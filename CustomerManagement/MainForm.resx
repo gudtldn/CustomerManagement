@@ -117,6 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Sub_Delete_Button.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABwAAAAjCAYAAACHIWrsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAMYSURBVFhHzZbrTiJBEIV5DbmIcvGCCCa8Bi/AP56CoFFQ
+        whNLlJvQy1fJmVQPA+6SdbMmZ7qru/qcquqawVwI4Z8ic/EY+v1++F2kz4K9hWMQ0dfXV1gul2Gz2Ri2
+        263ZrDNnxK/RaOyOxRyRcQwQQCrB9XodVqtVmM1mibDw+flpfjc3N7ujMY89rq6uQrFYDOfn56FUKu2W
+        YiEBAcbpdBrG43F4enoKb29vCdhXMPjd3d1FXCCHCBHhtFgswsXFRSgUChadF1IZsZlrTSX1YvwdFTw7
+        O7PMhMvLSxMla0QghBhCiHxWAhkrEAXWbrf3BXmQFeSIIVStVpNMWatUKkYgQOyromD8iN/t7a1xcJ7E
+        Wq1WrC7grCB0r8xBVnZk9PHxYUIEgQjnQJo7MgQEIYGAQyovoNzszedzK5+giuCvpjnYpWmobHqnICdL
+        L6495uVy2UZ/33DQ/WnuyBBw5iAYDodJ+49GIyP2jYUYDfP8/Gz+BMd4UoZETLkkzhrlogkkRil1f/Kl
+        keCgSdLckSEoQwQg8kBI3YxwPp83XwLRqDv8o5JKgHKSiTLSPdbr9TAYDJI7pKQ6Q6Bw8FqkuSNDkCAl
+        JQMJcm+Ui3tSg1BGRMlWVVGG9/f3O7qYOzIEnCH05QN62SFGWAKsq4u1BgdVSHNHhkAjCAgRPR/sx8dH
+        61Z1pb4ygEAQBBL8tkt1H7onZUjU/h2jjCoda3oV2OMM5xEkYM8PIjEvpHuDHCKyoXRe0Auzrj2CpCoH
+        7xAHBGgQ3QU2Ub+8vFgJGV9fX62kk8nE5gj0ej3L3gcACPbgawG5oOze39/toO9GZUFGgH3Zyo45IyWF
+        x4sBe/BzRMurvXH+G7i+vrYE9gSBylir1XZmyPFZ4g4oC/8M8WPa6XTMZt5sNg34sc+IACN4eHgwMRKR
+        BkgmPwmqpvne5k9BmWZu/iT2Frrd7m74fk1gz0NrfvSIDJDl5MmykN6TnXUmMg45Zh308PvMD/GAZJLe
+        TJNongX2s/yzzkXGqThZUAez4P08tOf90qNHZBxC1sFj+I8EQ+4Xrp2BITe7yNcAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
