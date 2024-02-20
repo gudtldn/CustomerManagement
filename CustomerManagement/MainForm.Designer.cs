@@ -186,6 +186,7 @@ namespace CustomerManagement
             this.MainListView.TabIndex = 0;
             this.MainListView.UseCompatibleStateImageBehavior = false;
             this.MainListView.View = System.Windows.Forms.View.Details;
+            this.MainListView.VirtualMode = true;
             // 
             // MainListView_CustomerName
             // 
