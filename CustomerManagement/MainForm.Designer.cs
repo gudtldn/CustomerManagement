@@ -32,35 +32,35 @@ namespace CustomerManagement
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.MainButton_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.Main_Find_Button = new System.Windows.Forms.Button();
-            this.Main_Delete_Button = new System.Windows.Forms.Button();
-            this.Main_Add_Button = new System.Windows.Forms.Button();
-            this.Main_Modify_Button = new System.Windows.Forms.Button();
-            this.MainListView = new System.Windows.Forms.ListView();
-            this.MainListView_CustomerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MainListView_PN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SubTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.Sub_Button_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.Sub_Delete_Button = new System.Windows.Forms.Button();
-            this.Sub_Modify_Button = new System.Windows.Forms.Button();
-            this.Sub_New_Button = new System.Windows.Forms.Button();
+            this.CustomerButton_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.Customer_Find_Button = new System.Windows.Forms.Button();
+            this.Customer_Delete_Button = new System.Windows.Forms.Button();
+            this.Customer_Add_Button = new System.Windows.Forms.Button();
+            this.Customer_Modify_Button = new System.Windows.Forms.Button();
+            this.CustomerListView = new System.Windows.Forms.ListView();
+            this.CustomerListView_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CustomerListView_PN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GarmentTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.Garment_Button_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.Garment_Delete_Button = new System.Windows.Forms.Button();
+            this.Garment_Modify_Button = new System.Windows.Forms.Button();
+            this.Garment_New_Button = new System.Windows.Forms.Button();
             this.Customer_Name_Label = new System.Windows.Forms.Label();
-            this.SubListView = new System.Windows.Forms.ListView();
-            this.SubListView_ReceptionDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SubListView_ProcessingDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SubListView_Completion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SubListView_Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SubListView_Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SubListView_Note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GarmentListView = new System.Windows.Forms.ListView();
+            this.GarmentListView_ReceptionDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GarmentListView_ProcessingDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GarmentListView_Completion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GarmentListView_Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GarmentListView_Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GarmentListView_Note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
             this.MainSplitContainer.SuspendLayout();
             this.MainTableLayoutPanel.SuspendLayout();
-            this.MainButton_TableLayoutPanel.SuspendLayout();
-            this.SubTableLayoutPanel.SuspendLayout();
-            this.Sub_Button_TableLayoutPanel.SuspendLayout();
+            this.CustomerButton_TableLayoutPanel.SuspendLayout();
+            this.GarmentTableLayoutPanel.SuspendLayout();
+            this.Garment_Button_TableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainSplitContainer
@@ -76,7 +76,7 @@ namespace CustomerManagement
             // 
             // MainSplitContainer.Panel2
             // 
-            this.MainSplitContainer.Panel2.Controls.Add(this.SubTableLayoutPanel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.GarmentTableLayoutPanel);
             this.MainSplitContainer.Size = new System.Drawing.Size(1264, 701);
             this.MainSplitContainer.SplitterDistance = 421;
             this.MainSplitContainer.SplitterWidth = 2;
@@ -86,8 +86,8 @@ namespace CustomerManagement
             // 
             this.MainTableLayoutPanel.ColumnCount = 1;
             this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTableLayoutPanel.Controls.Add(this.MainButton_TableLayoutPanel, 0, 0);
-            this.MainTableLayoutPanel.Controls.Add(this.MainListView, 0, 1);
+            this.MainTableLayoutPanel.Controls.Add(this.CustomerButton_TableLayoutPanel, 0, 0);
+            this.MainTableLayoutPanel.Controls.Add(this.CustomerListView, 0, 1);
             this.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.MainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -99,178 +99,177 @@ namespace CustomerManagement
             this.MainTableLayoutPanel.Size = new System.Drawing.Size(421, 701);
             this.MainTableLayoutPanel.TabIndex = 0;
             // 
-            // MainButton_TableLayoutPanel
+            // CustomerButton_TableLayoutPanel
             // 
-            this.MainButton_TableLayoutPanel.ColumnCount = 7;
-            this.MainButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
-            this.MainButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.MainButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.MainButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.MainButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
-            this.MainButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.MainButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.34F));
-            this.MainButton_TableLayoutPanel.Controls.Add(this.Main_Find_Button, 5, 0);
-            this.MainButton_TableLayoutPanel.Controls.Add(this.Main_Delete_Button, 3, 0);
-            this.MainButton_TableLayoutPanel.Controls.Add(this.Main_Add_Button, 1, 0);
-            this.MainButton_TableLayoutPanel.Controls.Add(this.Main_Modify_Button, 2, 0);
-            this.MainButton_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainButton_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainButton_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.MainButton_TableLayoutPanel.Name = "MainButton_TableLayoutPanel";
-            this.MainButton_TableLayoutPanel.RowCount = 1;
-            this.MainButton_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainButton_TableLayoutPanel.Size = new System.Drawing.Size(421, 52);
-            this.MainButton_TableLayoutPanel.TabIndex = 3;
+            this.CustomerButton_TableLayoutPanel.ColumnCount = 7;
+            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
+            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
+            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.34F));
+            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Find_Button, 5, 0);
+            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Delete_Button, 3, 0);
+            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Add_Button, 1, 0);
+            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Modify_Button, 2, 0);
+            this.CustomerButton_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerButton_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.CustomerButton_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.CustomerButton_TableLayoutPanel.Name = "CustomerButton_TableLayoutPanel";
+            this.CustomerButton_TableLayoutPanel.RowCount = 1;
+            this.CustomerButton_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CustomerButton_TableLayoutPanel.Size = new System.Drawing.Size(421, 52);
+            this.CustomerButton_TableLayoutPanel.TabIndex = 3;
             // 
-            // Main_Find_Button
+            // Customer_Find_Button
             // 
-            this.Main_Find_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main_Find_Button.Image = global::CustomerManagement.Properties.Resources.find;
-            this.Main_Find_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Main_Find_Button.Location = new System.Drawing.Point(294, 0);
-            this.Main_Find_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Main_Find_Button.Name = "Main_Find_Button";
-            this.Main_Find_Button.Size = new System.Drawing.Size(50, 52);
-            this.Main_Find_Button.TabIndex = 3;
-            this.Main_Find_Button.UseVisualStyleBackColor = true;
+            this.Customer_Find_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Customer_Find_Button.Image = global::CustomerManagement.Properties.Resources.find;
+            this.Customer_Find_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Customer_Find_Button.Location = new System.Drawing.Point(294, 0);
+            this.Customer_Find_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Customer_Find_Button.Name = "Customer_Find_Button";
+            this.Customer_Find_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Find_Button.TabIndex = 3;
+            this.Customer_Find_Button.UseVisualStyleBackColor = true;
             // 
-            // Main_Delete_Button
+            // Customer_Delete_Button
             // 
-            this.Main_Delete_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main_Delete_Button.Image = global::CustomerManagement.Properties.Resources.delete;
-            this.Main_Delete_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Main_Delete_Button.Location = new System.Drawing.Point(172, 0);
-            this.Main_Delete_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Main_Delete_Button.Name = "Main_Delete_Button";
-            this.Main_Delete_Button.Size = new System.Drawing.Size(50, 52);
-            this.Main_Delete_Button.TabIndex = 2;
-            this.Main_Delete_Button.UseVisualStyleBackColor = true;
+            this.Customer_Delete_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Customer_Delete_Button.Image = global::CustomerManagement.Properties.Resources.delete;
+            this.Customer_Delete_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Customer_Delete_Button.Location = new System.Drawing.Point(172, 0);
+            this.Customer_Delete_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Customer_Delete_Button.Name = "Customer_Delete_Button";
+            this.Customer_Delete_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Delete_Button.TabIndex = 2;
+            this.Customer_Delete_Button.UseVisualStyleBackColor = true;
             // 
-            // Main_Add_Button
+            // Customer_Add_Button
             // 
-            this.Main_Add_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Main_Add_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main_Add_Button.Image = global::CustomerManagement.Properties.Resources._new;
-            this.Main_Add_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Main_Add_Button.Location = new System.Drawing.Point(72, 0);
-            this.Main_Add_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Main_Add_Button.Name = "Main_Add_Button";
-            this.Main_Add_Button.Size = new System.Drawing.Size(50, 52);
-            this.Main_Add_Button.TabIndex = 0;
-            this.Main_Add_Button.UseVisualStyleBackColor = true;
+            this.Customer_Add_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Customer_Add_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Customer_Add_Button.Image = global::CustomerManagement.Properties.Resources._new;
+            this.Customer_Add_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Customer_Add_Button.Location = new System.Drawing.Point(72, 0);
+            this.Customer_Add_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Customer_Add_Button.Name = "Customer_Add_Button";
+            this.Customer_Add_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Add_Button.TabIndex = 0;
+            this.Customer_Add_Button.UseVisualStyleBackColor = true;
             // 
-            // Main_Modify_Button
+            // Customer_Modify_Button
             // 
-            this.Main_Modify_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main_Modify_Button.Image = global::CustomerManagement.Properties.Resources.modify;
-            this.Main_Modify_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Main_Modify_Button.Location = new System.Drawing.Point(122, 0);
-            this.Main_Modify_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Main_Modify_Button.Name = "Main_Modify_Button";
-            this.Main_Modify_Button.Size = new System.Drawing.Size(50, 52);
-            this.Main_Modify_Button.TabIndex = 1;
-            this.Main_Modify_Button.UseVisualStyleBackColor = true;
+            this.Customer_Modify_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Customer_Modify_Button.Image = global::CustomerManagement.Properties.Resources.modify;
+            this.Customer_Modify_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Customer_Modify_Button.Location = new System.Drawing.Point(122, 0);
+            this.Customer_Modify_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Customer_Modify_Button.Name = "Customer_Modify_Button";
+            this.Customer_Modify_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Modify_Button.TabIndex = 1;
+            this.Customer_Modify_Button.UseVisualStyleBackColor = true;
             // 
-            // MainListView
+            // CustomerListView
             // 
-            this.MainListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.MainListView_CustomerName,
-            this.MainListView_PN});
-            this.MainListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainListView.HideSelection = false;
-            this.MainListView.Location = new System.Drawing.Point(0, 52);
-            this.MainListView.Margin = new System.Windows.Forms.Padding(0);
-            this.MainListView.Name = "MainListView";
-            this.MainListView.Size = new System.Drawing.Size(421, 649);
-            this.MainListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.MainListView.TabIndex = 0;
-            this.MainListView.UseCompatibleStateImageBehavior = false;
-            this.MainListView.View = System.Windows.Forms.View.Details;
-            this.MainListView.VirtualMode = true;
+            this.CustomerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CustomerListView_Name,
+            this.CustomerListView_PN});
+            this.CustomerListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerListView.FullRowSelect = true;
+            this.CustomerListView.Location = new System.Drawing.Point(0, 52);
+            this.CustomerListView.Margin = new System.Windows.Forms.Padding(0);
+            this.CustomerListView.Name = "CustomerListView";
+            this.CustomerListView.Size = new System.Drawing.Size(421, 649);
+            this.CustomerListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.CustomerListView.TabIndex = 0;
+            this.CustomerListView.UseCompatibleStateImageBehavior = false;
+            this.CustomerListView.View = System.Windows.Forms.View.Details;
             // 
-            // MainListView_CustomerName
+            // CustomerListView_Name
             // 
-            this.MainListView_CustomerName.Text = "이름";
-            this.MainListView_CustomerName.Width = 225;
+            this.CustomerListView_Name.Text = "이름";
+            this.CustomerListView_Name.Width = 225;
             // 
-            // MainListView_PN
+            // CustomerListView_PN
             // 
-            this.MainListView_PN.Text = "전화번호";
-            this.MainListView_PN.Width = 185;
+            this.CustomerListView_PN.Text = "전화번호";
+            this.CustomerListView_PN.Width = 185;
             // 
-            // SubTableLayoutPanel
+            // GarmentTableLayoutPanel
             // 
-            this.SubTableLayoutPanel.ColumnCount = 1;
-            this.SubTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.SubTableLayoutPanel.Controls.Add(this.Sub_Button_TableLayoutPanel, 0, 0);
-            this.SubTableLayoutPanel.Controls.Add(this.SubListView, 0, 1);
-            this.SubTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SubTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.SubTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.SubTableLayoutPanel.Name = "SubTableLayoutPanel";
-            this.SubTableLayoutPanel.RowCount = 2;
-            this.SubTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
-            this.SubTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.5F));
-            this.SubTableLayoutPanel.Size = new System.Drawing.Size(841, 701);
-            this.SubTableLayoutPanel.TabIndex = 1;
+            this.GarmentTableLayoutPanel.ColumnCount = 1;
+            this.GarmentTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.GarmentTableLayoutPanel.Controls.Add(this.Garment_Button_TableLayoutPanel, 0, 0);
+            this.GarmentTableLayoutPanel.Controls.Add(this.GarmentListView, 0, 1);
+            this.GarmentTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GarmentTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.GarmentTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.GarmentTableLayoutPanel.Name = "GarmentTableLayoutPanel";
+            this.GarmentTableLayoutPanel.RowCount = 2;
+            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
+            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.5F));
+            this.GarmentTableLayoutPanel.Size = new System.Drawing.Size(841, 701);
+            this.GarmentTableLayoutPanel.TabIndex = 1;
             // 
-            // Sub_Button_TableLayoutPanel
+            // Garment_Button_TableLayoutPanel
             // 
-            this.Sub_Button_TableLayoutPanel.ColumnCount = 5;
-            this.Sub_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.Sub_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.Sub_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.Sub_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.Sub_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.Sub_Button_TableLayoutPanel.Controls.Add(this.Sub_Delete_Button, 3, 0);
-            this.Sub_Button_TableLayoutPanel.Controls.Add(this.Sub_Modify_Button, 2, 0);
-            this.Sub_Button_TableLayoutPanel.Controls.Add(this.Sub_New_Button, 1, 0);
-            this.Sub_Button_TableLayoutPanel.Controls.Add(this.Customer_Name_Label, 0, 0);
-            this.Sub_Button_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Sub_Button_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.Sub_Button_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.Sub_Button_TableLayoutPanel.Name = "Sub_Button_TableLayoutPanel";
-            this.Sub_Button_TableLayoutPanel.RowCount = 1;
-            this.Sub_Button_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Sub_Button_TableLayoutPanel.Size = new System.Drawing.Size(841, 52);
-            this.Sub_Button_TableLayoutPanel.TabIndex = 5;
+            this.Garment_Button_TableLayoutPanel.ColumnCount = 5;
+            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Delete_Button, 3, 0);
+            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Modify_Button, 2, 0);
+            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_New_Button, 1, 0);
+            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Customer_Name_Label, 0, 0);
+            this.Garment_Button_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Garment_Button_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.Garment_Button_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.Garment_Button_TableLayoutPanel.Name = "Garment_Button_TableLayoutPanel";
+            this.Garment_Button_TableLayoutPanel.RowCount = 1;
+            this.Garment_Button_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Garment_Button_TableLayoutPanel.Size = new System.Drawing.Size(841, 52);
+            this.Garment_Button_TableLayoutPanel.TabIndex = 5;
             // 
-            // Sub_Delete_Button
+            // Garment_Delete_Button
             // 
-            this.Sub_Delete_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Sub_Delete_Button.Image = ((System.Drawing.Image)(resources.GetObject("Sub_Delete_Button.Image")));
-            this.Sub_Delete_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Sub_Delete_Button.Location = new System.Drawing.Point(688, 0);
-            this.Sub_Delete_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Sub_Delete_Button.Name = "Sub_Delete_Button";
-            this.Sub_Delete_Button.Size = new System.Drawing.Size(50, 52);
-            this.Sub_Delete_Button.TabIndex = 5;
-            this.Sub_Delete_Button.UseVisualStyleBackColor = true;
+            this.Garment_Delete_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Garment_Delete_Button.Image = ((System.Drawing.Image)(resources.GetObject("Garment_Delete_Button.Image")));
+            this.Garment_Delete_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Garment_Delete_Button.Location = new System.Drawing.Point(688, 0);
+            this.Garment_Delete_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Garment_Delete_Button.Name = "Garment_Delete_Button";
+            this.Garment_Delete_Button.Size = new System.Drawing.Size(50, 52);
+            this.Garment_Delete_Button.TabIndex = 5;
+            this.Garment_Delete_Button.UseVisualStyleBackColor = true;
             // 
-            // Sub_Modify_Button
+            // Garment_Modify_Button
             // 
-            this.Sub_Modify_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Sub_Modify_Button.Image = global::CustomerManagement.Properties.Resources.modify;
-            this.Sub_Modify_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Sub_Modify_Button.Location = new System.Drawing.Point(638, 0);
-            this.Sub_Modify_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Sub_Modify_Button.Name = "Sub_Modify_Button";
-            this.Sub_Modify_Button.Size = new System.Drawing.Size(50, 52);
-            this.Sub_Modify_Button.TabIndex = 2;
-            this.Sub_Modify_Button.UseVisualStyleBackColor = true;
+            this.Garment_Modify_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Garment_Modify_Button.Image = global::CustomerManagement.Properties.Resources.modify;
+            this.Garment_Modify_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Garment_Modify_Button.Location = new System.Drawing.Point(638, 0);
+            this.Garment_Modify_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Garment_Modify_Button.Name = "Garment_Modify_Button";
+            this.Garment_Modify_Button.Size = new System.Drawing.Size(50, 52);
+            this.Garment_Modify_Button.TabIndex = 2;
+            this.Garment_Modify_Button.UseVisualStyleBackColor = true;
             // 
-            // Sub_New_Button
+            // Garment_New_Button
             // 
-            this.Sub_New_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Sub_New_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Sub_New_Button.Image = global::CustomerManagement.Properties.Resources._new;
-            this.Sub_New_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Sub_New_Button.Location = new System.Drawing.Point(588, 0);
-            this.Sub_New_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Sub_New_Button.Name = "Sub_New_Button";
-            this.Sub_New_Button.Size = new System.Drawing.Size(50, 52);
-            this.Sub_New_Button.TabIndex = 1;
-            this.Sub_New_Button.UseVisualStyleBackColor = true;
+            this.Garment_New_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Garment_New_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Garment_New_Button.Image = global::CustomerManagement.Properties.Resources._new;
+            this.Garment_New_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Garment_New_Button.Location = new System.Drawing.Point(588, 0);
+            this.Garment_New_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Garment_New_Button.Name = "Garment_New_Button";
+            this.Garment_New_Button.Size = new System.Drawing.Size(50, 52);
+            this.Garment_New_Button.TabIndex = 1;
+            this.Garment_New_Button.UseVisualStyleBackColor = true;
             // 
             // Customer_Name_Label
             // 
@@ -285,57 +284,58 @@ namespace CustomerManagement
             this.Customer_Name_Label.TabIndex = 6;
             this.Customer_Name_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // SubListView
+            // GarmentListView
             // 
-            this.SubListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.SubListView_ReceptionDate,
-            this.SubListView_ProcessingDate,
-            this.SubListView_Completion,
-            this.SubListView_Content,
-            this.SubListView_Amount,
-            this.SubListView_Note});
-            this.SubListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SubListView.HideSelection = false;
-            this.SubListView.Location = new System.Drawing.Point(0, 52);
-            this.SubListView.Margin = new System.Windows.Forms.Padding(0);
-            this.SubListView.Name = "SubListView";
-            this.SubListView.Size = new System.Drawing.Size(841, 649);
-            this.SubListView.TabIndex = 0;
-            this.SubListView.UseCompatibleStateImageBehavior = false;
-            this.SubListView.View = System.Windows.Forms.View.Details;
+            this.GarmentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.GarmentListView_ReceptionDate,
+            this.GarmentListView_ProcessingDate,
+            this.GarmentListView_Completion,
+            this.GarmentListView_Content,
+            this.GarmentListView_Amount,
+            this.GarmentListView_Note});
+            this.GarmentListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GarmentListView.FullRowSelect = true;
+            this.GarmentListView.HideSelection = false;
+            this.GarmentListView.Location = new System.Drawing.Point(0, 52);
+            this.GarmentListView.Margin = new System.Windows.Forms.Padding(0);
+            this.GarmentListView.Name = "GarmentListView";
+            this.GarmentListView.Size = new System.Drawing.Size(841, 649);
+            this.GarmentListView.TabIndex = 0;
+            this.GarmentListView.UseCompatibleStateImageBehavior = false;
+            this.GarmentListView.View = System.Windows.Forms.View.Details;
             // 
-            // SubListView_ReceptionDate
+            // GarmentListView_ReceptionDate
             // 
-            this.SubListView_ReceptionDate.Text = "접수일자";
-            this.SubListView_ReceptionDate.Width = 105;
+            this.GarmentListView_ReceptionDate.Text = "접수일자";
+            this.GarmentListView_ReceptionDate.Width = 105;
             // 
-            // SubListView_ProcessingDate
+            // GarmentListView_ProcessingDate
             // 
-            this.SubListView_ProcessingDate.Text = "처리일자";
-            this.SubListView_ProcessingDate.Width = 105;
+            this.GarmentListView_ProcessingDate.Text = "처리일자";
+            this.GarmentListView_ProcessingDate.Width = 105;
             // 
-            // SubListView_Completion
+            // GarmentListView_Completion
             // 
-            this.SubListView_Completion.Text = "완료구분";
-            this.SubListView_Completion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.GarmentListView_Completion.Text = "완료구분";
+            this.GarmentListView_Completion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // SubListView_Content
+            // GarmentListView_Content
             // 
-            this.SubListView_Content.Text = "내용";
-            this.SubListView_Content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SubListView_Content.Width = 350;
+            this.GarmentListView_Content.Text = "내용";
+            this.GarmentListView_Content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GarmentListView_Content.Width = 350;
             // 
-            // SubListView_Amount
+            // GarmentListView_Amount
             // 
-            this.SubListView_Amount.Text = "금액";
-            this.SubListView_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SubListView_Amount.Width = 100;
+            this.GarmentListView_Amount.Text = "금액";
+            this.GarmentListView_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GarmentListView_Amount.Width = 100;
             // 
-            // SubListView_Note
+            // GarmentListView_Note
             // 
-            this.SubListView_Note.Text = "비고";
-            this.SubListView_Note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SubListView_Note.Width = 119;
+            this.GarmentListView_Note.Text = "비고";
+            this.GarmentListView_Note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GarmentListView_Note.Width = 119;
             // 
             // MainForm
             // 
@@ -347,15 +347,16 @@ namespace CustomerManagement
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "고객관리";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MainSplitContainer.Panel1.ResumeLayout(false);
             this.MainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
             this.MainSplitContainer.ResumeLayout(false);
             this.MainTableLayoutPanel.ResumeLayout(false);
-            this.MainButton_TableLayoutPanel.ResumeLayout(false);
-            this.SubTableLayoutPanel.ResumeLayout(false);
-            this.Sub_Button_TableLayoutPanel.ResumeLayout(false);
-            this.Sub_Button_TableLayoutPanel.PerformLayout();
+            this.CustomerButton_TableLayoutPanel.ResumeLayout(false);
+            this.GarmentTableLayoutPanel.ResumeLayout(false);
+            this.Garment_Button_TableLayoutPanel.ResumeLayout(false);
+            this.Garment_Button_TableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -364,26 +365,26 @@ namespace CustomerManagement
 
         private System.Windows.Forms.SplitContainer MainSplitContainer;
         private System.Windows.Forms.TableLayoutPanel MainTableLayoutPanel;
-        private System.Windows.Forms.ListView MainListView;
-        private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel;
-        private System.Windows.Forms.ColumnHeader MainListView_CustomerName;
-        private System.Windows.Forms.ColumnHeader MainListView_PN;
-        private System.Windows.Forms.ListView SubListView;
-        private System.Windows.Forms.ColumnHeader SubListView_ReceptionDate;
-        private System.Windows.Forms.ColumnHeader SubListView_ProcessingDate;
-        private System.Windows.Forms.ColumnHeader SubListView_Completion;
-        private System.Windows.Forms.ColumnHeader SubListView_Content;
-        private System.Windows.Forms.ColumnHeader SubListView_Amount;
-        private System.Windows.Forms.ColumnHeader SubListView_Note;
-        private System.Windows.Forms.TableLayoutPanel MainButton_TableLayoutPanel;
-        private System.Windows.Forms.Button Main_Find_Button;
-        private System.Windows.Forms.Button Main_Delete_Button;
-        private System.Windows.Forms.Button Main_Add_Button;
-        private System.Windows.Forms.Button Main_Modify_Button;
-        private System.Windows.Forms.TableLayoutPanel Sub_Button_TableLayoutPanel;
-        private System.Windows.Forms.Button Sub_Delete_Button;
-        private System.Windows.Forms.Button Sub_Modify_Button;
-        private System.Windows.Forms.Button Sub_New_Button;
+        private System.Windows.Forms.ListView CustomerListView;
+        private System.Windows.Forms.TableLayoutPanel GarmentTableLayoutPanel;
+        private System.Windows.Forms.ColumnHeader CustomerListView_Name;
+        private System.Windows.Forms.ColumnHeader CustomerListView_PN;
+        private System.Windows.Forms.ListView GarmentListView;
+        private System.Windows.Forms.ColumnHeader GarmentListView_ReceptionDate;
+        private System.Windows.Forms.ColumnHeader GarmentListView_ProcessingDate;
+        private System.Windows.Forms.ColumnHeader GarmentListView_Completion;
+        private System.Windows.Forms.ColumnHeader GarmentListView_Content;
+        private System.Windows.Forms.ColumnHeader GarmentListView_Amount;
+        private System.Windows.Forms.ColumnHeader GarmentListView_Note;
+        private System.Windows.Forms.TableLayoutPanel CustomerButton_TableLayoutPanel;
+        private System.Windows.Forms.Button Customer_Find_Button;
+        private System.Windows.Forms.Button Customer_Delete_Button;
+        private System.Windows.Forms.Button Customer_Add_Button;
+        private System.Windows.Forms.Button Customer_Modify_Button;
+        private System.Windows.Forms.TableLayoutPanel Garment_Button_TableLayoutPanel;
+        private System.Windows.Forms.Button Garment_Delete_Button;
+        private System.Windows.Forms.Button Garment_Modify_Button;
+        private System.Windows.Forms.Button Garment_New_Button;
         private System.Windows.Forms.Label Customer_Name_Label;
     }
 }
