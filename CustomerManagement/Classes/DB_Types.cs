@@ -54,17 +54,17 @@ namespace CustomerManagement.Classes
         /// <summary>
         /// 의류의 등록 날짜를 가져오거나 설정합니다.
         /// </summary>
-        public string RegisteredDate;
+        public DateTime? ReceptionDate;
 
         /// <summary>
         /// 의류의 처리 날짜를 가져오거나 설정합니다.
         /// </summary>
-        public string ProcessingDate;
+        public DateTime? ProcessingDate;
 
         /// <summary>
         /// 의류의 완료 여부를 가져오거나 설정합니다.
         /// </summary>
-        public string IsCompleted;
+        public bool IsCompleted;
 
         /// <summary>
         /// 의류의 내용을 가져오거나 설정합니다.
@@ -90,7 +90,7 @@ namespace CustomerManagement.Classes
         /// Garment 구조체의 새 인스턴스를 초기화합니다.
         /// </summary>
         /// <param name="id">의류의 고유 식별자입니다.</param>
-        /// <param name="registered_date">의류의 등록 날짜입니다.</param>
+        /// <param name="reception_date">의류의 등록 날짜입니다.</param>
         /// <param name="processing_date">의류의 처리 날짜입니다.</param>
         /// <param name="is_completed">의류의 완료 여부입니다.</param>
         /// <param name="contents">의류의 내용입니다.</param>
@@ -99,16 +99,16 @@ namespace CustomerManagement.Classes
         /// <param name="customer_id">의류와 연결된 고객의 식별자입니다.</param>
         public Garment(
             int id,
-            string registered_date,
-            string processing_date,
-            string is_completed,
+            DateTime? reception_date,
+            DateTime? processing_date,
+            bool is_completed,
             string contents,
             int price,
             string note,
             int customer_id
         ) {
             ID = id;
-            RegisteredDate = registered_date;
+            ReceptionDate = reception_date;
             ProcessingDate = processing_date;
             IsCompleted = is_completed;
             Contents = contents;

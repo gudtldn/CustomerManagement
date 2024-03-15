@@ -65,8 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CustomerInfo.cs" />
+    <Compile Include="Classes\DB_Types.cs" />
     <Compile Include="Classes\DataSQL.cs" />
+    <Compile Include="Classes\Utils.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
