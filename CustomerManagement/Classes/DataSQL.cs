@@ -16,6 +16,9 @@ namespace CustomerManagement.Classes
 
         public DataSQL(string path = "./data/customer.db")
         {
+            if (!Directory.Exists("./data"))
+                Directory.CreateDirectory("./data");
+
             database_path = $"Data Source={path};";
             FileInfo info = new FileInfo(path);
 
