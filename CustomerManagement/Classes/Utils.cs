@@ -13,7 +13,7 @@ namespace CustomerManagement.Classes
             if (string.IsNullOrEmpty(phone_number))
                 return string.Empty;
 
-            if (phone_number.Length < 9 || phone_number.Length > 11)
+            if (phone_number.Length < 9 || phone_number.Length > 11 || !phone_number.All(char.IsDigit))
                 return phone_number;
 
             if (phone_number.Length == 9)
