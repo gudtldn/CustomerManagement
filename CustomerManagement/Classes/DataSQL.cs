@@ -172,8 +172,8 @@ namespace CustomerManagement.Classes
             {
                 yield return new Garment(
                     Convert.ToInt32(reader["id"]),
-                    reader["reception_date"] as DateTime?,
-                    reader["processing_date"] as DateTime?,
+                    reader["reception_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["reception_date"]),
+                    reader["processing_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["processing_date"]),
                     Convert.ToBoolean(reader["is_completed"]),
                     reader["contents"].ToString(),
                     Convert.ToInt32(reader["price"]),

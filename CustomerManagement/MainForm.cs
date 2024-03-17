@@ -49,8 +49,8 @@ namespace CustomerManagement
 
             foreach (Garment garment in data.GetGarments(customer))
             {
-                ListViewItem item = new ListViewItem(garment.ReceptionDate.ToString());
-                item.SubItems.Add(garment.ProcessingDate.ToString());
+                ListViewItem item = new ListViewItem(garment.ReceptionDate?.ToString("yyyy-MM-dd"));
+                item.SubItems.Add(garment.ProcessingDate?.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(garment.IsCompleted ? "완료" : "미완료");
                 item.SubItems.Add(garment.Contents);
                 item.SubItems.Add($"{garment.Price:n0} 원");
