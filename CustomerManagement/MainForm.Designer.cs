@@ -178,6 +178,7 @@ namespace CustomerManagement
             this.CustomerListView_PN});
             this.CustomerListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerListView.FullRowSelect = true;
+            this.CustomerListView.HideSelection = false;
             this.CustomerListView.Location = new System.Drawing.Point(0, 52);
             this.CustomerListView.Margin = new System.Windows.Forms.Padding(0);
             this.CustomerListView.Name = "CustomerListView";
@@ -186,6 +187,7 @@ namespace CustomerManagement
             this.CustomerListView.TabIndex = 0;
             this.CustomerListView.UseCompatibleStateImageBehavior = false;
             this.CustomerListView.View = System.Windows.Forms.View.Details;
+            this.CustomerListView.SelectedIndexChanged += new System.EventHandler(this.CustomerListView_SelectedIndexChanged);
             // 
             // CustomerListView_Name
             // 
