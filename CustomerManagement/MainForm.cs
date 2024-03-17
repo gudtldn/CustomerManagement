@@ -33,6 +33,8 @@ namespace CustomerManagement
 
             if (CustomerListView.Items.Count > 0)
                 CustomerListView.Items[0].Selected = true;
+
+            CustomerListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
         }
 
         private void CustomerListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,6 +63,17 @@ namespace CustomerManagement
             }
 
             Customer_Name_Label.Text = customer.Name; // 선택된 고객의 이름을 라벨에 표시
+        }
+
+        private void CustomerListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // 리스트뷰 정렬
+            if ((CustomerListView.ListViewItemSorter as ListViewItemComparer).Column == e.Column)
+                CustomerListView.Sorting = CustomerListView.Sorting == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+            else
+                CustomerListView.Sorting = SortOrder.Ascending;
+
+            CustomerListView.ListViewItemSorter = new ListViewItemComparer(e.Column, CustomerListView.Sorting);
         }
     }
 }

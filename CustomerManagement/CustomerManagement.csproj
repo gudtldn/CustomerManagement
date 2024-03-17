@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ListViewItemComparer.cs" />
     <Compile Include="Classes\DB_Types.cs" />
     <Compile Include="Classes\DataSQL.cs" />
     <Compile Include="Classes\Utils.cs" />
