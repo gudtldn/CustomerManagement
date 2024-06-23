@@ -89,6 +89,12 @@ namespace CustomerManagement
 
         private void Customer_Modify_Button_Click(object sender, EventArgs e)
         {
+            if (CustomerListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("고객을 선택해주세요.", "선택 오류", MessageBoxButtons.OK);
+                return;
+            }
+
             AddCustomerForm form = new AddCustomerForm(
                 ((Customer)CustomerListView.SelectedItems[0].Tag).Name,
                 ((Customer)CustomerListView.SelectedItems[0].Tag).PhoneNumber
