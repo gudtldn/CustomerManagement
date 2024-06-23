@@ -37,7 +37,7 @@ namespace CustomerManagement.Classes
         
                 if (compareResult == 0)
                     return mid;
-                else if (compareResult < 0)
+                else if (listView.Sorting == SortOrder.Ascending ? compareResult < 0 : compareResult > 0)
                     low = mid + 1;
                 else
                     high = mid - 1;

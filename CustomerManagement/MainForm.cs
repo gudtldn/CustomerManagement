@@ -95,10 +95,15 @@ namespace CustomerManagement
                 )
             });
 
-            int idx = Utils.BinarySearchListView(CustomerListView, form.CustomerName).Value;
-            CustomerListView.SelectedItems.Clear();
-            CustomerListView.Items[idx].Selected = true;
-            CustomerListView.Items[idx].EnsureVisible();
+            if ((CustomerListView.ListViewItemSorter as ListViewItemComparer).Column != 0)
+                CustomerListView.ListViewItemSorter = new ListViewItemComparer();
+
+            if (Utils.BinarySearchListView(CustomerListView, form.CustomerName) is int idx)
+            {
+                CustomerListView.SelectedItems.Clear();
+                CustomerListView.Items[idx].Selected = true;
+                CustomerListView.Items[idx].EnsureVisible();
+            }
         }
 
         private void Customer_Modify_Button_Click(object sender, EventArgs e)
