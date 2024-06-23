@@ -31,20 +31,20 @@ namespace CustomerManagement.Classes
                     connection.Open();
                     string create_table_query = @"
                         CREATE TABLE `customers` (
-                            `id`	INTEGER,
-                            `name`	TEXT NOT NULL UNIQUE,
-                            `phone_number`	TEXT NOT NULL UNIQUE,
+                            `id`                 INTEGER,
+                            `name`               TEXT NOT NULL UNIQUE,
+                            `phone_number`       TEXT NOT NULL UNIQUE,
                             PRIMARY KEY(`id` AUTOINCREMENT)
                         );
                         CREATE TABLE `garments` (
-                            `id`	INTEGER,
-                            `reception_date`	TEXT,
-                            `processing_date`	TEXT,
-                            `is_completed`	INTEGER NOT NULL,
-                            `contents`	TEXT,
-                            `price`	INTEGER NOT NULL,
-                            `note`	TEXT,
-                            `customer_id`	INTEGER NOT NULL,
+                            `id`                 INTEGER,
+                            `reception_date`     TEXT,
+                            `processing_date`    TEXT,
+                            `is_completed`       INTEGER NOT NULL,
+                            `contents`           TEXT,
+                            `price`              INTEGER NOT NULL,
+                            `note`               TEXT,
+                            `customer_id`        INTEGER NOT NULL,
                             FOREIGN KEY(`customer_id`) REFERENCES `customers`(`id`),
                             PRIMARY KEY(`id` AUTOINCREMENT)
                         )";
