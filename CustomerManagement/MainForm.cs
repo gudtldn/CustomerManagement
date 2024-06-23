@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +39,8 @@ namespace CustomerManagement
 
         private void CustomerListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CustomerListView.SelectedItems.Count > 1) return; // 선택된 고객이 2명 이상이면 함수를 종료
+            // 선택된 고객이 2명 이상이면 함수를 종료
+            if (CustomerListView.SelectedItems.Count > 1) return;
 
             GarmentListView.Items.Clear(); // 선택된 고객의 의류정보를 가져오기 전에 리스트뷰를 비움
             Customer_Name_Label.Text = ""; // 선택된 고객이 없으면 라벨을 초기화
@@ -74,6 +75,25 @@ namespace CustomerManagement
                 CustomerListView.Sorting = SortOrder.Ascending;
 
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(e.Column, CustomerListView.Sorting);
+        }
+
+        private void Customer_Add_Button_Click(object sender, EventArgs e)
+        {
+            AddCustomerForm form = new AddCustomerForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                Console.WriteLine(form.CustomerName);
+                Console.WriteLine(form.CustomerPhoneNumber);
+            }
+        }
+
+        private void Customer_Modify_Button_Click(object sender, EventArgs e)
+        {
+            AddCustomerForm form = new AddCustomerForm(
+                ((Customer)CustomerListView.SelectedItems[0].Tag).Name,
+                ((Customer)CustomerListView.SelectedItems[0].Tag).PhoneNumber
+            );
+            form.ShowDialog();
         }
     }
 }

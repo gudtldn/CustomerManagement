@@ -1,4 +1,4 @@
-﻿
+
 namespace CustomerManagement
 {
     partial class MainForm
@@ -158,6 +158,7 @@ namespace CustomerManagement
             this.Customer_Add_Button.Size = new System.Drawing.Size(50, 52);
             this.Customer_Add_Button.TabIndex = 0;
             this.Customer_Add_Button.UseVisualStyleBackColor = true;
+            this.Customer_Add_Button.Click += new System.EventHandler(this.Customer_Add_Button_Click);
             // 
             // Customer_Modify_Button
             // 
@@ -170,6 +171,7 @@ namespace CustomerManagement
             this.Customer_Modify_Button.Size = new System.Drawing.Size(50, 52);
             this.Customer_Modify_Button.TabIndex = 1;
             this.Customer_Modify_Button.UseVisualStyleBackColor = true;
+            this.Customer_Modify_Button.Click += new System.EventHandler(this.Customer_Modify_Button_Click);
             // 
             // CustomerListView
             // 
