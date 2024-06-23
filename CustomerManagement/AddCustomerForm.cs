@@ -26,6 +26,8 @@ namespace CustomerManagement
             get { return _CustomerPhoneNumber; }
         }
 
+        private string GetPhoneNumber() => AddCustomerFormPNTextBox.Text.Replace("-", "");
+        
         public AddCustomerForm(ListView listView, string name, string phoneNumber)
         {
             _ListView = listView;
@@ -44,8 +46,8 @@ namespace CustomerManagement
         {
             if (CustomerName != null && CustomerPhoneNumber != null)
             {
-                AddCuscomerFormNameTextBox.Text = CustomerName;
-                AddCuscomerFormPNTextBox.Text = CustomerPhoneNumber;
+                AddCustomerFormNameTextBox.Text = CustomerName;
+                AddCustomerFormPNTextBox.Text = CustomerPhoneNumber;
             }
         }
 
@@ -63,43 +65,52 @@ namespace CustomerManagement
             }
         }
 
+        private void AddCustomerFormPNTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string pnText = GetPhoneNumber();
+
+            AddCustomerFormPNTextBox.Text = Utils.FormatPhoneNumber(pnText);
+            AddCustomerFormPNTextBox.SelectionStart = AddCustomerFormPNTextBox.Text.Length;
+        }
+
         private void AddCuscomerFormConfirmButton_Click(object sender, EventArgs e)
         {
-            if (AddCuscomerFormNameTextBox.Text == "")
+            string pnText = GetPhoneNumber();
+            if (AddCustomerFormNameTextBox.Text == "")
             {
                 MessageBox.Show("이름을 입력해주세요.", "입력 오류", MessageBoxButtons.OK);
-                AddCuscomerFormNameTextBox.Focus();
+                AddCustomerFormNameTextBox.Focus();
                 return;
             }
-            else if (AddCuscomerFormPNTextBox.Text == "")
+            else if (pnText == "")
             {
                 MessageBox.Show("전화번호를 입력해주세요.", "입력 오류", MessageBoxButtons.OK);
-                AddCuscomerFormPNTextBox.Focus();
+                AddCustomerFormPNTextBox.Focus();
                 return;
             }
 
             DataSQL data = new DataSQL();
-            if (AddCuscomerFormNameTextBox.Text != (CustomerName ?? "")) 
+            if (AddCustomerFormNameTextBox.Text != (CustomerName ?? "")) 
             {
-                if (data.GetCustomerFromName(AddCuscomerFormNameTextBox.Text) != null)
+                if (data.GetCustomerFromName(AddCustomerFormNameTextBox.Text) != null)
                 {
                     MessageBox.Show("이미 존재하는 고객명입니다.", "입력 오류", MessageBoxButtons.OK);
-                    AddCuscomerFormNameTextBox.Focus();
+                    AddCustomerFormNameTextBox.Focus();
                     return;
                 }
             }
 
-            if (AddCuscomerFormPNTextBox.Text != (CustomerPhoneNumber ?? "")) {
-                if (data.GetCustomerFromPhoneNumber(AddCuscomerFormPNTextBox.Text) != null)
+            if (pnText != (CustomerPhoneNumber ?? "")) {
+                if (data.GetCustomerFromPhoneNumber(pnText) != null)
                 {
                     MessageBox.Show("이미 존재하는 전화번호입니다.", "입력 오류", MessageBoxButtons.OK);
-                    AddCuscomerFormPNTextBox.Focus();
+                    AddCustomerFormPNTextBox.Focus();
                     return;
                 }
             }
 
-            _CustomerName = AddCuscomerFormNameTextBox.Text;
-            _CustomerPhoneNumber = AddCuscomerFormPNTextBox.Text;
+            _CustomerName = AddCustomerFormNameTextBox.Text;
+            _CustomerPhoneNumber = pnText;
 
             DialogResult = DialogResult.OK;
             Close();
@@ -108,8 +119,8 @@ namespace CustomerManagement
         private void AddCuscomerFormCancelButton_Click(object sender, EventArgs e)
         {
             if (
-                AddCuscomerFormNameTextBox.Text != (CustomerName ?? "")
-                || AddCuscomerFormPNTextBox.Text != (CustomerPhoneNumber ?? "")
+                AddCustomerFormNameTextBox.Text != (CustomerName ?? "")
+                || GetPhoneNumber() != (CustomerPhoneNumber ?? "")
             ) {
                 if (MessageBox.Show("입력된 정보가 저장되지 않습니다. 계속하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;

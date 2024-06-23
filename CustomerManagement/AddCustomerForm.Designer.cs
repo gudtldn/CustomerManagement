@@ -30,10 +30,10 @@
         {
             this.AddCuscomerFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddCuscomerFormTableLayoutPanelInner1 = new System.Windows.Forms.TableLayoutPanel();
-            this.AddCuscomerFormPNTextBox = new System.Windows.Forms.TextBox();
+            this.AddCustomerFormPNTextBox = new System.Windows.Forms.TextBox();
             this.AddCuscomerFormPNLabel = new System.Windows.Forms.Label();
             this.AddCuscomerFormNameLabel = new System.Windows.Forms.Label();
-            this.AddCuscomerFormNameTextBox = new System.Windows.Forms.TextBox();
+            this.AddCustomerFormNameTextBox = new System.Windows.Forms.TextBox();
             this.AddCuscomerFormTableLayoutPanelInner2 = new System.Windows.Forms.TableLayoutPanel();
             this.AddCuscomerFormCancelButton = new System.Windows.Forms.Button();
             this.AddCuscomerFormConfirmButton = new System.Windows.Forms.Button();
@@ -63,10 +63,10 @@
             this.AddCuscomerFormTableLayoutPanelInner1.ColumnCount = 2;
             this.AddCuscomerFormTableLayoutPanelInner1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.28947F));
             this.AddCuscomerFormTableLayoutPanelInner1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.71053F));
-            this.AddCuscomerFormTableLayoutPanelInner1.Controls.Add(this.AddCuscomerFormPNTextBox, 1, 1);
+            this.AddCuscomerFormTableLayoutPanelInner1.Controls.Add(this.AddCustomerFormPNTextBox, 1, 1);
             this.AddCuscomerFormTableLayoutPanelInner1.Controls.Add(this.AddCuscomerFormPNLabel, 0, 1);
             this.AddCuscomerFormTableLayoutPanelInner1.Controls.Add(this.AddCuscomerFormNameLabel, 0, 0);
-            this.AddCuscomerFormTableLayoutPanelInner1.Controls.Add(this.AddCuscomerFormNameTextBox, 1, 0);
+            this.AddCuscomerFormTableLayoutPanelInner1.Controls.Add(this.AddCustomerFormNameTextBox, 1, 0);
             this.AddCuscomerFormTableLayoutPanelInner1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddCuscomerFormTableLayoutPanelInner1.Location = new System.Drawing.Point(0, 0);
             this.AddCuscomerFormTableLayoutPanelInner1.Margin = new System.Windows.Forms.Padding(0);
@@ -77,15 +77,18 @@
             this.AddCuscomerFormTableLayoutPanelInner1.Size = new System.Drawing.Size(304, 65);
             this.AddCuscomerFormTableLayoutPanelInner1.TabIndex = 0;
             // 
-            // AddCuscomerFormPNTextBox
+            // AddCustomerFormPNTextBox
             // 
-            this.AddCuscomerFormPNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddCuscomerFormPNTextBox.Location = new System.Drawing.Point(85, 38);
-            this.AddCuscomerFormPNTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.AddCuscomerFormPNTextBox.Name = "AddCuscomerFormPNTextBox";
-            this.AddCuscomerFormPNTextBox.Size = new System.Drawing.Size(219, 21);
-            this.AddCuscomerFormPNTextBox.TabIndex = 3;
-            this.AddCuscomerFormPNTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
+            this.AddCustomerFormPNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddCustomerFormPNTextBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.AddCustomerFormPNTextBox.Location = new System.Drawing.Point(85, 35);
+            this.AddCustomerFormPNTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.AddCustomerFormPNTextBox.MaxLength = 13;
+            this.AddCustomerFormPNTextBox.Name = "AddCustomerFormPNTextBox";
+            this.AddCustomerFormPNTextBox.Size = new System.Drawing.Size(219, 26);
+            this.AddCustomerFormPNTextBox.TabIndex = 3;
+            this.AddCustomerFormPNTextBox.TextChanged += new System.EventHandler(this.AddCustomerFormPNTextBox_TextChanged);
+            this.AddCustomerFormPNTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
             // 
             // AddCuscomerFormPNLabel
             // 
@@ -111,15 +114,17 @@
             this.AddCuscomerFormNameLabel.Text = "고객명:";
             this.AddCuscomerFormNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // AddCuscomerFormNameTextBox
+            // AddCustomerFormNameTextBox
             // 
-            this.AddCuscomerFormNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddCuscomerFormNameTextBox.Location = new System.Drawing.Point(85, 5);
-            this.AddCuscomerFormNameTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.AddCuscomerFormNameTextBox.Name = "AddCuscomerFormNameTextBox";
-            this.AddCuscomerFormNameTextBox.Size = new System.Drawing.Size(219, 21);
-            this.AddCuscomerFormNameTextBox.TabIndex = 2;
-            this.AddCuscomerFormNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
+            this.AddCustomerFormNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddCustomerFormNameTextBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.AddCustomerFormNameTextBox.Location = new System.Drawing.Point(85, 3);
+            this.AddCustomerFormNameTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.AddCustomerFormNameTextBox.MaxLength = 32;
+            this.AddCustomerFormNameTextBox.Name = "AddCustomerFormNameTextBox";
+            this.AddCustomerFormNameTextBox.Size = new System.Drawing.Size(219, 26);
+            this.AddCustomerFormNameTextBox.TabIndex = 2;
+            this.AddCustomerFormNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
             // 
             // AddCuscomerFormTableLayoutPanelInner2
             // 
@@ -190,8 +195,8 @@
         private System.Windows.Forms.TableLayoutPanel AddCuscomerFormTableLayoutPanelInner1;
         private System.Windows.Forms.Label AddCuscomerFormNameLabel;
         private System.Windows.Forms.Label AddCuscomerFormPNLabel;
-        private System.Windows.Forms.TextBox AddCuscomerFormNameTextBox;
-        private System.Windows.Forms.TextBox AddCuscomerFormPNTextBox;
+        private System.Windows.Forms.TextBox AddCustomerFormNameTextBox;
+        private System.Windows.Forms.TextBox AddCustomerFormPNTextBox;
         private System.Windows.Forms.TableLayoutPanel AddCuscomerFormTableLayoutPanelInner2;
         private System.Windows.Forms.Button AddCuscomerFormCancelButton;
         private System.Windows.Forms.Button AddCuscomerFormConfirmButton;
