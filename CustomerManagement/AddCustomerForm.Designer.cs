@@ -85,7 +85,7 @@
             this.AddCuscomerFormPNTextBox.Name = "AddCuscomerFormPNTextBox";
             this.AddCuscomerFormPNTextBox.Size = new System.Drawing.Size(219, 21);
             this.AddCuscomerFormPNTextBox.TabIndex = 3;
-            this.AddCuscomerFormPNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddCustomerForm_KeyPress);
+            this.AddCuscomerFormPNTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
             // 
             // AddCuscomerFormPNLabel
             // 
@@ -119,7 +119,7 @@
             this.AddCuscomerFormNameTextBox.Name = "AddCuscomerFormNameTextBox";
             this.AddCuscomerFormNameTextBox.Size = new System.Drawing.Size(219, 21);
             this.AddCuscomerFormNameTextBox.TabIndex = 2;
-            this.AddCuscomerFormNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddCustomerForm_KeyPress);
+            this.AddCuscomerFormNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
             // 
             // AddCuscomerFormTableLayoutPanelInner2
             // 
@@ -175,7 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "고객 추가";
             this.Load += new System.EventHandler(this.AddCustomerForm_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddCustomerForm_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
             this.AddCuscomerFormTableLayoutPanel.ResumeLayout(false);
             this.AddCuscomerFormTableLayoutPanelInner1.ResumeLayout(false);
             this.AddCuscomerFormTableLayoutPanelInner1.PerformLayout();

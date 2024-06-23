@@ -49,15 +49,17 @@ namespace CustomerManagement
             }
         }
 
-        private void AddCustomerForm_KeyPress(object sender, KeyPressEventArgs e)
+        private void AddCustomerForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 AddCuscomerFormCancelButton.PerformClick();
+                e.SuppressKeyPress = true;
             }
-            else if (e.KeyChar == (char)Keys.Enter)
+            else if (e.KeyCode == Keys.Enter)
             {
                 AddCuscomerFormConfirmButton.PerformClick();
+                e.SuppressKeyPress = true;
             }
         }
 
