@@ -79,27 +79,57 @@ namespace CustomerManagement
 
         private void Customer_Add_Button_Click(object sender, EventArgs e)
         {
-            AddCustomerForm form = new AddCustomerForm();
-            if (form.ShowDialog() == DialogResult.OK)
+            AddCustomerForm form = new AddCustomerForm(CustomerListView);
+            if (form.ShowDialog() == DialogResult.Cancel) return;
+
+            DataSQL data = new DataSQL();
+            data.AddCustomer(form.CustomerName, form.CustomerPhoneNumber);
+
+            CustomerListView.Items.Add(new ListViewItem(form.CustomerName)
             {
-                Console.WriteLine(form.CustomerName);
-                Console.WriteLine(form.CustomerPhoneNumber);
-            }
+                SubItems = { Utils.FormatPhoneNumber(form.CustomerPhoneNumber) },
+                Tag = new Customer(
+                    data.GetCustomer(form.CustomerName, form.CustomerPhoneNumber).Value.ID,
+                    form.CustomerName,
+                    form.CustomerPhoneNumber
+                )
+            });
+
+            int idx = Utils.BinarySearchListView(CustomerListView, form.CustomerName).Value;
+            CustomerListView.SelectedItems.Clear();
+            CustomerListView.Items[idx].Selected = true;
+            CustomerListView.Items[idx].EnsureVisible();
         }
 
         private void Customer_Modify_Button_Click(object sender, EventArgs e)
         {
-            if (CustomerListView.SelectedItems.Count == 0)
+            if (CustomerListView.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("한 번에 하나의 고객만 수정할 수 있습니다.", "수정 오류", MessageBoxButtons.OK);
+                return;
+            }
+            else if (CustomerListView.SelectedItems.Count == 0)
             {
                 MessageBox.Show("고객을 선택해주세요.", "선택 오류", MessageBoxButtons.OK);
                 return;
             }
 
             AddCustomerForm form = new AddCustomerForm(
+                CustomerListView,
                 ((Customer)CustomerListView.SelectedItems[0].Tag).Name,
                 ((Customer)CustomerListView.SelectedItems[0].Tag).PhoneNumber
             );
-            form.ShowDialog();
+            if (form.ShowDialog() == DialogResult.Cancel) return;
+
+            DataSQL data = new DataSQL();
+            Customer customer = (Customer)CustomerListView.SelectedItems[0].Tag;
+            data.UpdateCustomer(customer, form.CustomerName, form.CustomerPhoneNumber);
+
+            Customer_Name_Label.Text = form.CustomerName;
+
+            CustomerListView.SelectedItems[0].Text = form.CustomerName;
+            CustomerListView.SelectedItems[0].SubItems[1].Text = Utils.FormatPhoneNumber(form.CustomerPhoneNumber);
+            CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber);
         }
     }
 }

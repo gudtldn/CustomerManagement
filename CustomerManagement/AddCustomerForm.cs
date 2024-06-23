@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomerManagement.Classes;
 
 namespace CustomerManagement
 {
@@ -14,6 +15,7 @@ namespace CustomerManagement
     {
         private string _CustomerName = null;
         private string _CustomerPhoneNumber = null;
+        private readonly ListView _ListView;
 
         public string CustomerName
         {
@@ -24,15 +26,17 @@ namespace CustomerManagement
             get { return _CustomerPhoneNumber; }
         }
 
-        public AddCustomerForm(string name, string phoneNumber)
+        public AddCustomerForm(ListView listView, string name, string phoneNumber)
         {
+            _ListView = listView;
             _CustomerName = name;
             _CustomerPhoneNumber = phoneNumber;
             InitializeComponent();
         }
 
-        public AddCustomerForm()
+        public AddCustomerForm(ListView listView)
         {
+            _ListView = listView;
             InitializeComponent();
         }
 
@@ -70,6 +74,26 @@ namespace CustomerManagement
                 MessageBox.Show("전화번호를 입력해주세요.", "입력 오류", MessageBoxButtons.OK);
                 AddCuscomerFormPNTextBox.Focus();
                 return;
+            }
+
+            DataSQL data = new DataSQL();
+            if (AddCuscomerFormNameTextBox.Text != (CustomerName ?? "")) 
+            {
+                if (data.GetCustomerFromName(AddCuscomerFormNameTextBox.Text) != null)
+                {
+                    MessageBox.Show("이미 존재하는 고객명입니다.", "입력 오류", MessageBoxButtons.OK);
+                    AddCuscomerFormNameTextBox.Focus();
+                    return;
+                }
+            }
+
+            if (AddCuscomerFormPNTextBox.Text != (CustomerPhoneNumber ?? "")) {
+                if (data.GetCustomerFromPhoneNumber(AddCuscomerFormPNTextBox.Text) != null)
+                {
+                    MessageBox.Show("이미 존재하는 전화번호입니다.", "입력 오류", MessageBoxButtons.OK);
+                    AddCuscomerFormPNTextBox.Focus();
+                    return;
+                }
             }
 
             _CustomerName = AddCuscomerFormNameTextBox.Text;

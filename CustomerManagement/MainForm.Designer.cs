@@ -1,4 +1,4 @@
-
+﻿
 namespace CustomerManagement
 {
     partial class MainForm
@@ -78,7 +78,7 @@ namespace CustomerManagement
             // 
             this.MainSplitContainer.Panel2.Controls.Add(this.GarmentTableLayoutPanel);
             this.MainSplitContainer.Size = new System.Drawing.Size(1264, 701);
-            this.MainSplitContainer.SplitterDistance = 421;
+            this.MainSplitContainer.SplitterDistance = 420;
             this.MainSplitContainer.SplitterWidth = 2;
             this.MainSplitContainer.TabIndex = 0;
             // 
@@ -96,7 +96,7 @@ namespace CustomerManagement
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.5F));
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.MainTableLayoutPanel.Size = new System.Drawing.Size(421, 701);
+            this.MainTableLayoutPanel.Size = new System.Drawing.Size(420, 701);
             this.MainTableLayoutPanel.TabIndex = 0;
             // 
             // CustomerButton_TableLayoutPanel
@@ -119,7 +119,7 @@ namespace CustomerManagement
             this.CustomerButton_TableLayoutPanel.Name = "CustomerButton_TableLayoutPanel";
             this.CustomerButton_TableLayoutPanel.RowCount = 1;
             this.CustomerButton_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CustomerButton_TableLayoutPanel.Size = new System.Drawing.Size(421, 52);
+            this.CustomerButton_TableLayoutPanel.Size = new System.Drawing.Size(420, 52);
             this.CustomerButton_TableLayoutPanel.TabIndex = 3;
             // 
             // Customer_Find_Button
@@ -184,13 +184,14 @@ namespace CustomerManagement
             this.CustomerListView.Location = new System.Drawing.Point(0, 52);
             this.CustomerListView.Margin = new System.Windows.Forms.Padding(0);
             this.CustomerListView.Name = "CustomerListView";
-            this.CustomerListView.Size = new System.Drawing.Size(421, 649);
+            this.CustomerListView.Size = new System.Drawing.Size(420, 649);
             this.CustomerListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.CustomerListView.TabIndex = 0;
             this.CustomerListView.UseCompatibleStateImageBehavior = false;
             this.CustomerListView.View = System.Windows.Forms.View.Details;
             this.CustomerListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.CustomerListView_ColumnClick);
             this.CustomerListView.SelectedIndexChanged += new System.EventHandler(this.CustomerListView_SelectedIndexChanged);
+            this.CustomerListView.Leave += new System.EventHandler(this.CustomerListView_FocusLeave);
             // 
             // CustomerListView_Name
             // 
@@ -215,7 +216,7 @@ namespace CustomerManagement
             this.GarmentTableLayoutPanel.RowCount = 2;
             this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
             this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.5F));
-            this.GarmentTableLayoutPanel.Size = new System.Drawing.Size(841, 701);
+            this.GarmentTableLayoutPanel.Size = new System.Drawing.Size(842, 701);
             this.GarmentTableLayoutPanel.TabIndex = 1;
             // 
             // Garment_Button_TableLayoutPanel
@@ -236,7 +237,7 @@ namespace CustomerManagement
             this.Garment_Button_TableLayoutPanel.Name = "Garment_Button_TableLayoutPanel";
             this.Garment_Button_TableLayoutPanel.RowCount = 1;
             this.Garment_Button_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Garment_Button_TableLayoutPanel.Size = new System.Drawing.Size(841, 52);
+            this.Garment_Button_TableLayoutPanel.Size = new System.Drawing.Size(842, 52);
             this.Garment_Button_TableLayoutPanel.TabIndex = 5;
             // 
             // Garment_Delete_Button
@@ -244,7 +245,7 @@ namespace CustomerManagement
             this.Garment_Delete_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Garment_Delete_Button.Image = ((System.Drawing.Image)(resources.GetObject("Garment_Delete_Button.Image")));
             this.Garment_Delete_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Garment_Delete_Button.Location = new System.Drawing.Point(688, 0);
+            this.Garment_Delete_Button.Location = new System.Drawing.Point(689, 0);
             this.Garment_Delete_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Garment_Delete_Button.Name = "Garment_Delete_Button";
             this.Garment_Delete_Button.Size = new System.Drawing.Size(50, 52);
@@ -256,7 +257,7 @@ namespace CustomerManagement
             this.Garment_Modify_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Garment_Modify_Button.Image = global::CustomerManagement.Properties.Resources.modify;
             this.Garment_Modify_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Garment_Modify_Button.Location = new System.Drawing.Point(638, 0);
+            this.Garment_Modify_Button.Location = new System.Drawing.Point(639, 0);
             this.Garment_Modify_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Garment_Modify_Button.Name = "Garment_Modify_Button";
             this.Garment_Modify_Button.Size = new System.Drawing.Size(50, 52);
@@ -269,7 +270,7 @@ namespace CustomerManagement
             this.Garment_New_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Garment_New_Button.Image = global::CustomerManagement.Properties.Resources._new;
             this.Garment_New_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Garment_New_Button.Location = new System.Drawing.Point(588, 0);
+            this.Garment_New_Button.Location = new System.Drawing.Point(589, 0);
             this.Garment_New_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Garment_New_Button.Name = "Garment_New_Button";
             this.Garment_New_Button.Size = new System.Drawing.Size(50, 52);
@@ -285,7 +286,7 @@ namespace CustomerManagement
             this.Customer_Name_Label.Location = new System.Drawing.Point(9, 0);
             this.Customer_Name_Label.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.Customer_Name_Label.Name = "Customer_Name_Label";
-            this.Customer_Name_Label.Size = new System.Drawing.Size(570, 52);
+            this.Customer_Name_Label.Size = new System.Drawing.Size(571, 52);
             this.Customer_Name_Label.TabIndex = 6;
             this.Customer_Name_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -304,7 +305,7 @@ namespace CustomerManagement
             this.GarmentListView.Location = new System.Drawing.Point(0, 52);
             this.GarmentListView.Margin = new System.Windows.Forms.Padding(0);
             this.GarmentListView.Name = "GarmentListView";
-            this.GarmentListView.Size = new System.Drawing.Size(841, 649);
+            this.GarmentListView.Size = new System.Drawing.Size(842, 649);
             this.GarmentListView.TabIndex = 0;
             this.GarmentListView.UseCompatibleStateImageBehavior = false;
             this.GarmentListView.View = System.Windows.Forms.View.Details;
@@ -348,7 +349,7 @@ namespace CustomerManagement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 701);
             this.Controls.Add(this.MainSplitContainer);
-            this.MinimumSize = new System.Drawing.Size(640, 370);
+            this.MinimumSize = new System.Drawing.Size(640, 369);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "고객관리";

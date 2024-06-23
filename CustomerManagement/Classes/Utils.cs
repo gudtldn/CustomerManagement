@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CustomerManagement.Classes
 {
@@ -22,6 +23,27 @@ namespace CustomerManagement.Classes
                 return phone_number.Substring(0, 3) + "-" + phone_number.Substring(3, 3) + "-" + phone_number.Substring(6);
             else // phone_number.Length == 11
                 return phone_number.Substring(0, 3) + "-" + phone_number.Substring(3, 4) + "-" + phone_number.Substring(7);
+        }
+
+        public static int? BinarySearchListView(ListView listView, string searchItem)
+        {
+            int low = 0;
+            int high = listView.Items.Count - 1;
+        
+            while (low <= high)
+            {
+                int mid = (low + high) / 2;
+                int compareResult = string.Compare(listView.Items[mid].Text, searchItem, StringComparison.Ordinal);
+        
+                if (compareResult == 0)
+                    return mid;
+                else if (compareResult < 0)
+                    low = mid + 1;
+                else
+                    high = mid - 1;
+            }
+
+            return null;
         }
     }
 }
