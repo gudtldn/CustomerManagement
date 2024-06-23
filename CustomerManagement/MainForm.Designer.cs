@@ -191,7 +191,6 @@ namespace CustomerManagement
             this.CustomerListView.View = System.Windows.Forms.View.Details;
             this.CustomerListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.CustomerListView_ColumnClick);
             this.CustomerListView.SelectedIndexChanged += new System.EventHandler(this.CustomerListView_SelectedIndexChanged);
-            this.CustomerListView.Leave += new System.EventHandler(this.CustomerListView_FocusLeave);
             // 
             // CustomerListView_Name
             // 
