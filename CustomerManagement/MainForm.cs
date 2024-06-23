@@ -118,7 +118,9 @@ namespace CustomerManagement
                 CustomerListView,
                 ((Customer)CustomerListView.SelectedItems[0].Tag).Name,
                 ((Customer)CustomerListView.SelectedItems[0].Tag).PhoneNumber
-            );
+            ) {
+                Text = "고객 수정"
+            };
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
             DataSQL data = new DataSQL();
