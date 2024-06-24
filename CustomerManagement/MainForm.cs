@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +18,7 @@ namespace CustomerManagement
         public MainForm()
         {
             InitializeComponent();
+            // TODO: 단축키 설정
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -162,5 +163,17 @@ namespace CustomerManagement
             }
         }
 
+        private void Customer_Find_Button_Click(object sender, EventArgs e)
+        {
+            FindCustomerForm form = new FindCustomerForm(CustomerListView);
+            if (form.ShowDialog() == DialogResult.Cancel) return;
+
+            if (form.FindIndex is int idx)
+            {
+                CustomerListView.SelectedItems.Clear();
+                CustomerListView.Items[idx].Selected = true;
+                CustomerListView.Items[idx].EnsureVisible();
+            }
+        }
     }
 }

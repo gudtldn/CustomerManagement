@@ -133,6 +133,7 @@ namespace CustomerManagement
             this.Customer_Find_Button.Size = new System.Drawing.Size(50, 52);
             this.Customer_Find_Button.TabIndex = 3;
             this.Customer_Find_Button.UseVisualStyleBackColor = true;
+            this.Customer_Find_Button.Click += new System.EventHandler(this.Customer_Find_Button_Click);
             // 
             // Customer_Delete_Button
             // 
@@ -145,6 +146,7 @@ namespace CustomerManagement
             this.Customer_Delete_Button.Size = new System.Drawing.Size(50, 52);
             this.Customer_Delete_Button.TabIndex = 2;
             this.Customer_Delete_Button.UseVisualStyleBackColor = true;
+            this.Customer_Delete_Button.Click += new System.EventHandler(this.Customer_Delete_Button_Click);
             // 
             // Customer_Add_Button
             // 
