@@ -50,15 +50,16 @@ namespace CustomerManagement
 
         private void AddCustomerForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
+            switch (e.KeyCode)
             {
-                AddCustomerFormCancelButton.PerformClick();
-                e.SuppressKeyPress = true;
-            }
-            else if (e.KeyCode == Keys.Enter)
-            {
-                AddCustomerFormConfirmButton.PerformClick();
-                e.SuppressKeyPress = true;
+                case Keys.Escape:
+                    AddCustomerFormCancelButton.PerformClick();
+                    e.SuppressKeyPress = true;
+                    break;
+                case Keys.Enter:
+                    AddCustomerFormConfirmButton.PerformClick();
+                    e.SuppressKeyPress = true;
+                    break;
             }
         }
 
