@@ -214,5 +214,18 @@ namespace CustomerManagement.Classes
                 }
             }
         }
+
+        public bool DeleteCustomer(Customer customer)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(database_path))
+            {
+                connection.Open();
+                using (SQLiteCommand sql_command = new SQLiteCommand("DELETE FROM customers WHERE id = @id", connection))
+                {
+                    sql_command.Parameters.AddWithValue("@id", customer.ID);
+                    return sql_command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
     }
 }

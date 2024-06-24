@@ -137,5 +137,30 @@ namespace CustomerManagement
             CustomerListView.SelectedItems[0].SubItems[1].Text = Utils.FormatPhoneNumber(form.CustomerPhoneNumber);
             CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber);
         }
+
+        private void Customer_Delete_Button_Click(object sender, EventArgs e)
+        {
+            if (CustomerListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("고객을 선택해주세요.", "선택 오류", MessageBoxButtons.OK);
+                return;
+            }
+
+            var selectedItems = CustomerListView.SelectedItems;
+            DialogResult dialogResult = MessageBox.Show(
+                $"정말로 {selectedItems.Count}개의 고객 정보를 삭제하시겠습니까?",
+                "삭제 확인",
+                MessageBoxButtons.YesNo
+            );
+            if (dialogResult == DialogResult.No) return;
+
+            DataSQL data = new DataSQL();
+            foreach (ListViewItem item in selectedItems)
+            {
+                data.DeleteCustomer((Customer)item.Tag);
+                CustomerListView.Items.Remove(item);
+            }
+        }
+
     }
 }
