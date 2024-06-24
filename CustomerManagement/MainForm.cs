@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -79,7 +79,7 @@ namespace CustomerManagement
 
         private void Customer_Add_Button_Click(object sender, EventArgs e)
         {
-            AddCustomerForm form = new AddCustomerForm(CustomerListView);
+            AddCustomerForm form = new AddCustomerForm();
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
             DataSQL data = new DataSQL();
@@ -120,7 +120,6 @@ namespace CustomerManagement
             }
 
             AddCustomerForm form = new AddCustomerForm(
-                CustomerListView,
                 ((Customer)CustomerListView.SelectedItems[0].Tag).Name,
                 ((Customer)CustomerListView.SelectedItems[0].Tag).PhoneNumber
             ) {

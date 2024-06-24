@@ -15,7 +15,6 @@ namespace CustomerManagement
     {
         private string _CustomerName = null;
         private string _CustomerPhoneNumber = null;
-        private readonly ListView _ListView;
 
         public string CustomerName
         {
@@ -28,17 +27,15 @@ namespace CustomerManagement
 
         private string GetPhoneNumber() => AddCustomerFormPNTextBox.Text.Replace("-", "");
         
-        public AddCustomerForm(ListView listView, string name, string phoneNumber)
+        public AddCustomerForm(string name, string phoneNumber)
         {
-            _ListView = listView;
             _CustomerName = name;
             _CustomerPhoneNumber = phoneNumber;
             InitializeComponent();
         }
 
-        public AddCustomerForm(ListView listView)
+        public AddCustomerForm()
         {
-            _ListView = listView;
             InitializeComponent();
         }
 
