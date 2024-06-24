@@ -55,12 +55,12 @@ namespace CustomerManagement
         {
             if (e.KeyCode == Keys.Escape)
             {
-                AddCuscomerFormCancelButton.PerformClick();
+                AddCustomerFormCancelButton.PerformClick();
                 e.SuppressKeyPress = true;
             }
             else if (e.KeyCode == Keys.Enter)
             {
-                AddCuscomerFormConfirmButton.PerformClick();
+                AddCustomerFormConfirmButton.PerformClick();
                 e.SuppressKeyPress = true;
             }
         }
@@ -73,7 +73,7 @@ namespace CustomerManagement
             AddCustomerFormPNTextBox.SelectionStart = AddCustomerFormPNTextBox.Text.Length;
         }
 
-        private void AddCuscomerFormConfirmButton_Click(object sender, EventArgs e)
+        private void AddCustomerFormConfirmButton_Click(object sender, EventArgs e)
         {
             string pnText = GetPhoneNumber();
             if (AddCustomerFormNameTextBox.Text == "")
@@ -116,7 +116,7 @@ namespace CustomerManagement
             Close();
         }
 
-        private void AddCuscomerFormCancelButton_Click(object sender, EventArgs e)
+        private void AddCustomerFormCancelButton_Click(object sender, EventArgs e)
         {
             if (
                 AddCustomerFormNameTextBox.Text != (CustomerName ?? "")
