@@ -89,6 +89,7 @@
             this.AddCustomerFormPNTextBox.TabIndex = 3;
             this.AddCustomerFormPNTextBox.TextChanged += new System.EventHandler(this.AddCustomerFormPNTextBox_TextChanged);
             this.AddCustomerFormPNTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
+            this.AddCustomerFormPNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddCustomerFormPNTextBox_KeyPress);
             // 
             // AddCustomerFormPNLabel
             // 

@@ -63,6 +63,15 @@ namespace CustomerManagement
             }
         }
 
+        private void AddCustomerFormPNTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                System.Media.SystemSounds.Beep.Play();
+                e.Handled = true;
+            }
+        }
+
         private void AddCustomerFormPNTextBox_TextChanged(object sender, EventArgs e)
         {
             string pnText = GetPhoneNumber();
