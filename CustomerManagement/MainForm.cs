@@ -78,6 +78,8 @@ namespace CustomerManagement
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(e.Column, CustomerListView.Sorting);
         }
 
+        private void CustomerListView_DoubleClick(object sender, EventArgs e) => Customer_Modify_Button.PerformClick();
+
         private void Customer_Add_Button_Click(object sender, EventArgs e)
         {
             AddCustomerForm form = new AddCustomerForm();
