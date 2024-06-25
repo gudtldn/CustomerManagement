@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +23,11 @@ namespace CustomerManagement
         {
             this.listView = listView;
             InitializeComponent();
+            /* TODO: 찾기 폼 변경하기
+                * 웹에서 검색창을 누르면 검색창이 나오는 것처럼
+                * 이제 거기에 라디오 버튼을 추가
+                * 다음, 이전 버튼을 추가
+            */
         }
 
         private void FindCustomerForm_KeyDown(object sender, KeyEventArgs e)
@@ -39,6 +44,21 @@ namespace CustomerManagement
                 break;
             }
 
+            if (e.Alt)
+            {
+                switch (e.KeyCode)
+                {
+                case Keys.D1:
+                    FindCuscomerFormNameRB.Checked = true;
+                    e.SuppressKeyPress = true;
+                    break;
+                case Keys.D2:
+                    FindCuscomerFormPNRB.Checked = true;
+                    e.SuppressKeyPress = true;
+                    break;
+                }
+            }
+        }
 
         private void FindCuscomerFormTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -94,7 +114,7 @@ namespace CustomerManagement
             else if (FindCuscomerFormPNRB.Checked)
             {
                 var list = listView.Items.Cast<ListViewItem>().Select(item => item.SubItems[1].Text.Replace("-", "")).ToList();
-                int idx = list.FindIndex(item => item.Contains(FindCuscomerFormTextBox.Text.Replace("-", "")));
+                int idx = list.FindIndex(item => item == FindCuscomerFormTextBox.Text.Replace("-", ""));
                 findIndex = idx < 0 ? (int?)null : idx;
             }
 
