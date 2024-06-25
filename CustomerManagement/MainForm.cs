@@ -137,6 +137,7 @@ namespace CustomerManagement
             CustomerListView.SelectedItems[0].Text = form.CustomerName;
             CustomerListView.SelectedItems[0].SubItems[1].Text = Utils.FormatPhoneNumber(form.CustomerPhoneNumber);
             CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber);
+            // TODO: 리스트뷰 정렬 필요
         }
 
         private void Customer_Delete_Button_Click(object sender, EventArgs e)
@@ -151,7 +152,8 @@ namespace CustomerManagement
             DialogResult dialogResult = MessageBox.Show(
                 $"정말로 {selectedItems.Count}개의 고객 정보를 삭제하시겠습니까?",
                 "삭제 확인",
-                MessageBoxButtons.YesNo
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
             );
             if (dialogResult == DialogResult.No) return;
 
