@@ -70,6 +70,7 @@
             this.FindCuscomerFormTextBox.TabIndex = 0;
             this.FindCuscomerFormTextBox.TextChanged += new System.EventHandler(this.FindCuscomerFormTextBox_TextChanged);
             this.FindCuscomerFormTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindCustomerForm_KeyDown);
+            this.FindCuscomerFormTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FindCuscomerFormTextBox_KeyPress);
             // 
             // FindCustomerFormInnerTableLayoutPanel3
             // 
@@ -152,9 +153,10 @@
             this.FindCuscomerFormNameRB.Name = "FindCuscomerFormNameRB";
             this.FindCuscomerFormNameRB.Size = new System.Drawing.Size(139, 26);
             this.FindCuscomerFormNameRB.TabIndex = 0;
+            this.FindCuscomerFormNameRB.TabStop = true;
             this.FindCuscomerFormNameRB.Text = "이름으로 검색하기";
             this.FindCuscomerFormNameRB.UseVisualStyleBackColor = true;
-            this.FindCuscomerFormNameRB.CheckedChanged += new System.EventHandler(this.FindCuscomerFormRB_CheckedChanged);
+            this.FindCuscomerFormNameRB.CheckedChanged += new System.EventHandler(this.FindCuscomerForm_CheckedChanged);
             this.FindCuscomerFormNameRB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindCustomerForm_KeyDown);
             // 
             // FindCustomerForm

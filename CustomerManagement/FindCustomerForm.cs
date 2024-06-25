@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,7 @@ namespace CustomerManagement
     {
         private int? findIndex = null;
         private readonly ListView listView;
+        private ToolTip toolTip = new ToolTip();
 
         public int? FindIndex { get { return findIndex; } }
 
@@ -38,19 +39,21 @@ namespace CustomerManagement
                 break;
             }
 
-            if (e.Control && e.KeyCode == Keys.D1)
+
+        private void FindCuscomerFormTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (FindCuscomerFormNameRB.Checked) return;
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                FindCuscomerFormNameRB.Checked = true;
-                e.SuppressKeyPress = true;
-            }
-            else if (e.Control && e.KeyCode == Keys.D2)
-            {
-                FindCuscomerFormPNRB.Checked = true;
-                e.SuppressKeyPress = true;
+                System.Media.SystemSounds.Beep.Play();
+                toolTip.Show("숫자만 입력할 수 있습니다.", FindCuscomerFormTextBox, 0, -20, 1000);
+
+                e.Handled = true;
             }
         }
 
-        private void FindCuscomerFormRB_CheckedChanged(object sender, EventArgs e)
+        private void FindCuscomerForm_CheckedChanged(object sender, EventArgs e)
         {
             if (FindCuscomerFormNameRB.Checked)
                 FindCuscomerFormTextBox.MaxLength = 32;
@@ -59,6 +62,8 @@ namespace CustomerManagement
                 FindCuscomerFormTextBox.MaxLength = 13;
                 FindCuscomerFormTextBox.Text = Utils.FormatPhoneNumber(FindCuscomerFormTextBox.Text);
             }
+            FindCuscomerFormTextBox.Focus();
+            FindCuscomerFormTextBox.SelectAll();
         }
 
         private void FindCuscomerFormTextBox_TextChanged(object sender, EventArgs e)
