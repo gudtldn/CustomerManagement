@@ -30,10 +30,10 @@
         {
             this.AddCustomerFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddCustomerFormInnerTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.AddCustomerFormPNTextBox = new System.Windows.Forms.TextBox();
+            this.AddCustomerFormPNTextBox = new EnhancedTextBox();
             this.AddCustomerFormPNLabel = new System.Windows.Forms.Label();
             this.AddCustomerFormNameLabel = new System.Windows.Forms.Label();
-            this.AddCustomerFormNameTextBox = new System.Windows.Forms.TextBox();
+            this.AddCustomerFormNameTextBox = new EnhancedTextBox();
             this.AddCustomerFormInnerTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.AddCustomerFormCancelButton = new System.Windows.Forms.Button();
             this.AddCustomerFormConfirmButton = new System.Windows.Forms.Button();

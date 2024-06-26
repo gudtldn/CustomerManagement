@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.FindCustomerFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FindCuscomerFormTextBox = new System.Windows.Forms.TextBox();
+            this.FindCuscomerFormTextBox = new EnhancedTextBox();
             this.FindCustomerFormInnerTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.FindCustomerFormCancelButton = new System.Windows.Forms.Button();
             this.FindCustomerFormConfirmButton = new System.Windows.Forms.Button();

@@ -74,6 +74,9 @@
     <Compile Include="AddCustomerForm.Designer.cs">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Form\EnhancedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\ListViewItemComparer.cs" />
     <Compile Include="Classes\DB_Types.cs" />
     <Compile Include="Classes\DataSQL.cs" />
