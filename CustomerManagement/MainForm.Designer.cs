@@ -53,6 +53,12 @@ namespace CustomerManagement
             this.GarmentListView_Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GarmentListView_Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GarmentListView_Note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MainStatusTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.MainStatusLabel = new System.Windows.Forms.Label();
+            this.MainStatusCountLabel = new System.Windows.Forms.Label();
+            this.GarmentStatusTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.GarmentStatusCountLabel = new System.Windows.Forms.Label();
+            this.GarmentStatusTotalMoneyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -61,6 +67,8 @@ namespace CustomerManagement
             this.CustomerButton_TableLayoutPanel.SuspendLayout();
             this.GarmentTableLayoutPanel.SuspendLayout();
             this.Garment_Button_TableLayoutPanel.SuspendLayout();
+            this.MainStatusTableLayoutPanel.SuspendLayout();
+            this.GarmentStatusTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainSplitContainer
@@ -88,13 +96,14 @@ namespace CustomerManagement
             this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MainTableLayoutPanel.Controls.Add(this.CustomerButton_TableLayoutPanel, 0, 0);
             this.MainTableLayoutPanel.Controls.Add(this.CustomerListView, 0, 1);
+            this.MainTableLayoutPanel.Controls.Add(this.MainStatusTableLayoutPanel, 0, 2);
             this.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.MainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainTableLayoutPanel.Name = "MainTableLayoutPanel";
-            this.MainTableLayoutPanel.RowCount = 2;
-            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
-            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.5F));
+            this.MainTableLayoutPanel.RowCount = 3;
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.MainTableLayoutPanel.Size = new System.Drawing.Size(420, 701);
             this.MainTableLayoutPanel.TabIndex = 0;
@@ -119,7 +128,7 @@ namespace CustomerManagement
             this.CustomerButton_TableLayoutPanel.Name = "CustomerButton_TableLayoutPanel";
             this.CustomerButton_TableLayoutPanel.RowCount = 1;
             this.CustomerButton_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CustomerButton_TableLayoutPanel.Size = new System.Drawing.Size(420, 52);
+            this.CustomerButton_TableLayoutPanel.Size = new System.Drawing.Size(420, 55);
             this.CustomerButton_TableLayoutPanel.TabIndex = 3;
             // 
             // Customer_Find_Button
@@ -130,7 +139,7 @@ namespace CustomerManagement
             this.Customer_Find_Button.Location = new System.Drawing.Point(294, 0);
             this.Customer_Find_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Customer_Find_Button.Name = "Customer_Find_Button";
-            this.Customer_Find_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Find_Button.Size = new System.Drawing.Size(50, 55);
             this.Customer_Find_Button.TabIndex = 3;
             this.Customer_Find_Button.UseVisualStyleBackColor = true;
             this.Customer_Find_Button.Click += new System.EventHandler(this.Customer_Find_Button_Click);
@@ -143,7 +152,7 @@ namespace CustomerManagement
             this.Customer_Delete_Button.Location = new System.Drawing.Point(172, 0);
             this.Customer_Delete_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Customer_Delete_Button.Name = "Customer_Delete_Button";
-            this.Customer_Delete_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Delete_Button.Size = new System.Drawing.Size(50, 55);
             this.Customer_Delete_Button.TabIndex = 2;
             this.Customer_Delete_Button.UseVisualStyleBackColor = true;
             this.Customer_Delete_Button.Click += new System.EventHandler(this.Customer_Delete_Button_Click);
@@ -157,7 +166,7 @@ namespace CustomerManagement
             this.Customer_Add_Button.Location = new System.Drawing.Point(72, 0);
             this.Customer_Add_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Customer_Add_Button.Name = "Customer_Add_Button";
-            this.Customer_Add_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Add_Button.Size = new System.Drawing.Size(50, 55);
             this.Customer_Add_Button.TabIndex = 0;
             this.Customer_Add_Button.UseVisualStyleBackColor = true;
             this.Customer_Add_Button.Click += new System.EventHandler(this.Customer_Add_Button_Click);
@@ -170,7 +179,7 @@ namespace CustomerManagement
             this.Customer_Modify_Button.Location = new System.Drawing.Point(122, 0);
             this.Customer_Modify_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Customer_Modify_Button.Name = "Customer_Modify_Button";
-            this.Customer_Modify_Button.Size = new System.Drawing.Size(50, 52);
+            this.Customer_Modify_Button.Size = new System.Drawing.Size(50, 55);
             this.Customer_Modify_Button.TabIndex = 1;
             this.Customer_Modify_Button.UseVisualStyleBackColor = true;
             this.Customer_Modify_Button.Click += new System.EventHandler(this.Customer_Modify_Button_Click);
@@ -183,10 +192,10 @@ namespace CustomerManagement
             this.CustomerListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerListView.FullRowSelect = true;
             this.CustomerListView.HideSelection = false;
-            this.CustomerListView.Location = new System.Drawing.Point(0, 52);
+            this.CustomerListView.Location = new System.Drawing.Point(0, 55);
             this.CustomerListView.Margin = new System.Windows.Forms.Padding(0);
             this.CustomerListView.Name = "CustomerListView";
-            this.CustomerListView.Size = new System.Drawing.Size(420, 649);
+            this.CustomerListView.Size = new System.Drawing.Size(420, 626);
             this.CustomerListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.CustomerListView.TabIndex = 0;
             this.CustomerListView.UseCompatibleStateImageBehavior = false;
@@ -211,13 +220,15 @@ namespace CustomerManagement
             this.GarmentTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.GarmentTableLayoutPanel.Controls.Add(this.Garment_Button_TableLayoutPanel, 0, 0);
             this.GarmentTableLayoutPanel.Controls.Add(this.GarmentListView, 0, 1);
+            this.GarmentTableLayoutPanel.Controls.Add(this.GarmentStatusTableLayoutPanel, 0, 2);
             this.GarmentTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.GarmentTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.GarmentTableLayoutPanel.Name = "GarmentTableLayoutPanel";
-            this.GarmentTableLayoutPanel.RowCount = 2;
-            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
-            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.5F));
+            this.GarmentTableLayoutPanel.RowCount = 3;
+            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.GarmentTableLayoutPanel.Size = new System.Drawing.Size(842, 701);
             this.GarmentTableLayoutPanel.TabIndex = 1;
             // 
@@ -239,7 +250,7 @@ namespace CustomerManagement
             this.Garment_Button_TableLayoutPanel.Name = "Garment_Button_TableLayoutPanel";
             this.Garment_Button_TableLayoutPanel.RowCount = 1;
             this.Garment_Button_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Garment_Button_TableLayoutPanel.Size = new System.Drawing.Size(842, 52);
+            this.Garment_Button_TableLayoutPanel.Size = new System.Drawing.Size(842, 55);
             this.Garment_Button_TableLayoutPanel.TabIndex = 5;
             // 
             // Garment_Delete_Button
@@ -250,9 +261,10 @@ namespace CustomerManagement
             this.Garment_Delete_Button.Location = new System.Drawing.Point(689, 0);
             this.Garment_Delete_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Garment_Delete_Button.Name = "Garment_Delete_Button";
-            this.Garment_Delete_Button.Size = new System.Drawing.Size(50, 52);
+            this.Garment_Delete_Button.Size = new System.Drawing.Size(50, 55);
             this.Garment_Delete_Button.TabIndex = 5;
             this.Garment_Delete_Button.UseVisualStyleBackColor = true;
+            this.Garment_Delete_Button.Click += new System.EventHandler(this.Garment_Delete_Button_Click);
             // 
             // Garment_Modify_Button
             // 
@@ -262,9 +274,10 @@ namespace CustomerManagement
             this.Garment_Modify_Button.Location = new System.Drawing.Point(639, 0);
             this.Garment_Modify_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Garment_Modify_Button.Name = "Garment_Modify_Button";
-            this.Garment_Modify_Button.Size = new System.Drawing.Size(50, 52);
+            this.Garment_Modify_Button.Size = new System.Drawing.Size(50, 55);
             this.Garment_Modify_Button.TabIndex = 2;
             this.Garment_Modify_Button.UseVisualStyleBackColor = true;
+            this.Garment_Modify_Button.Click += new System.EventHandler(this.Garment_Modify_Button_Click);
             // 
             // Garment_New_Button
             // 
@@ -275,9 +288,10 @@ namespace CustomerManagement
             this.Garment_New_Button.Location = new System.Drawing.Point(589, 0);
             this.Garment_New_Button.Margin = new System.Windows.Forms.Padding(0);
             this.Garment_New_Button.Name = "Garment_New_Button";
-            this.Garment_New_Button.Size = new System.Drawing.Size(50, 52);
+            this.Garment_New_Button.Size = new System.Drawing.Size(50, 55);
             this.Garment_New_Button.TabIndex = 1;
             this.Garment_New_Button.UseVisualStyleBackColor = true;
+            this.Garment_New_Button.Click += new System.EventHandler(this.Garment_New_Button_Click);
             // 
             // Customer_Name_Label
             // 
@@ -288,7 +302,7 @@ namespace CustomerManagement
             this.Customer_Name_Label.Location = new System.Drawing.Point(9, 0);
             this.Customer_Name_Label.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.Customer_Name_Label.Name = "Customer_Name_Label";
-            this.Customer_Name_Label.Size = new System.Drawing.Size(571, 52);
+            this.Customer_Name_Label.Size = new System.Drawing.Size(571, 55);
             this.Customer_Name_Label.TabIndex = 6;
             this.Customer_Name_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -304,10 +318,10 @@ namespace CustomerManagement
             this.GarmentListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentListView.FullRowSelect = true;
             this.GarmentListView.HideSelection = false;
-            this.GarmentListView.Location = new System.Drawing.Point(0, 52);
+            this.GarmentListView.Location = new System.Drawing.Point(0, 55);
             this.GarmentListView.Margin = new System.Windows.Forms.Padding(0);
             this.GarmentListView.Name = "GarmentListView";
-            this.GarmentListView.Size = new System.Drawing.Size(842, 649);
+            this.GarmentListView.Size = new System.Drawing.Size(842, 626);
             this.GarmentListView.TabIndex = 0;
             this.GarmentListView.UseCompatibleStateImageBehavior = false;
             this.GarmentListView.View = System.Windows.Forms.View.Details;
@@ -345,6 +359,95 @@ namespace CustomerManagement
             this.GarmentListView_Note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GarmentListView_Note.Width = 119;
             // 
+            // MainStatusTableLayoutPanel
+            // 
+            this.MainStatusTableLayoutPanel.ColumnCount = 2;
+            this.MainStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.MainStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.MainStatusTableLayoutPanel.Controls.Add(this.MainStatusCountLabel, 1, 0);
+            this.MainStatusTableLayoutPanel.Controls.Add(this.MainStatusLabel, 0, 0);
+            this.MainStatusTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainStatusTableLayoutPanel.Location = new System.Drawing.Point(0, 681);
+            this.MainStatusTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainStatusTableLayoutPanel.Name = "MainStatusTableLayoutPanel";
+            this.MainStatusTableLayoutPanel.RowCount = 1;
+            this.MainStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MainStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.MainStatusTableLayoutPanel.Size = new System.Drawing.Size(420, 20);
+            this.MainStatusTableLayoutPanel.TabIndex = 4;
+            // 
+            // MainStatusLabel
+            // 
+            this.MainStatusLabel.AutoSize = true;
+            this.MainStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainStatusLabel.Font = new System.Drawing.Font("굴림", 10F);
+            this.MainStatusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MainStatusLabel.Location = new System.Drawing.Point(5, 0);
+            this.MainStatusLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.MainStatusLabel.Name = "MainStatusLabel";
+            this.MainStatusLabel.Size = new System.Drawing.Size(200, 20);
+            this.MainStatusLabel.TabIndex = 0;
+            this.MainStatusLabel.Text = "고객 수";
+            this.MainStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // MainStatusCountLabel
+            // 
+            this.MainStatusCountLabel.AutoSize = true;
+            this.MainStatusCountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainStatusCountLabel.Font = new System.Drawing.Font("굴림", 10F);
+            this.MainStatusCountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MainStatusCountLabel.Location = new System.Drawing.Point(225, 0);
+            this.MainStatusCountLabel.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.MainStatusCountLabel.Name = "MainStatusCountLabel";
+            this.MainStatusCountLabel.Size = new System.Drawing.Size(180, 20);
+            this.MainStatusCountLabel.TabIndex = 1;
+            this.MainStatusCountLabel.Text = "N명";
+            this.MainStatusCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // GarmentStatusTableLayoutPanel
+            // 
+            this.GarmentStatusTableLayoutPanel.ColumnCount = 2;
+            this.GarmentStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.GarmentStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.GarmentStatusTableLayoutPanel.Controls.Add(this.GarmentStatusTotalMoneyLabel, 1, 0);
+            this.GarmentStatusTableLayoutPanel.Controls.Add(this.GarmentStatusCountLabel, 0, 0);
+            this.GarmentStatusTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GarmentStatusTableLayoutPanel.Location = new System.Drawing.Point(0, 681);
+            this.GarmentStatusTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.GarmentStatusTableLayoutPanel.Name = "GarmentStatusTableLayoutPanel";
+            this.GarmentStatusTableLayoutPanel.RowCount = 1;
+            this.GarmentStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.GarmentStatusTableLayoutPanel.Size = new System.Drawing.Size(842, 20);
+            this.GarmentStatusTableLayoutPanel.TabIndex = 6;
+            // 
+            // GarmentStatusCountLabel
+            // 
+            this.GarmentStatusCountLabel.AutoSize = true;
+            this.GarmentStatusCountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GarmentStatusCountLabel.Font = new System.Drawing.Font("굴림", 10F);
+            this.GarmentStatusCountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GarmentStatusCountLabel.Location = new System.Drawing.Point(15, 0);
+            this.GarmentStatusCountLabel.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.GarmentStatusCountLabel.Name = "GarmentStatusCountLabel";
+            this.GarmentStatusCountLabel.Size = new System.Drawing.Size(391, 20);
+            this.GarmentStatusCountLabel.TabIndex = 2;
+            this.GarmentStatusCountLabel.Text = "자료 수: N개";
+            this.GarmentStatusCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // GarmentStatusTotalMoneyLabel
+            // 
+            this.GarmentStatusTotalMoneyLabel.AutoSize = true;
+            this.GarmentStatusTotalMoneyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GarmentStatusTotalMoneyLabel.Font = new System.Drawing.Font("굴림", 10F);
+            this.GarmentStatusTotalMoneyLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GarmentStatusTotalMoneyLabel.Location = new System.Drawing.Point(436, 0);
+            this.GarmentStatusTotalMoneyLabel.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.GarmentStatusTotalMoneyLabel.Name = "GarmentStatusTotalMoneyLabel";
+            this.GarmentStatusTotalMoneyLabel.Size = new System.Drawing.Size(391, 20);
+            this.GarmentStatusTotalMoneyLabel.TabIndex = 3;
+            this.GarmentStatusTotalMoneyLabel.Text = "총 금액: NNNN\\";
+            this.GarmentStatusTotalMoneyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -365,6 +468,10 @@ namespace CustomerManagement
             this.GarmentTableLayoutPanel.ResumeLayout(false);
             this.Garment_Button_TableLayoutPanel.ResumeLayout(false);
             this.Garment_Button_TableLayoutPanel.PerformLayout();
+            this.MainStatusTableLayoutPanel.ResumeLayout(false);
+            this.MainStatusTableLayoutPanel.PerformLayout();
+            this.GarmentStatusTableLayoutPanel.ResumeLayout(false);
+            this.GarmentStatusTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -394,6 +501,12 @@ namespace CustomerManagement
         private System.Windows.Forms.Button Garment_Modify_Button;
         private System.Windows.Forms.Button Garment_New_Button;
         private System.Windows.Forms.Label Customer_Name_Label;
+        private System.Windows.Forms.TableLayoutPanel MainStatusTableLayoutPanel;
+        private System.Windows.Forms.Label MainStatusLabel;
+        private System.Windows.Forms.Label MainStatusCountLabel;
+        private System.Windows.Forms.TableLayoutPanel GarmentStatusTableLayoutPanel;
+        private System.Windows.Forms.Label GarmentStatusTotalMoneyLabel;
+        private System.Windows.Forms.Label GarmentStatusCountLabel;
     }
 }
 

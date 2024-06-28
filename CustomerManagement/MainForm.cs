@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +21,26 @@ namespace CustomerManagement
             // TODO: 단축키 설정
         }
 
+        private void UpdateTotalCustomer()
+        {
+            int totalCustomer = CustomerListView.Items.Count;
+            MainStatusCountLabel.Text = $"{totalCustomer:#,##0}명";
+        }
+
+        private void UpdateTotalGarment()
+        {
+            int totalGarment = GarmentListView.Items.Count;
+            int totalMoney = 0;
+            foreach (ListViewItem item in GarmentListView.Items)
+            {
+                if (int.TryParse(item.SubItems[4].Text.Replace(" 원", "").Replace(",", ""), out int price))
+                    totalMoney += price;
+            }
+
+            GarmentStatusCountLabel.Text = $"자료 수: {totalGarment:#,##0}개";
+            GarmentStatusTotalMoneyLabel.Text = $"총 금액: {totalMoney:#,##0}원";
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             DataSQL data = new DataSQL();
@@ -36,6 +56,7 @@ namespace CustomerManagement
                 CustomerListView.Items[0].Selected = true;
 
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
+            UpdateTotalCustomer();
         }
 
         private void CustomerListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,6 +66,10 @@ namespace CustomerManagement
 
             GarmentListView.Items.Clear(); // 선택된 고객의 의류정보를 가져오기 전에 리스트뷰를 비움
             Customer_Name_Label.Text = ""; // 선택된 고객이 없으면 라벨을 초기화
+
+            // 의류정보의 개수와 총 금액을 초기화
+            GarmentStatusCountLabel.Text = "";
+            GarmentStatusTotalMoneyLabel.Text = "";
 
             if (CustomerListView.SelectedItems.Count == 0) return; // 선택된 고객이 없으면 함수를 종료
 
@@ -65,6 +90,7 @@ namespace CustomerManagement
             }
 
             Customer_Name_Label.Text = customer.Name; // 선택된 고객의 이름을 라벨에 표시
+            UpdateTotalGarment();
         }
 
         private void CustomerListView_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -107,6 +133,8 @@ namespace CustomerManagement
                 CustomerListView.Items[idx].Selected = true;
                 CustomerListView.Items[idx].EnsureVisible();
             }
+
+            UpdateTotalCustomer();
         }
 
         private void Customer_Modify_Button_Click(object sender, EventArgs e)
@@ -165,6 +193,8 @@ namespace CustomerManagement
                 data.DeleteCustomer((Customer)item.Tag);
                 CustomerListView.Items.Remove(item);
             }
+
+            UpdateTotalCustomer();
         }
 
         private void Customer_Find_Button_Click(object sender, EventArgs e)
