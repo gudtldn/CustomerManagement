@@ -29,107 +29,123 @@ namespace CustomerManagement
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.SplitContainer MainSplitContainer;
+            System.Windows.Forms.TableLayoutPanel MainTableLayoutPanel;
+            System.Windows.Forms.TableLayoutPanel CustomerButton_TableLayoutPanel;
+            System.Windows.Forms.ColumnHeader CustomerListView_Name;
+            System.Windows.Forms.ColumnHeader CustomerListView_PN;
+            System.Windows.Forms.TableLayoutPanel MainStatusTableLayoutPanel;
+            System.Windows.Forms.Label MainStatusLabel;
+            System.Windows.Forms.TableLayoutPanel GarmentTableLayoutPanel;
+            System.Windows.Forms.TableLayoutPanel Garment_Button_TableLayoutPanel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CustomerButton_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            System.Windows.Forms.ColumnHeader GarmentListView_ReceptionDate;
+            System.Windows.Forms.ColumnHeader GarmentListView_ProcessingDate;
+            System.Windows.Forms.ColumnHeader GarmentListView_Completion;
+            System.Windows.Forms.ColumnHeader GarmentListView_Content;
+            System.Windows.Forms.ColumnHeader GarmentListView_Amount;
+            System.Windows.Forms.ColumnHeader GarmentListView_Note;
+            System.Windows.Forms.TableLayoutPanel GarmentStatusTableLayoutPanel;
             this.Customer_Find_Button = new System.Windows.Forms.Button();
             this.Customer_Delete_Button = new System.Windows.Forms.Button();
             this.Customer_Add_Button = new System.Windows.Forms.Button();
             this.Customer_Modify_Button = new System.Windows.Forms.Button();
             this.CustomerListView = new System.Windows.Forms.ListView();
-            this.CustomerListView_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CustomerListView_PN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GarmentTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.Garment_Button_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.MainStatusCountLabel = new System.Windows.Forms.Label();
             this.Garment_Delete_Button = new System.Windows.Forms.Button();
             this.Garment_Modify_Button = new System.Windows.Forms.Button();
             this.Garment_New_Button = new System.Windows.Forms.Button();
             this.Customer_Name_Label = new System.Windows.Forms.Label();
             this.GarmentListView = new System.Windows.Forms.ListView();
-            this.GarmentListView_ReceptionDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GarmentListView_ProcessingDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GarmentListView_Completion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GarmentListView_Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GarmentListView_Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GarmentListView_Note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.MainStatusTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.MainStatusLabel = new System.Windows.Forms.Label();
-            this.MainStatusCountLabel = new System.Windows.Forms.Label();
-            this.GarmentStatusTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.GarmentStatusCountLabel = new System.Windows.Forms.Label();
             this.GarmentStatusTotalMoneyLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
-            this.MainSplitContainer.Panel1.SuspendLayout();
-            this.MainSplitContainer.Panel2.SuspendLayout();
-            this.MainSplitContainer.SuspendLayout();
-            this.MainTableLayoutPanel.SuspendLayout();
-            this.CustomerButton_TableLayoutPanel.SuspendLayout();
-            this.GarmentTableLayoutPanel.SuspendLayout();
-            this.Garment_Button_TableLayoutPanel.SuspendLayout();
-            this.MainStatusTableLayoutPanel.SuspendLayout();
-            this.GarmentStatusTableLayoutPanel.SuspendLayout();
+            this.GarmentStatusCountLabel = new System.Windows.Forms.Label();
+            MainSplitContainer = new System.Windows.Forms.SplitContainer();
+            MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            CustomerButton_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            CustomerListView_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            CustomerListView_PN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            MainStatusTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            MainStatusLabel = new System.Windows.Forms.Label();
+            GarmentTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            Garment_Button_TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            GarmentListView_ReceptionDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            GarmentListView_ProcessingDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            GarmentListView_Completion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            GarmentListView_Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            GarmentListView_Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            GarmentListView_Note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            GarmentStatusTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(MainSplitContainer)).BeginInit();
+            MainSplitContainer.Panel1.SuspendLayout();
+            MainSplitContainer.Panel2.SuspendLayout();
+            MainSplitContainer.SuspendLayout();
+            MainTableLayoutPanel.SuspendLayout();
+            CustomerButton_TableLayoutPanel.SuspendLayout();
+            MainStatusTableLayoutPanel.SuspendLayout();
+            GarmentTableLayoutPanel.SuspendLayout();
+            Garment_Button_TableLayoutPanel.SuspendLayout();
+            GarmentStatusTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainSplitContainer
             // 
-            this.MainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainSplitContainer.Location = new System.Drawing.Point(0, 0);
-            this.MainSplitContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.MainSplitContainer.Name = "MainSplitContainer";
+            MainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainSplitContainer.Location = new System.Drawing.Point(0, 0);
+            MainSplitContainer.Margin = new System.Windows.Forms.Padding(0);
+            MainSplitContainer.Name = "MainSplitContainer";
             // 
             // MainSplitContainer.Panel1
             // 
-            this.MainSplitContainer.Panel1.Controls.Add(this.MainTableLayoutPanel);
+            MainSplitContainer.Panel1.Controls.Add(MainTableLayoutPanel);
             // 
             // MainSplitContainer.Panel2
             // 
-            this.MainSplitContainer.Panel2.Controls.Add(this.GarmentTableLayoutPanel);
-            this.MainSplitContainer.Size = new System.Drawing.Size(1264, 701);
-            this.MainSplitContainer.SplitterDistance = 420;
-            this.MainSplitContainer.SplitterWidth = 2;
-            this.MainSplitContainer.TabIndex = 0;
+            MainSplitContainer.Panel2.Controls.Add(GarmentTableLayoutPanel);
+            MainSplitContainer.Size = new System.Drawing.Size(1264, 701);
+            MainSplitContainer.SplitterDistance = 420;
+            MainSplitContainer.SplitterWidth = 2;
+            MainSplitContainer.TabIndex = 0;
             // 
             // MainTableLayoutPanel
             // 
-            this.MainTableLayoutPanel.ColumnCount = 1;
-            this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTableLayoutPanel.Controls.Add(this.CustomerButton_TableLayoutPanel, 0, 0);
-            this.MainTableLayoutPanel.Controls.Add(this.CustomerListView, 0, 1);
-            this.MainTableLayoutPanel.Controls.Add(this.MainStatusTableLayoutPanel, 0, 2);
-            this.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.MainTableLayoutPanel.Name = "MainTableLayoutPanel";
-            this.MainTableLayoutPanel.RowCount = 3;
-            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.MainTableLayoutPanel.Size = new System.Drawing.Size(420, 701);
-            this.MainTableLayoutPanel.TabIndex = 0;
+            MainTableLayoutPanel.ColumnCount = 1;
+            MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            MainTableLayoutPanel.Controls.Add(CustomerButton_TableLayoutPanel, 0, 0);
+            MainTableLayoutPanel.Controls.Add(this.CustomerListView, 0, 1);
+            MainTableLayoutPanel.Controls.Add(MainStatusTableLayoutPanel, 0, 2);
+            MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            MainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            MainTableLayoutPanel.Name = "MainTableLayoutPanel";
+            MainTableLayoutPanel.RowCount = 3;
+            MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            MainTableLayoutPanel.Size = new System.Drawing.Size(420, 701);
+            MainTableLayoutPanel.TabIndex = 0;
             // 
             // CustomerButton_TableLayoutPanel
             // 
-            this.CustomerButton_TableLayoutPanel.ColumnCount = 7;
-            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
-            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
-            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.34F));
-            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Find_Button, 5, 0);
-            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Delete_Button, 3, 0);
-            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Add_Button, 1, 0);
-            this.CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Modify_Button, 2, 0);
-            this.CustomerButton_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomerButton_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.CustomerButton_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.CustomerButton_TableLayoutPanel.Name = "CustomerButton_TableLayoutPanel";
-            this.CustomerButton_TableLayoutPanel.RowCount = 1;
-            this.CustomerButton_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CustomerButton_TableLayoutPanel.Size = new System.Drawing.Size(420, 55);
-            this.CustomerButton_TableLayoutPanel.TabIndex = 3;
+            CustomerButton_TableLayoutPanel.ColumnCount = 7;
+            CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
+            CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.33F));
+            CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            CustomerButton_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.34F));
+            CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Find_Button, 5, 0);
+            CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Delete_Button, 3, 0);
+            CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Add_Button, 1, 0);
+            CustomerButton_TableLayoutPanel.Controls.Add(this.Customer_Modify_Button, 2, 0);
+            CustomerButton_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            CustomerButton_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            CustomerButton_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            CustomerButton_TableLayoutPanel.Name = "CustomerButton_TableLayoutPanel";
+            CustomerButton_TableLayoutPanel.RowCount = 1;
+            CustomerButton_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            CustomerButton_TableLayoutPanel.Size = new System.Drawing.Size(420, 55);
+            CustomerButton_TableLayoutPanel.TabIndex = 3;
             // 
             // Customer_Find_Button
             // 
@@ -187,8 +203,8 @@ namespace CustomerManagement
             // CustomerListView
             // 
             this.CustomerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.CustomerListView_Name,
-            this.CustomerListView_PN});
+            CustomerListView_Name,
+            CustomerListView_PN});
             this.CustomerListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerListView.FullRowSelect = true;
             this.CustomerListView.HideSelection = false;
@@ -206,52 +222,97 @@ namespace CustomerManagement
             // 
             // CustomerListView_Name
             // 
-            this.CustomerListView_Name.Text = "이름";
-            this.CustomerListView_Name.Width = 225;
+            CustomerListView_Name.Text = "이름";
+            CustomerListView_Name.Width = 225;
             // 
             // CustomerListView_PN
             // 
-            this.CustomerListView_PN.Text = "전화번호";
-            this.CustomerListView_PN.Width = 185;
+            CustomerListView_PN.Text = "전화번호";
+            CustomerListView_PN.Width = 185;
+            // 
+            // MainStatusTableLayoutPanel
+            // 
+            MainStatusTableLayoutPanel.ColumnCount = 2;
+            MainStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            MainStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            MainStatusTableLayoutPanel.Controls.Add(this.MainStatusCountLabel, 1, 0);
+            MainStatusTableLayoutPanel.Controls.Add(MainStatusLabel, 0, 0);
+            MainStatusTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainStatusTableLayoutPanel.Location = new System.Drawing.Point(0, 681);
+            MainStatusTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            MainStatusTableLayoutPanel.Name = "MainStatusTableLayoutPanel";
+            MainStatusTableLayoutPanel.RowCount = 1;
+            MainStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            MainStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            MainStatusTableLayoutPanel.Size = new System.Drawing.Size(420, 20);
+            MainStatusTableLayoutPanel.TabIndex = 4;
+            // 
+            // MainStatusCountLabel
+            // 
+            this.MainStatusCountLabel.AutoSize = true;
+            this.MainStatusCountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainStatusCountLabel.Font = new System.Drawing.Font("굴림", 10F);
+            this.MainStatusCountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MainStatusCountLabel.Location = new System.Drawing.Point(225, 0);
+            this.MainStatusCountLabel.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.MainStatusCountLabel.Name = "MainStatusCountLabel";
+            this.MainStatusCountLabel.Size = new System.Drawing.Size(180, 20);
+            this.MainStatusCountLabel.TabIndex = 1;
+            this.MainStatusCountLabel.Text = "N명";
+            this.MainStatusCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // MainStatusLabel
+            // 
+            MainStatusLabel.AutoSize = true;
+            MainStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainStatusLabel.Font = new System.Drawing.Font("굴림", 10F);
+            MainStatusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            MainStatusLabel.Location = new System.Drawing.Point(5, 0);
+            MainStatusLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            MainStatusLabel.Name = "MainStatusLabel";
+            MainStatusLabel.Size = new System.Drawing.Size(200, 20);
+            MainStatusLabel.TabIndex = 0;
+            MainStatusLabel.Text = "고객 수";
+            MainStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GarmentTableLayoutPanel
             // 
-            this.GarmentTableLayoutPanel.ColumnCount = 1;
-            this.GarmentTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GarmentTableLayoutPanel.Controls.Add(this.Garment_Button_TableLayoutPanel, 0, 0);
-            this.GarmentTableLayoutPanel.Controls.Add(this.GarmentListView, 0, 1);
-            this.GarmentTableLayoutPanel.Controls.Add(this.GarmentStatusTableLayoutPanel, 0, 2);
-            this.GarmentTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GarmentTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.GarmentTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.GarmentTableLayoutPanel.Name = "GarmentTableLayoutPanel";
-            this.GarmentTableLayoutPanel.RowCount = 3;
-            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.GarmentTableLayoutPanel.Size = new System.Drawing.Size(842, 701);
-            this.GarmentTableLayoutPanel.TabIndex = 1;
+            GarmentTableLayoutPanel.ColumnCount = 1;
+            GarmentTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            GarmentTableLayoutPanel.Controls.Add(Garment_Button_TableLayoutPanel, 0, 0);
+            GarmentTableLayoutPanel.Controls.Add(this.GarmentListView, 0, 1);
+            GarmentTableLayoutPanel.Controls.Add(GarmentStatusTableLayoutPanel, 0, 2);
+            GarmentTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            GarmentTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            GarmentTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            GarmentTableLayoutPanel.Name = "GarmentTableLayoutPanel";
+            GarmentTableLayoutPanel.RowCount = 3;
+            GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            GarmentTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            GarmentTableLayoutPanel.Size = new System.Drawing.Size(842, 701);
+            GarmentTableLayoutPanel.TabIndex = 1;
             // 
             // Garment_Button_TableLayoutPanel
             // 
-            this.Garment_Button_TableLayoutPanel.ColumnCount = 5;
-            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Delete_Button, 3, 0);
-            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Modify_Button, 2, 0);
-            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_New_Button, 1, 0);
-            this.Garment_Button_TableLayoutPanel.Controls.Add(this.Customer_Name_Label, 0, 0);
-            this.Garment_Button_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Garment_Button_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.Garment_Button_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.Garment_Button_TableLayoutPanel.Name = "Garment_Button_TableLayoutPanel";
-            this.Garment_Button_TableLayoutPanel.RowCount = 1;
-            this.Garment_Button_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Garment_Button_TableLayoutPanel.Size = new System.Drawing.Size(842, 55);
-            this.Garment_Button_TableLayoutPanel.TabIndex = 5;
+            Garment_Button_TableLayoutPanel.ColumnCount = 5;
+            Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Delete_Button, 3, 0);
+            Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Modify_Button, 2, 0);
+            Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_New_Button, 1, 0);
+            Garment_Button_TableLayoutPanel.Controls.Add(this.Customer_Name_Label, 0, 0);
+            Garment_Button_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            Garment_Button_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            Garment_Button_TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            Garment_Button_TableLayoutPanel.Name = "Garment_Button_TableLayoutPanel";
+            Garment_Button_TableLayoutPanel.RowCount = 1;
+            Garment_Button_TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            Garment_Button_TableLayoutPanel.Size = new System.Drawing.Size(842, 55);
+            Garment_Button_TableLayoutPanel.TabIndex = 5;
             // 
             // Garment_Delete_Button
             // 
@@ -309,12 +370,12 @@ namespace CustomerManagement
             // GarmentListView
             // 
             this.GarmentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.GarmentListView_ReceptionDate,
-            this.GarmentListView_ProcessingDate,
-            this.GarmentListView_Completion,
-            this.GarmentListView_Content,
-            this.GarmentListView_Amount,
-            this.GarmentListView_Note});
+            GarmentListView_ReceptionDate,
+            GarmentListView_ProcessingDate,
+            GarmentListView_Completion,
+            GarmentListView_Content,
+            GarmentListView_Amount,
+            GarmentListView_Note});
             this.GarmentListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentListView.FullRowSelect = true;
             this.GarmentListView.HideSelection = false;
@@ -328,97 +389,66 @@ namespace CustomerManagement
             // 
             // GarmentListView_ReceptionDate
             // 
-            this.GarmentListView_ReceptionDate.Text = "접수일자";
-            this.GarmentListView_ReceptionDate.Width = 105;
+            GarmentListView_ReceptionDate.Text = "접수일자";
+            GarmentListView_ReceptionDate.Width = 105;
             // 
             // GarmentListView_ProcessingDate
             // 
-            this.GarmentListView_ProcessingDate.Text = "처리일자";
-            this.GarmentListView_ProcessingDate.Width = 105;
+            GarmentListView_ProcessingDate.Text = "처리일자";
+            GarmentListView_ProcessingDate.Width = 105;
             // 
             // GarmentListView_Completion
             // 
-            this.GarmentListView_Completion.Text = "완료구분";
-            this.GarmentListView_Completion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            GarmentListView_Completion.Text = "완료구분";
+            GarmentListView_Completion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GarmentListView_Content
             // 
-            this.GarmentListView_Content.Text = "내용";
-            this.GarmentListView_Content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GarmentListView_Content.Width = 350;
+            GarmentListView_Content.Text = "내용";
+            GarmentListView_Content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            GarmentListView_Content.Width = 350;
             // 
             // GarmentListView_Amount
             // 
-            this.GarmentListView_Amount.Text = "금액";
-            this.GarmentListView_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GarmentListView_Amount.Width = 100;
+            GarmentListView_Amount.Text = "금액";
+            GarmentListView_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            GarmentListView_Amount.Width = 100;
             // 
             // GarmentListView_Note
             // 
-            this.GarmentListView_Note.Text = "비고";
-            this.GarmentListView_Note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GarmentListView_Note.Width = 119;
-            // 
-            // MainStatusTableLayoutPanel
-            // 
-            this.MainStatusTableLayoutPanel.ColumnCount = 2;
-            this.MainStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.MainStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.MainStatusTableLayoutPanel.Controls.Add(this.MainStatusCountLabel, 1, 0);
-            this.MainStatusTableLayoutPanel.Controls.Add(this.MainStatusLabel, 0, 0);
-            this.MainStatusTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainStatusTableLayoutPanel.Location = new System.Drawing.Point(0, 681);
-            this.MainStatusTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.MainStatusTableLayoutPanel.Name = "MainStatusTableLayoutPanel";
-            this.MainStatusTableLayoutPanel.RowCount = 1;
-            this.MainStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.MainStatusTableLayoutPanel.Size = new System.Drawing.Size(420, 20);
-            this.MainStatusTableLayoutPanel.TabIndex = 4;
-            // 
-            // MainStatusLabel
-            // 
-            this.MainStatusLabel.AutoSize = true;
-            this.MainStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainStatusLabel.Font = new System.Drawing.Font("굴림", 10F);
-            this.MainStatusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MainStatusLabel.Location = new System.Drawing.Point(5, 0);
-            this.MainStatusLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.MainStatusLabel.Name = "MainStatusLabel";
-            this.MainStatusLabel.Size = new System.Drawing.Size(200, 20);
-            this.MainStatusLabel.TabIndex = 0;
-            this.MainStatusLabel.Text = "고객 수";
-            this.MainStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // MainStatusCountLabel
-            // 
-            this.MainStatusCountLabel.AutoSize = true;
-            this.MainStatusCountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainStatusCountLabel.Font = new System.Drawing.Font("굴림", 10F);
-            this.MainStatusCountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MainStatusCountLabel.Location = new System.Drawing.Point(225, 0);
-            this.MainStatusCountLabel.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.MainStatusCountLabel.Name = "MainStatusCountLabel";
-            this.MainStatusCountLabel.Size = new System.Drawing.Size(180, 20);
-            this.MainStatusCountLabel.TabIndex = 1;
-            this.MainStatusCountLabel.Text = "N명";
-            this.MainStatusCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            GarmentListView_Note.Text = "비고";
+            GarmentListView_Note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            GarmentListView_Note.Width = 119;
             // 
             // GarmentStatusTableLayoutPanel
             // 
-            this.GarmentStatusTableLayoutPanel.ColumnCount = 2;
-            this.GarmentStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.GarmentStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.GarmentStatusTableLayoutPanel.Controls.Add(this.GarmentStatusTotalMoneyLabel, 1, 0);
-            this.GarmentStatusTableLayoutPanel.Controls.Add(this.GarmentStatusCountLabel, 0, 0);
-            this.GarmentStatusTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GarmentStatusTableLayoutPanel.Location = new System.Drawing.Point(0, 681);
-            this.GarmentStatusTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.GarmentStatusTableLayoutPanel.Name = "GarmentStatusTableLayoutPanel";
-            this.GarmentStatusTableLayoutPanel.RowCount = 1;
-            this.GarmentStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GarmentStatusTableLayoutPanel.Size = new System.Drawing.Size(842, 20);
-            this.GarmentStatusTableLayoutPanel.TabIndex = 6;
+            GarmentStatusTableLayoutPanel.ColumnCount = 2;
+            GarmentStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            GarmentStatusTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            GarmentStatusTableLayoutPanel.Controls.Add(this.GarmentStatusTotalMoneyLabel, 1, 0);
+            GarmentStatusTableLayoutPanel.Controls.Add(this.GarmentStatusCountLabel, 0, 0);
+            GarmentStatusTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            GarmentStatusTableLayoutPanel.Location = new System.Drawing.Point(0, 681);
+            GarmentStatusTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            GarmentStatusTableLayoutPanel.Name = "GarmentStatusTableLayoutPanel";
+            GarmentStatusTableLayoutPanel.RowCount = 1;
+            GarmentStatusTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            GarmentStatusTableLayoutPanel.Size = new System.Drawing.Size(842, 20);
+            GarmentStatusTableLayoutPanel.TabIndex = 6;
+            // 
+            // GarmentStatusTotalMoneyLabel
+            // 
+            this.GarmentStatusTotalMoneyLabel.AutoSize = true;
+            this.GarmentStatusTotalMoneyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GarmentStatusTotalMoneyLabel.Font = new System.Drawing.Font("굴림", 10F);
+            this.GarmentStatusTotalMoneyLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GarmentStatusTotalMoneyLabel.Location = new System.Drawing.Point(436, 0);
+            this.GarmentStatusTotalMoneyLabel.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.GarmentStatusTotalMoneyLabel.Name = "GarmentStatusTotalMoneyLabel";
+            this.GarmentStatusTotalMoneyLabel.Size = new System.Drawing.Size(391, 20);
+            this.GarmentStatusTotalMoneyLabel.TabIndex = 3;
+            this.GarmentStatusTotalMoneyLabel.Text = "총 금액: NNNN원";
+            this.GarmentStatusTotalMoneyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GarmentStatusCountLabel
             // 
@@ -434,77 +464,46 @@ namespace CustomerManagement
             this.GarmentStatusCountLabel.Text = "자료 수: N개";
             this.GarmentStatusCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // GarmentStatusTotalMoneyLabel
-            // 
-            this.GarmentStatusTotalMoneyLabel.AutoSize = true;
-            this.GarmentStatusTotalMoneyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GarmentStatusTotalMoneyLabel.Font = new System.Drawing.Font("굴림", 10F);
-            this.GarmentStatusTotalMoneyLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GarmentStatusTotalMoneyLabel.Location = new System.Drawing.Point(436, 0);
-            this.GarmentStatusTotalMoneyLabel.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.GarmentStatusTotalMoneyLabel.Name = "GarmentStatusTotalMoneyLabel";
-            this.GarmentStatusTotalMoneyLabel.Size = new System.Drawing.Size(391, 20);
-            this.GarmentStatusTotalMoneyLabel.TabIndex = 3;
-            this.GarmentStatusTotalMoneyLabel.Text = "총 금액: NNNN\\";
-            this.GarmentStatusTotalMoneyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 701);
-            this.Controls.Add(this.MainSplitContainer);
+            this.Controls.Add(MainSplitContainer);
             this.MinimumSize = new System.Drawing.Size(640, 369);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "고객관리";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.MainSplitContainer.Panel1.ResumeLayout(false);
-            this.MainSplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
-            this.MainSplitContainer.ResumeLayout(false);
-            this.MainTableLayoutPanel.ResumeLayout(false);
-            this.CustomerButton_TableLayoutPanel.ResumeLayout(false);
-            this.GarmentTableLayoutPanel.ResumeLayout(false);
-            this.Garment_Button_TableLayoutPanel.ResumeLayout(false);
-            this.Garment_Button_TableLayoutPanel.PerformLayout();
-            this.MainStatusTableLayoutPanel.ResumeLayout(false);
-            this.MainStatusTableLayoutPanel.PerformLayout();
-            this.GarmentStatusTableLayoutPanel.ResumeLayout(false);
-            this.GarmentStatusTableLayoutPanel.PerformLayout();
+            MainSplitContainer.Panel1.ResumeLayout(false);
+            MainSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(MainSplitContainer)).EndInit();
+            MainSplitContainer.ResumeLayout(false);
+            MainTableLayoutPanel.ResumeLayout(false);
+            CustomerButton_TableLayoutPanel.ResumeLayout(false);
+            MainStatusTableLayoutPanel.ResumeLayout(false);
+            MainStatusTableLayoutPanel.PerformLayout();
+            GarmentTableLayoutPanel.ResumeLayout(false);
+            Garment_Button_TableLayoutPanel.ResumeLayout(false);
+            Garment_Button_TableLayoutPanel.PerformLayout();
+            GarmentStatusTableLayoutPanel.ResumeLayout(false);
+            GarmentStatusTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer MainSplitContainer;
-        private System.Windows.Forms.TableLayoutPanel MainTableLayoutPanel;
         private System.Windows.Forms.ListView CustomerListView;
-        private System.Windows.Forms.TableLayoutPanel GarmentTableLayoutPanel;
-        private System.Windows.Forms.ColumnHeader CustomerListView_Name;
-        private System.Windows.Forms.ColumnHeader CustomerListView_PN;
         private System.Windows.Forms.ListView GarmentListView;
-        private System.Windows.Forms.ColumnHeader GarmentListView_ReceptionDate;
-        private System.Windows.Forms.ColumnHeader GarmentListView_ProcessingDate;
-        private System.Windows.Forms.ColumnHeader GarmentListView_Completion;
-        private System.Windows.Forms.ColumnHeader GarmentListView_Content;
-        private System.Windows.Forms.ColumnHeader GarmentListView_Amount;
-        private System.Windows.Forms.ColumnHeader GarmentListView_Note;
-        private System.Windows.Forms.TableLayoutPanel CustomerButton_TableLayoutPanel;
         private System.Windows.Forms.Button Customer_Find_Button;
         private System.Windows.Forms.Button Customer_Delete_Button;
         private System.Windows.Forms.Button Customer_Add_Button;
         private System.Windows.Forms.Button Customer_Modify_Button;
-        private System.Windows.Forms.TableLayoutPanel Garment_Button_TableLayoutPanel;
         private System.Windows.Forms.Button Garment_Delete_Button;
         private System.Windows.Forms.Button Garment_Modify_Button;
         private System.Windows.Forms.Button Garment_New_Button;
         private System.Windows.Forms.Label Customer_Name_Label;
-        private System.Windows.Forms.TableLayoutPanel MainStatusTableLayoutPanel;
-        private System.Windows.Forms.Label MainStatusLabel;
         private System.Windows.Forms.Label MainStatusCountLabel;
-        private System.Windows.Forms.TableLayoutPanel GarmentStatusTableLayoutPanel;
         private System.Windows.Forms.Label GarmentStatusTotalMoneyLabel;
         private System.Windows.Forms.Label GarmentStatusCountLabel;
     }

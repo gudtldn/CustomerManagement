@@ -28,36 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FindCustomerFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            System.Windows.Forms.TableLayoutPanel FindCustomerFormTableLayoutPanel;
+            System.Windows.Forms.TableLayoutPanel FindCustomerFormInnerTableLayoutPanel3;
+            System.Windows.Forms.TableLayoutPanel AddCustomerFormInnerTableLayoutPanel1;
             this.FindCuscomerFormTextBox = new EnhancedTextBox();
-            this.FindCustomerFormInnerTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.FindCustomerFormCancelButton = new System.Windows.Forms.Button();
             this.FindCustomerFormConfirmButton = new System.Windows.Forms.Button();
-            this.AddCustomerFormInnerTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.FindCuscomerFormPNRB = new System.Windows.Forms.RadioButton();
             this.FindCuscomerFormNameRB = new System.Windows.Forms.RadioButton();
-            this.FindCustomerFormTableLayoutPanel.SuspendLayout();
-            this.FindCustomerFormInnerTableLayoutPanel3.SuspendLayout();
-            this.AddCustomerFormInnerTableLayoutPanel1.SuspendLayout();
+            FindCustomerFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            FindCustomerFormInnerTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            AddCustomerFormInnerTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            FindCustomerFormTableLayoutPanel.SuspendLayout();
+            FindCustomerFormInnerTableLayoutPanel3.SuspendLayout();
+            AddCustomerFormInnerTableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FindCustomerFormTableLayoutPanel
             // 
-            this.FindCustomerFormTableLayoutPanel.ColumnCount = 1;
-            this.FindCustomerFormTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.FindCustomerFormTableLayoutPanel.Controls.Add(this.FindCuscomerFormTextBox, 0, 1);
-            this.FindCustomerFormTableLayoutPanel.Controls.Add(this.FindCustomerFormInnerTableLayoutPanel3, 0, 2);
-            this.FindCustomerFormTableLayoutPanel.Controls.Add(this.AddCustomerFormInnerTableLayoutPanel1, 0, 0);
-            this.FindCustomerFormTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FindCustomerFormTableLayoutPanel.Location = new System.Drawing.Point(40, 20);
-            this.FindCustomerFormTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.FindCustomerFormTableLayoutPanel.Name = "FindCustomerFormTableLayoutPanel";
-            this.FindCustomerFormTableLayoutPanel.RowCount = 3;
-            this.FindCustomerFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.FindCustomerFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.FindCustomerFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.FindCustomerFormTableLayoutPanel.Size = new System.Drawing.Size(304, 131);
-            this.FindCustomerFormTableLayoutPanel.TabIndex = 1;
+            FindCustomerFormTableLayoutPanel.ColumnCount = 1;
+            FindCustomerFormTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            FindCustomerFormTableLayoutPanel.Controls.Add(this.FindCuscomerFormTextBox, 0, 1);
+            FindCustomerFormTableLayoutPanel.Controls.Add(FindCustomerFormInnerTableLayoutPanel3, 0, 2);
+            FindCustomerFormTableLayoutPanel.Controls.Add(AddCustomerFormInnerTableLayoutPanel1, 0, 0);
+            FindCustomerFormTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            FindCustomerFormTableLayoutPanel.Location = new System.Drawing.Point(40, 20);
+            FindCustomerFormTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            FindCustomerFormTableLayoutPanel.Name = "FindCustomerFormTableLayoutPanel";
+            FindCustomerFormTableLayoutPanel.RowCount = 3;
+            FindCustomerFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            FindCustomerFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            FindCustomerFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            FindCustomerFormTableLayoutPanel.Size = new System.Drawing.Size(304, 131);
+            FindCustomerFormTableLayoutPanel.TabIndex = 1;
             // 
             // FindCuscomerFormTextBox
             // 
@@ -74,21 +77,21 @@
             // 
             // FindCustomerFormInnerTableLayoutPanel3
             // 
-            this.FindCustomerFormInnerTableLayoutPanel3.ColumnCount = 2;
-            this.FindCustomerFormInnerTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.FindCustomerFormInnerTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.FindCustomerFormInnerTableLayoutPanel3.Controls.Add(this.FindCustomerFormCancelButton, 1, 0);
-            this.FindCustomerFormInnerTableLayoutPanel3.Controls.Add(this.FindCustomerFormConfirmButton, 0, 0);
-            this.FindCustomerFormInnerTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FindCustomerFormInnerTableLayoutPanel3.Location = new System.Drawing.Point(0, 64);
-            this.FindCustomerFormInnerTableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.FindCustomerFormInnerTableLayoutPanel3.Name = "FindCustomerFormInnerTableLayoutPanel3";
-            this.FindCustomerFormInnerTableLayoutPanel3.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
-            this.FindCustomerFormInnerTableLayoutPanel3.RowCount = 1;
-            this.FindCustomerFormInnerTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.FindCustomerFormInnerTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.FindCustomerFormInnerTableLayoutPanel3.Size = new System.Drawing.Size(304, 67);
-            this.FindCustomerFormInnerTableLayoutPanel3.TabIndex = 1;
+            FindCustomerFormInnerTableLayoutPanel3.ColumnCount = 2;
+            FindCustomerFormInnerTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            FindCustomerFormInnerTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            FindCustomerFormInnerTableLayoutPanel3.Controls.Add(this.FindCustomerFormCancelButton, 1, 0);
+            FindCustomerFormInnerTableLayoutPanel3.Controls.Add(this.FindCustomerFormConfirmButton, 0, 0);
+            FindCustomerFormInnerTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            FindCustomerFormInnerTableLayoutPanel3.Location = new System.Drawing.Point(0, 64);
+            FindCustomerFormInnerTableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            FindCustomerFormInnerTableLayoutPanel3.Name = "FindCustomerFormInnerTableLayoutPanel3";
+            FindCustomerFormInnerTableLayoutPanel3.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
+            FindCustomerFormInnerTableLayoutPanel3.RowCount = 1;
+            FindCustomerFormInnerTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            FindCustomerFormInnerTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            FindCustomerFormInnerTableLayoutPanel3.Size = new System.Drawing.Size(304, 67);
+            FindCustomerFormInnerTableLayoutPanel3.TabIndex = 1;
             // 
             // FindCustomerFormCancelButton
             // 
@@ -114,19 +117,19 @@
             // 
             // AddCustomerFormInnerTableLayoutPanel1
             // 
-            this.AddCustomerFormInnerTableLayoutPanel1.ColumnCount = 2;
-            this.AddCustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddCustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddCustomerFormInnerTableLayoutPanel1.Controls.Add(this.FindCuscomerFormPNRB, 1, 0);
-            this.AddCustomerFormInnerTableLayoutPanel1.Controls.Add(this.FindCuscomerFormNameRB, 0, 0);
-            this.AddCustomerFormInnerTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddCustomerFormInnerTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.AddCustomerFormInnerTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.AddCustomerFormInnerTableLayoutPanel1.Name = "AddCustomerFormInnerTableLayoutPanel1";
-            this.AddCustomerFormInnerTableLayoutPanel1.RowCount = 1;
-            this.AddCustomerFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddCustomerFormInnerTableLayoutPanel1.Size = new System.Drawing.Size(304, 32);
-            this.AddCustomerFormInnerTableLayoutPanel1.TabIndex = 2;
+            AddCustomerFormInnerTableLayoutPanel1.ColumnCount = 2;
+            AddCustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AddCustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AddCustomerFormInnerTableLayoutPanel1.Controls.Add(this.FindCuscomerFormPNRB, 1, 0);
+            AddCustomerFormInnerTableLayoutPanel1.Controls.Add(this.FindCuscomerFormNameRB, 0, 0);
+            AddCustomerFormInnerTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            AddCustomerFormInnerTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            AddCustomerFormInnerTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            AddCustomerFormInnerTableLayoutPanel1.Name = "AddCustomerFormInnerTableLayoutPanel1";
+            AddCustomerFormInnerTableLayoutPanel1.RowCount = 1;
+            AddCustomerFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AddCustomerFormInnerTableLayoutPanel1.Size = new System.Drawing.Size(304, 32);
+            AddCustomerFormInnerTableLayoutPanel1.TabIndex = 2;
             // 
             // FindCuscomerFormPNRB
             // 
@@ -164,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 161);
-            this.Controls.Add(this.FindCustomerFormTableLayoutPanel);
+            this.Controls.Add(FindCustomerFormTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -174,24 +177,20 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "고객 찾기";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindCustomerForm_KeyDown);
-            this.FindCustomerFormTableLayoutPanel.ResumeLayout(false);
-            this.FindCustomerFormTableLayoutPanel.PerformLayout();
-            this.FindCustomerFormInnerTableLayoutPanel3.ResumeLayout(false);
-            this.AddCustomerFormInnerTableLayoutPanel1.ResumeLayout(false);
-            this.AddCustomerFormInnerTableLayoutPanel1.PerformLayout();
+            FindCustomerFormTableLayoutPanel.ResumeLayout(false);
+            FindCustomerFormTableLayoutPanel.PerformLayout();
+            FindCustomerFormInnerTableLayoutPanel3.ResumeLayout(false);
+            AddCustomerFormInnerTableLayoutPanel1.ResumeLayout(false);
+            AddCustomerFormInnerTableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel FindCustomerFormTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel FindCustomerFormInnerTableLayoutPanel3;
         private System.Windows.Forms.Button FindCustomerFormCancelButton;
         private System.Windows.Forms.Button FindCustomerFormConfirmButton;
-        private System.Windows.Forms.TableLayoutPanel AddCustomerFormInnerTableLayoutPanel1;
         private System.Windows.Forms.RadioButton FindCuscomerFormNameRB;
         private System.Windows.Forms.RadioButton FindCuscomerFormPNRB;
-        private System.Windows.Forms.TextBox FindCuscomerFormTextBox;
+        private EnhancedTextBox FindCuscomerFormTextBox;
     }
 }

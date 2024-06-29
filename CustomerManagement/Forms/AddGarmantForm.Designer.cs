@@ -32,13 +32,13 @@
             System.Windows.Forms.Label GarmentProcessingDateLabel;
             System.Windows.Forms.Label GarmentReceptionDateLabel;
             System.Windows.Forms.Label GarmentPriceLabel;
-            this.GarmentContentsLabel = new System.Windows.Forms.Label();
-            this.CustomerFormInnerTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            System.Windows.Forms.Label GarmentContentsLabel;
+            System.Windows.Forms.TableLayoutPanel GarmentFormInnerTableLayoutPanel2;
+            System.Windows.Forms.TableLayoutPanel GarmentFormTableLayoutPanel;
+            System.Windows.Forms.TableLayoutPanel GarmentFormInnerTableLayoutPanel1;
+            System.Windows.Forms.Label GarmentNoteLabel;
             this.GarmentFormCancelButton = new System.Windows.Forms.Button();
             this.GarmentFormConfirmButton = new System.Windows.Forms.Button();
-            this.GarmentFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CustomerFormInnerTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.GarmentNoteLabel = new System.Windows.Forms.Label();
             this.GarmentNoteTextBox = new EnhancedTextBox();
             this.GarmentContentsTextBox = new EnhancedTextBox();
             this.GarmentProcessingDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -49,9 +49,14 @@
             GarmentProcessingDateLabel = new System.Windows.Forms.Label();
             GarmentReceptionDateLabel = new System.Windows.Forms.Label();
             GarmentPriceLabel = new System.Windows.Forms.Label();
-            this.CustomerFormInnerTableLayoutPanel2.SuspendLayout();
-            this.GarmentFormTableLayoutPanel.SuspendLayout();
-            this.CustomerFormInnerTableLayoutPanel1.SuspendLayout();
+            GarmentContentsLabel = new System.Windows.Forms.Label();
+            GarmentFormInnerTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            GarmentFormTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            GarmentFormInnerTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            GarmentNoteLabel = new System.Windows.Forms.Label();
+            GarmentFormInnerTableLayoutPanel2.SuspendLayout();
+            GarmentFormTableLayoutPanel.SuspendLayout();
+            GarmentFormInnerTableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GarmentIsCompletedLabel
@@ -104,32 +109,32 @@
             // 
             // GarmentContentsLabel
             // 
-            this.GarmentContentsLabel.AutoSize = true;
-            this.GarmentContentsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GarmentContentsLabel.Font = new System.Drawing.Font("굴림", 10F);
-            this.GarmentContentsLabel.Location = new System.Drawing.Point(3, 66);
-            this.GarmentContentsLabel.Name = "GarmentContentsLabel";
-            this.GarmentContentsLabel.Size = new System.Drawing.Size(72, 33);
-            this.GarmentContentsLabel.TabIndex = 8;
-            this.GarmentContentsLabel.Text = "내용:";
-            this.GarmentContentsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            GarmentContentsLabel.AutoSize = true;
+            GarmentContentsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            GarmentContentsLabel.Font = new System.Drawing.Font("굴림", 10F);
+            GarmentContentsLabel.Location = new System.Drawing.Point(3, 66);
+            GarmentContentsLabel.Name = "GarmentContentsLabel";
+            GarmentContentsLabel.Size = new System.Drawing.Size(72, 33);
+            GarmentContentsLabel.TabIndex = 8;
+            GarmentContentsLabel.Text = "내용:";
+            GarmentContentsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // CustomerFormInnerTableLayoutPanel2
+            // GarmentFormInnerTableLayoutPanel2
             // 
-            this.CustomerFormInnerTableLayoutPanel2.ColumnCount = 2;
-            this.CustomerFormInnerTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.CustomerFormInnerTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.CustomerFormInnerTableLayoutPanel2.Controls.Add(this.GarmentFormCancelButton, 1, 0);
-            this.CustomerFormInnerTableLayoutPanel2.Controls.Add(this.GarmentFormConfirmButton, 0, 0);
-            this.CustomerFormInnerTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomerFormInnerTableLayoutPanel2.Location = new System.Drawing.Point(0, 135);
-            this.CustomerFormInnerTableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.CustomerFormInnerTableLayoutPanel2.Name = "CustomerFormInnerTableLayoutPanel2";
-            this.CustomerFormInnerTableLayoutPanel2.Padding = new System.Windows.Forms.Padding(70, 0, 70, 0);
-            this.CustomerFormInnerTableLayoutPanel2.RowCount = 1;
-            this.CustomerFormInnerTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.CustomerFormInnerTableLayoutPanel2.Size = new System.Drawing.Size(394, 46);
-            this.CustomerFormInnerTableLayoutPanel2.TabIndex = 2;
+            GarmentFormInnerTableLayoutPanel2.ColumnCount = 2;
+            GarmentFormInnerTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            GarmentFormInnerTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            GarmentFormInnerTableLayoutPanel2.Controls.Add(this.GarmentFormCancelButton, 1, 0);
+            GarmentFormInnerTableLayoutPanel2.Controls.Add(this.GarmentFormConfirmButton, 0, 0);
+            GarmentFormInnerTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            GarmentFormInnerTableLayoutPanel2.Location = new System.Drawing.Point(0, 135);
+            GarmentFormInnerTableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            GarmentFormInnerTableLayoutPanel2.Name = "GarmentFormInnerTableLayoutPanel2";
+            GarmentFormInnerTableLayoutPanel2.Padding = new System.Windows.Forms.Padding(70, 0, 70, 0);
+            GarmentFormInnerTableLayoutPanel2.RowCount = 1;
+            GarmentFormInnerTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            GarmentFormInnerTableLayoutPanel2.Size = new System.Drawing.Size(394, 46);
+            GarmentFormInnerTableLayoutPanel2.TabIndex = 2;
             // 
             // GarmentFormCancelButton
             // 
@@ -155,67 +160,67 @@
             // 
             // GarmentFormTableLayoutPanel
             // 
-            this.GarmentFormTableLayoutPanel.ColumnCount = 1;
-            this.GarmentFormTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.GarmentFormTableLayoutPanel.Controls.Add(this.CustomerFormInnerTableLayoutPanel2, 0, 1);
-            this.GarmentFormTableLayoutPanel.Controls.Add(this.CustomerFormInnerTableLayoutPanel1, 0, 0);
-            this.GarmentFormTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GarmentFormTableLayoutPanel.Location = new System.Drawing.Point(20, 20);
-            this.GarmentFormTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.GarmentFormTableLayoutPanel.Name = "GarmentFormTableLayoutPanel";
-            this.GarmentFormTableLayoutPanel.RowCount = 2;
-            this.GarmentFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.GarmentFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.GarmentFormTableLayoutPanel.Size = new System.Drawing.Size(394, 181);
-            this.GarmentFormTableLayoutPanel.TabIndex = 0;
+            GarmentFormTableLayoutPanel.ColumnCount = 1;
+            GarmentFormTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            GarmentFormTableLayoutPanel.Controls.Add(GarmentFormInnerTableLayoutPanel2, 0, 1);
+            GarmentFormTableLayoutPanel.Controls.Add(GarmentFormInnerTableLayoutPanel1, 0, 0);
+            GarmentFormTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            GarmentFormTableLayoutPanel.Location = new System.Drawing.Point(20, 20);
+            GarmentFormTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            GarmentFormTableLayoutPanel.Name = "GarmentFormTableLayoutPanel";
+            GarmentFormTableLayoutPanel.RowCount = 2;
+            GarmentFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            GarmentFormTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            GarmentFormTableLayoutPanel.Size = new System.Drawing.Size(394, 181);
+            GarmentFormTableLayoutPanel.TabIndex = 0;
             // 
-            // CustomerFormInnerTableLayoutPanel1
+            // GarmentFormInnerTableLayoutPanel1
             // 
-            this.CustomerFormInnerTableLayoutPanel1.ColumnCount = 4;
-            this.CustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.CustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.CustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.CustomerFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentNoteLabel, 0, 3);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentNoteTextBox, 1, 3);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentContentsTextBox, 1, 2);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentContentsLabel, 0, 2);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(GarmentPriceLabel, 2, 1);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(GarmentIsCompletedLabel, 0, 1);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentProcessingDateTimePicker, 3, 0);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(GarmentProcessingDateLabel, 2, 0);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(GarmentReceptionDateLabel, 0, 0);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentReceptionDateTimePicker, 1, 0);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentIsCompletedCheckBox, 1, 1);
-            this.CustomerFormInnerTableLayoutPanel1.Controls.Add(this.GarmentPriceTextBox, 3, 1);
-            this.CustomerFormInnerTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomerFormInnerTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.CustomerFormInnerTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.CustomerFormInnerTableLayoutPanel1.Name = "CustomerFormInnerTableLayoutPanel1";
-            this.CustomerFormInnerTableLayoutPanel1.RowCount = 4;
-            this.CustomerFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CustomerFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CustomerFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CustomerFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CustomerFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CustomerFormInnerTableLayoutPanel1.Size = new System.Drawing.Size(394, 135);
-            this.CustomerFormInnerTableLayoutPanel1.TabIndex = 0;
+            GarmentFormInnerTableLayoutPanel1.ColumnCount = 4;
+            GarmentFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            GarmentFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            GarmentFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            GarmentFormInnerTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(GarmentNoteLabel, 0, 3);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(this.GarmentNoteTextBox, 1, 3);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(this.GarmentContentsTextBox, 1, 2);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(GarmentContentsLabel, 0, 2);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(GarmentPriceLabel, 2, 1);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(GarmentIsCompletedLabel, 0, 1);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(this.GarmentProcessingDateTimePicker, 3, 0);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(GarmentProcessingDateLabel, 2, 0);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(GarmentReceptionDateLabel, 0, 0);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(this.GarmentReceptionDateTimePicker, 1, 0);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(this.GarmentIsCompletedCheckBox, 1, 1);
+            GarmentFormInnerTableLayoutPanel1.Controls.Add(this.GarmentPriceTextBox, 3, 1);
+            GarmentFormInnerTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            GarmentFormInnerTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            GarmentFormInnerTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            GarmentFormInnerTableLayoutPanel1.Name = "GarmentFormInnerTableLayoutPanel1";
+            GarmentFormInnerTableLayoutPanel1.RowCount = 4;
+            GarmentFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            GarmentFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            GarmentFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            GarmentFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            GarmentFormInnerTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            GarmentFormInnerTableLayoutPanel1.Size = new System.Drawing.Size(394, 135);
+            GarmentFormInnerTableLayoutPanel1.TabIndex = 0;
             // 
             // GarmentNoteLabel
             // 
-            this.GarmentNoteLabel.AutoSize = true;
-            this.GarmentNoteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GarmentNoteLabel.Font = new System.Drawing.Font("굴림", 10F);
-            this.GarmentNoteLabel.Location = new System.Drawing.Point(3, 99);
-            this.GarmentNoteLabel.Name = "GarmentNoteLabel";
-            this.GarmentNoteLabel.Size = new System.Drawing.Size(72, 36);
-            this.GarmentNoteLabel.TabIndex = 11;
-            this.GarmentNoteLabel.Text = "비고:";
-            this.GarmentNoteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            GarmentNoteLabel.AutoSize = true;
+            GarmentNoteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            GarmentNoteLabel.Font = new System.Drawing.Font("굴림", 10F);
+            GarmentNoteLabel.Location = new System.Drawing.Point(3, 99);
+            GarmentNoteLabel.Name = "GarmentNoteLabel";
+            GarmentNoteLabel.Size = new System.Drawing.Size(72, 36);
+            GarmentNoteLabel.TabIndex = 11;
+            GarmentNoteLabel.Text = "비고:";
+            GarmentNoteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GarmentNoteTextBox
             // 
-            this.CustomerFormInnerTableLayoutPanel1.SetColumnSpan(this.GarmentNoteTextBox, 3);
+            GarmentFormInnerTableLayoutPanel1.SetColumnSpan(this.GarmentNoteTextBox, 3);
             this.GarmentNoteTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentNoteTextBox.Font = new System.Drawing.Font("굴림", 10F);
             this.GarmentNoteTextBox.Location = new System.Drawing.Point(83, 104);
@@ -226,7 +231,7 @@
             // 
             // GarmentContentsTextBox
             // 
-            this.CustomerFormInnerTableLayoutPanel1.SetColumnSpan(this.GarmentContentsTextBox, 3);
+            GarmentFormInnerTableLayoutPanel1.SetColumnSpan(this.GarmentContentsTextBox, 3);
             this.GarmentContentsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentContentsTextBox.Font = new System.Drawing.Font("굴림", 10F);
             this.GarmentContentsTextBox.Location = new System.Drawing.Point(83, 71);
@@ -290,7 +295,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 211);
-            this.Controls.Add(this.GarmentFormTableLayoutPanel);
+            this.Controls.Add(GarmentFormTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -299,10 +304,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "자료추가";
             this.Load += new System.EventHandler(this.AddGarmantForm_Load);
-            this.CustomerFormInnerTableLayoutPanel2.ResumeLayout(false);
-            this.GarmentFormTableLayoutPanel.ResumeLayout(false);
-            this.CustomerFormInnerTableLayoutPanel1.ResumeLayout(false);
-            this.CustomerFormInnerTableLayoutPanel1.PerformLayout();
+            GarmentFormInnerTableLayoutPanel2.ResumeLayout(false);
+            GarmentFormTableLayoutPanel.ResumeLayout(false);
+            GarmentFormInnerTableLayoutPanel1.ResumeLayout(false);
+            GarmentFormInnerTableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,14 +317,9 @@
         private System.Windows.Forms.Button GarmentFormConfirmButton;
         private System.Windows.Forms.DateTimePicker GarmentProcessingDateTimePicker;
         private System.Windows.Forms.DateTimePicker GarmentReceptionDateTimePicker;
-        private System.Windows.Forms.TableLayoutPanel GarmentFormTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel CustomerFormInnerTableLayoutPanel1;
         private System.Windows.Forms.CheckBox GarmentIsCompletedCheckBox;
-        private System.Windows.Forms.TableLayoutPanel CustomerFormInnerTableLayoutPanel2;
         private EnhancedTextBox GarmentPriceTextBox;
         private EnhancedTextBox GarmentContentsTextBox;
-        private System.Windows.Forms.Label GarmentContentsLabel;
-        private System.Windows.Forms.Label GarmentNoteLabel;
         private EnhancedTextBox GarmentNoteTextBox;
     }
 }
