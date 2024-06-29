@@ -104,6 +104,9 @@
     <EmbeddedResource Include="Forms\AddCustomerForm.resx">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddGarmantForm.resx">
+      <DependentUpon>AddGarmantForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FindCustomerForm.resx">
       <DependentUpon>FindCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
