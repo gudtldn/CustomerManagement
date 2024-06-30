@@ -60,6 +60,38 @@ namespace CustomerManagement
             UpdateTotalCustomer();
         }
 
+        private void CustomerListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.F:
+                        Customer_Find_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                    case Keys.N:
+                        Customer_Add_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                }
+            }
+            else
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Enter:
+                        Customer_Modify_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                    case Keys.Delete:
+                        Customer_Delete_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                }
+            }
+        }
+
         private void CustomerListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             // 선택된 고객이 2명 이상이면 함수를 종료
@@ -209,6 +241,35 @@ namespace CustomerManagement
                 CustomerListView.SelectedItems.Clear();
                 CustomerListView.Items[idx].Selected = true;
                 CustomerListView.Items[idx].EnsureVisible();
+            }
+        }
+
+        private void GarmentListView_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.N:
+                        Garment_Add_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                }
+            }
+            else
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Enter:
+                        Garment_Modify_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                    case Keys.Delete:
+                        Garment_Delete_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                }
             }
         }
 

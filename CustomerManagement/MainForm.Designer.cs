@@ -54,7 +54,7 @@ namespace CustomerManagement
             this.MainStatusCountLabel = new System.Windows.Forms.Label();
             this.Garment_Delete_Button = new System.Windows.Forms.Button();
             this.Garment_Modify_Button = new System.Windows.Forms.Button();
-            this.Garment_New_Button = new System.Windows.Forms.Button();
+            this.Garment_Add_Button = new System.Windows.Forms.Button();
             this.Customer_Name_Label = new System.Windows.Forms.Label();
             this.GarmentListView = new System.Windows.Forms.ListView();
             this.GarmentStatusTotalMoneyLabel = new System.Windows.Forms.Label();
@@ -219,6 +219,7 @@ namespace CustomerManagement
             this.CustomerListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.CustomerListView_ColumnClick);
             this.CustomerListView.SelectedIndexChanged += new System.EventHandler(this.CustomerListView_SelectedIndexChanged);
             this.CustomerListView.DoubleClick += new System.EventHandler(this.CustomerListView_DoubleClick);
+            this.CustomerListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CustomerListView_KeyDown);
             // 
             // CustomerListView_Name
             // 
@@ -303,7 +304,7 @@ namespace CustomerManagement
             Garment_Button_TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
             Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Delete_Button, 3, 0);
             Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Modify_Button, 2, 0);
-            Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_New_Button, 1, 0);
+            Garment_Button_TableLayoutPanel.Controls.Add(this.Garment_Add_Button, 1, 0);
             Garment_Button_TableLayoutPanel.Controls.Add(this.Customer_Name_Label, 0, 0);
             Garment_Button_TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             Garment_Button_TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
@@ -342,17 +343,17 @@ namespace CustomerManagement
             // 
             // Garment_New_Button
             // 
-            this.Garment_New_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Garment_New_Button.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Garment_New_Button.Image = global::CustomerManagement.Properties.Resources._new;
-            this.Garment_New_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Garment_New_Button.Location = new System.Drawing.Point(589, 0);
-            this.Garment_New_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Garment_New_Button.Name = "Garment_New_Button";
-            this.Garment_New_Button.Size = new System.Drawing.Size(50, 55);
-            this.Garment_New_Button.TabIndex = 1;
-            this.Garment_New_Button.UseVisualStyleBackColor = true;
-            this.Garment_New_Button.Click += new System.EventHandler(this.Garment_Add_Button_Click);
+            this.Garment_Add_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Garment_Add_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Garment_Add_Button.Image = global::CustomerManagement.Properties.Resources._new;
+            this.Garment_Add_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Garment_Add_Button.Location = new System.Drawing.Point(589, 0);
+            this.Garment_Add_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.Garment_Add_Button.Name = "Garment_New_Button";
+            this.Garment_Add_Button.Size = new System.Drawing.Size(50, 55);
+            this.Garment_Add_Button.TabIndex = 1;
+            this.Garment_Add_Button.UseVisualStyleBackColor = true;
+            this.Garment_Add_Button.Click += new System.EventHandler(this.Garment_Add_Button_Click);
             // 
             // Customer_Name_Label
             // 
@@ -388,6 +389,7 @@ namespace CustomerManagement
             this.GarmentListView.View = System.Windows.Forms.View.Details;
             this.GarmentListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.GarmentListView_ColumnClick);
             this.GarmentListView.DoubleClick += new System.EventHandler(this.GarmentListView_DoubleClick);
+            this.GarmentListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentListView_KeyDown);
             // 
             // GarmentListView_ReceptionDate
             // 
@@ -503,7 +505,7 @@ namespace CustomerManagement
         private System.Windows.Forms.Button Customer_Modify_Button;
         private System.Windows.Forms.Button Garment_Delete_Button;
         private System.Windows.Forms.Button Garment_Modify_Button;
-        private System.Windows.Forms.Button Garment_New_Button;
+        private System.Windows.Forms.Button Garment_Add_Button;
         private System.Windows.Forms.Label Customer_Name_Label;
         private System.Windows.Forms.Label MainStatusCountLabel;
         private System.Windows.Forms.Label GarmentStatusTotalMoneyLabel;
