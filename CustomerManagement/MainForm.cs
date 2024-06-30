@@ -409,6 +409,8 @@ namespace CustomerManagement
                 customer.ID
             );
 
+            UpdateTotalGarment();
+
             // TODO: 리스트뷰 정렬 필요
         }
 
