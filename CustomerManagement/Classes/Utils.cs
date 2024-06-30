@@ -29,12 +29,12 @@ namespace CustomerManagement.Classes
         {
             int low = 0;
             int high = listView.Items.Count - 1;
-        
+
             while (low <= high)
             {
                 int mid = (low + high) / 2;
                 int compareResult = string.Compare(listView.Items[mid].Text, searchItem, StringComparison.Ordinal);
-        
+
                 if (compareResult == 0)
                     return mid;
                 else if (listView.Sorting == SortOrder.Ascending ? compareResult < 0 : compareResult > 0)

@@ -127,7 +127,7 @@ namespace CustomerManagement
             );
 
             DialogResult = DialogResult.OK;
-            Close();    
+            Close();
         }
 
         private void GarmentFormCancelButton_Click(object sender, EventArgs e) => Close();

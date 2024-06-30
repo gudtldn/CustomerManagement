@@ -26,7 +26,7 @@ namespace CustomerManagement
         }
 
         private string GetPhoneNumber() => AddCustomerFormPNTextBox.Text.Replace("-", "");
-        
+
         public AddCustomerForm(string name, string phoneNumber)
         {
             _CustomerName = name;
@@ -112,7 +112,7 @@ namespace CustomerManagement
             }
 
             DataSQL data = new DataSQL();
-            if (AddCustomerFormNameTextBox.Text != (CustomerName ?? "")) 
+            if (AddCustomerFormNameTextBox.Text != (CustomerName ?? ""))
             {
                 if (data.GetCustomerFromName(AddCustomerFormNameTextBox.Text) != null)
                 {
