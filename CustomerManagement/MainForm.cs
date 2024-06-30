@@ -314,7 +314,7 @@ namespace CustomerManagement
                 return;
             }
 
-            AddGarmantForm form = new AddGarmantForm((Garment)GarmentListView.SelectedItems[0].Tag) { Text = "의류 수정" };
+            AddGarmantForm form = new AddGarmantForm((Garment)GarmentListView.SelectedItems[0].Tag) { Text = "자료수정" };
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
             DataSQL data = new DataSQL();
