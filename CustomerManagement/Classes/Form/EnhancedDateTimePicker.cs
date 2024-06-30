@@ -50,9 +50,9 @@ public class EnhancedDateTimePicker : DateTimePicker
             case Keys.Back:
             case Keys.Delete:
                 this.Format = DateTimePickerFormat.Custom;
+                e.SuppressKeyPress = true;
                 break;
         }
-        e.SuppressKeyPress = true;
     }
 
     private void EnhancedDateTimePicker_DropDown(object sender, EventArgs e)
