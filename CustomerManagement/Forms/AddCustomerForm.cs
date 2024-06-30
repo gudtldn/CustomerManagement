@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -120,8 +120,14 @@ namespace CustomerManagement
                 AddCustomerFormNameTextBox.Text != (CustomerName ?? "")
                 || GetPhoneNumber() != (CustomerPhoneNumber ?? "")
             ) {
-                if (MessageBox.Show("입력된 정보가 저장되지 않습니다. 계속하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
+                if (
+                    MessageBox.Show(
+                        "입력된 정보가 저장되지 않습니다. 계속하시겠습니까?",
+                        "알림",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    ) == DialogResult.No
+                ) return;
             }
 
             DialogResult = DialogResult.Cancel;
