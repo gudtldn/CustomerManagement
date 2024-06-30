@@ -24,7 +24,7 @@ namespace CustomerManagement
         private void UpdateTotalCustomer()
         {
             int totalCustomer = CustomerListView.Items.Count;
-            MainStatusCountLabel.Text = $"{totalCustomer:#,##0}명";
+            MainStatusCountLabel.Text = $"{totalCustomer:n0}명";
         }
 
         private void UpdateTotalGarment()
@@ -37,8 +37,8 @@ namespace CustomerManagement
                     totalMoney += price;
             }
 
-            GarmentStatusCountLabel.Text = $"자료 수: {totalGarment:#,##0}개";
-            GarmentStatusTotalMoneyLabel.Text = $"총 금액: {totalMoney:#,##0}원";
+            GarmentStatusCountLabel.Text = $"자료 수: {totalGarment:n0}개";
+            GarmentStatusTotalMoneyLabel.Text = $"총 금액: {totalMoney:n0}원";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
