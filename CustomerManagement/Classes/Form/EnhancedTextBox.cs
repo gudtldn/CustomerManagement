@@ -1,12 +1,45 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 public class EnhancedTextBox : TextBox
 {
+    private readonly ToolTip toolTip = new ToolTip();
+    private bool _isNumberOnly = false;
+
+    [Browsable(true)]
+    [DefaultValue(false)]
+    [Category("CustomProperty")]
+    [Description("숫자만 입력받기")]
+    public bool IsNumberOnly
+    {
+        get => _isNumberOnly;
+        set
+        {
+            if (_isNumberOnly != value)
+            {
+                _isNumberOnly = value;
+                UpdateEventHandlers();
+            }
+        }
+    }
+
     public EnhancedTextBox()
     {
         this.KeyDown += new KeyEventHandler(this.EnhancedTextBox_KeyDown);
         this.KeyPress += new KeyPressEventHandler(this.EnhancedTextBox_KeyPress);
+    }
+
+    private void UpdateEventHandlers()
+    {
+        if (_isNumberOnly)
+        {
+            this.KeyPress += new KeyPressEventHandler(this.OnlyNumberKeyPress);
+        }
+        else
+        {
+            this.KeyPress -= new KeyPressEventHandler(this.OnlyNumberKeyPress);
+        }
     }
 
     private void EnhancedTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -23,6 +56,17 @@ public class EnhancedTextBox : TextBox
         if (e.KeyChar == '\u0017') // Ctrl + Backspace의 ASCII 코드
         {
             e.Handled = true; // 기본 동작 억제
+        }
+    }
+
+    private  void OnlyNumberKeyPress(object sender, KeyPressEventArgs e)
+    {
+        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+        {
+            System.Media.SystemSounds.Beep.Play();
+            toolTip.Show("숫자만 입력할 수 있습니다.", this, 0, -20, 1000);
+
+            e.Handled = true;
         }
     }
 

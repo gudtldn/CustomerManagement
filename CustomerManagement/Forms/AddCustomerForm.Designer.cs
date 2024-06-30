@@ -86,6 +86,7 @@
             // 
             this.AddCustomerFormPNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AddCustomerFormPNTextBox.Font = new System.Drawing.Font("굴림", 12F);
+            this.AddCustomerFormPNTextBox.IsNumberOnly = true;
             this.AddCustomerFormPNTextBox.Location = new System.Drawing.Point(83, 35);
             this.AddCustomerFormPNTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.AddCustomerFormPNTextBox.MaxLength = 13;
@@ -94,7 +95,6 @@
             this.AddCustomerFormPNTextBox.TabIndex = 3;
             this.AddCustomerFormPNTextBox.TextChanged += new System.EventHandler(this.AddCustomerFormPNTextBox_TextChanged);
             this.AddCustomerFormPNTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
-            this.AddCustomerFormPNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddCustomerFormPNTextBox_KeyPress);
             // 
             // AddCustomerFormPNLabel
             // 

@@ -1,4 +1,4 @@
-﻿namespace CustomerManagement
+namespace CustomerManagement
 {
     partial class AddGarmantForm
     {
@@ -282,6 +282,7 @@
             // 
             this.GarmentPriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentPriceTextBox.Font = new System.Drawing.Font("굴림", 10F);
+            this.GarmentPriceTextBox.IsNumberOnly = true;
             this.GarmentPriceTextBox.Location = new System.Drawing.Point(279, 38);
             this.GarmentPriceTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.GarmentPriceTextBox.Name = "GarmentPriceTextBox";

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,22 +17,6 @@ namespace CustomerManagement
         public AddGarmantForm()
         {
             InitializeComponent();
-        }
-
-        private void AddGarmantForm_Load(object sender, EventArgs e)
-        {
-            // 접수, 처리일자 초기화
-        }
-
-        private void AddGarmentFormPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                System.Media.SystemSounds.Beep.Play();
-                toolTip.Show("숫자만 입력할 수 있습니다.", GarmentPriceTextBox, 0, -20, 1000);
-
-                e.Handled = true;
-            }
         }
 
         private void GarmentFormConfirmButton_Click(object sender, EventArgs e)

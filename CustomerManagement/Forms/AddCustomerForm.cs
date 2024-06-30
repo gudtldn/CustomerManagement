@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +15,6 @@ namespace CustomerManagement
     {
         private string _CustomerName = null;
         private string _CustomerPhoneNumber = null;
-        private ToolTip toolTip = new ToolTip();
 
         public string CustomerName
         {
@@ -61,17 +60,6 @@ namespace CustomerManagement
                     AddCustomerFormConfirmButton.PerformClick();
                     e.SuppressKeyPress = true;
                     break;
-            }
-        }
-
-        private void AddCustomerFormPNTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                System.Media.SystemSounds.Beep.Play();
-                toolTip.Show("숫자만 입력할 수 있습니다.", AddCustomerFormPNTextBox, 0, -20, 1000);
-
-                e.Handled = true;
             }
         }
 
