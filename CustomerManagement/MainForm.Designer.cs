@@ -352,7 +352,7 @@ namespace CustomerManagement
             this.Garment_New_Button.Size = new System.Drawing.Size(50, 55);
             this.Garment_New_Button.TabIndex = 1;
             this.Garment_New_Button.UseVisualStyleBackColor = true;
-            this.Garment_New_Button.Click += new System.EventHandler(this.Garment_New_Button_Click);
+            this.Garment_New_Button.Click += new System.EventHandler(this.Garment_Add_Button_Click);
             // 
             // Customer_Name_Label
             // 
@@ -386,6 +386,8 @@ namespace CustomerManagement
             this.GarmentListView.TabIndex = 0;
             this.GarmentListView.UseCompatibleStateImageBehavior = false;
             this.GarmentListView.View = System.Windows.Forms.View.Details;
+            this.GarmentListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.GarmentListView_ColumnClick);
+            this.GarmentListView.DoubleClick += new System.EventHandler(this.GarmentListView_DoubleClick);
             // 
             // GarmentListView_ReceptionDate
             // 

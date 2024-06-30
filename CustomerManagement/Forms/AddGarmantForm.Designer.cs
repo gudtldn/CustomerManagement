@@ -228,6 +228,7 @@
             this.GarmentNoteTextBox.Name = "GarmentNoteTextBox";
             this.GarmentNoteTextBox.Size = new System.Drawing.Size(306, 23);
             this.GarmentNoteTextBox.TabIndex = 10;
+            this.GarmentNoteTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentForm_KeyDown);
             // 
             // GarmentContentsTextBox
             // 
@@ -239,6 +240,7 @@
             this.GarmentContentsTextBox.Name = "GarmentContentsTextBox";
             this.GarmentContentsTextBox.Size = new System.Drawing.Size(306, 23);
             this.GarmentContentsTextBox.TabIndex = 9;
+            this.GarmentContentsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentForm_KeyDown);
             // 
             // GarmentProcessingDateTimePicker
             // 
@@ -253,6 +255,7 @@
             this.GarmentProcessingDateTimePicker.Size = new System.Drawing.Size(110, 21);
             this.GarmentProcessingDateTimePicker.TabIndex = 3;
             this.GarmentProcessingDateTimePicker.Value = this.GarmentProcessingDateTimePicker.Value;
+            this.GarmentProcessingDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentForm_KeyDown);
             // 
             // GarmentReceptionDateTimePicker
             // 
@@ -266,6 +269,7 @@
             this.GarmentReceptionDateTimePicker.Size = new System.Drawing.Size(108, 21);
             this.GarmentReceptionDateTimePicker.TabIndex = 1;
             this.GarmentReceptionDateTimePicker.Value = this.GarmentReceptionDateTimePicker.Value;
+            this.GarmentReceptionDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentForm_KeyDown);
             // 
             // GarmentIsCompletedCheckBox
             // 
@@ -290,6 +294,7 @@
             this.GarmentPriceTextBox.Size = new System.Drawing.Size(110, 23);
             this.GarmentPriceTextBox.TabIndex = 7;
             this.GarmentPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.GarmentPriceTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentForm_KeyDown);
             // 
             // AddGarmantForm
             // 
@@ -304,6 +309,8 @@
             this.Padding = new System.Windows.Forms.Padding(20, 20, 20, 10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "자료추가";
+            this.Load += new System.EventHandler(this.GarmentForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentForm_KeyDown);
             GarmentFormInnerTableLayoutPanel2.ResumeLayout(false);
             GarmentFormTableLayoutPanel.ResumeLayout(false);
             GarmentFormInnerTableLayoutPanel1.ResumeLayout(false);

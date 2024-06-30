@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,6 +56,7 @@ namespace CustomerManagement
                 CustomerListView.Items[0].Selected = true;
 
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
+            GarmentListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
             UpdateTotalCustomer();
         }
 
@@ -90,6 +91,7 @@ namespace CustomerManagement
             }
 
             Customer_Name_Label.Text = customer.Name; // 선택된 고객의 이름을 라벨에 표시
+            Customer_Name_Label.Tag = customer; // 선택된 고객의 정보를 라벨의 Tag에 저장
             UpdateTotalGarment();
         }
 
@@ -208,6 +210,173 @@ namespace CustomerManagement
                 CustomerListView.Items[idx].Selected = true;
                 CustomerListView.Items[idx].EnsureVisible();
             }
+        }
+
+        private void GarmentListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // 리스트뷰 정렬
+            if ((GarmentListView.ListViewItemSorter as ListViewItemComparer).Column == e.Column)
+                GarmentListView.Sorting = GarmentListView.Sorting == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+            else
+                GarmentListView.Sorting = SortOrder.Ascending;
+
+            GarmentListView.ListViewItemSorter = new ListViewItemComparer(e.Column, GarmentListView.Sorting);
+        }
+
+        private void GarmentListView_DoubleClick(object sender, EventArgs e)
+        {
+            if (GarmentListView.SelectedItems.Count == 1)
+                Garment_Modify_Button.PerformClick();
+        }
+
+        private void Garment_Add_Button_Click(object sender, EventArgs e)
+        {
+            if (CustomerListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("고객을 선택해주세요.", "선택 오류", MessageBoxButtons.OK);
+                return;
+            }
+
+            AddGarmantForm form = new AddGarmantForm();
+            if (form.ShowDialog() == DialogResult.Cancel) return;
+
+            DataSQL data = new DataSQL();
+            Customer customer = (Customer)Customer_Name_Label.Tag;
+
+            data.AddGarment(
+                customer,
+                form.Garment.ReceptionDate,
+                form.Garment.ProcessingDate,
+                form.Garment.IsCompleted,
+                form.Garment.Contents,
+                form.Garment.Price,
+                form.Garment.Note
+            );
+
+            int garmentId = data.GetGarment(
+                customer,
+                form.Garment.ReceptionDate,
+                form.Garment.ProcessingDate,
+                form.Garment.IsCompleted,
+                form.Garment.Contents,
+                form.Garment.Price,
+                form.Garment.Note
+            ).ID;
+
+            GarmentListView.Items.Add(new ListViewItem(form.Garment.ReceptionDate?.ToString("yyyy-MM-dd") ?? "")
+            {
+                SubItems = {
+                    form.Garment.ProcessingDate?.ToString("yyyy-MM-dd") ?? "",
+                    form.Garment.IsCompleted ? "완료" : "미완료",
+                    form.Garment.Contents,
+                    $"{form.Garment.Price:n0} 원",
+                    form.Garment.Note
+                },
+                Tag = new Garment(
+                    garmentId,
+                    form.Garment.ReceptionDate,
+                    form.Garment.ProcessingDate,
+                    form.Garment.IsCompleted,
+                    form.Garment.Contents,
+                    form.Garment.Price,
+                    form.Garment.Note,
+                    customer.ID
+                )
+            });
+
+            if ((GarmentListView.ListViewItemSorter as ListViewItemComparer).Column != 0)
+                GarmentListView.ListViewItemSorter = new ListViewItemComparer();
+
+            var garments = GarmentListView.Items.Cast<ListViewItem>().Select(item => (Garment)item.Tag);
+            for (int i = 0; i < GarmentListView.Items.Count; i++)
+            {
+                if (garments.ElementAt(i).ID == garmentId)
+                {
+                    GarmentListView.Items[i].Selected = true;
+                    GarmentListView.Items[i].EnsureVisible();
+                    break;
+                }
+            }
+
+            UpdateTotalGarment();
+        }
+
+        private void Garment_Modify_Button_Click(object sender, EventArgs e)
+        {
+            if (GarmentListView.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("한 번에 하나의 자료만 수정할 수 있습니다.", "수정 오류", MessageBoxButtons.OK);
+                return;
+            }
+            else if (GarmentListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("자료를 선택해주세요.", "선택 오류", MessageBoxButtons.OK);
+                return;
+            }
+
+            AddGarmantForm form = new AddGarmantForm((Garment)GarmentListView.SelectedItems[0].Tag) { Text = "의류 수정" };
+            if (form.ShowDialog() == DialogResult.Cancel) return;
+
+            DataSQL data = new DataSQL();
+            Customer customer = (Customer)Customer_Name_Label.Tag;
+            Garment garment = (Garment)GarmentListView.SelectedItems[0].Tag;
+
+            data.UpdateGarment(
+                garment,
+                form.Garment.ReceptionDate,
+                form.Garment.ProcessingDate,
+                form.Garment.IsCompleted,
+                form.Garment.Contents,
+                form.Garment.Price,
+                form.Garment.Note
+            );
+
+            GarmentListView.SelectedItems[0].Text = form.Garment.ReceptionDate?.ToString("yyyy-MM-dd") ?? "";
+            GarmentListView.SelectedItems[0].SubItems[1].Text = form.Garment.ProcessingDate?.ToString("yyyy-MM-dd") ?? "";
+            GarmentListView.SelectedItems[0].SubItems[2].Text = form.Garment.IsCompleted ? "완료" : "미완료";
+            GarmentListView.SelectedItems[0].SubItems[3].Text = form.Garment.Contents;
+            GarmentListView.SelectedItems[0].SubItems[4].Text = $"{form.Garment.Price:n0} 원";
+            GarmentListView.SelectedItems[0].SubItems[5].Text = form.Garment.Note;
+            GarmentListView.SelectedItems[0].Tag = new Garment(
+                garment.ID,
+                form.Garment.ReceptionDate,
+                form.Garment.ProcessingDate,
+                form.Garment.IsCompleted,
+                form.Garment.Contents,
+                form.Garment.Price,
+                form.Garment.Note,
+                customer.ID
+            );
+
+            // TODO: 리스트뷰 정렬 필요
+        }
+
+        private void Garment_Delete_Button_Click(object sender, EventArgs e)
+        {
+            if (GarmentListView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("자료를 선택해주세요.", "선택 오류", MessageBoxButtons.OK);
+                return;
+            }
+
+            var selectedItems = GarmentListView.SelectedItems;
+            DialogResult dialogResult = MessageBox.Show(
+                $"정말로 {selectedItems.Count}개의 자료를 삭제하시겠습니까?",
+                "삭제 확인",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (dialogResult == DialogResult.No) return;
+
+            DataSQL data = new DataSQL();
+            foreach (ListViewItem item in selectedItems)
+            {
+                data.DeleteGarment((Garment)item.Tag);
+                GarmentListView.Items.Remove(item);
+            }
+
+            UpdateTotalGarment();
         }
     }
 }

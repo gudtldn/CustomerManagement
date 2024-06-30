@@ -227,5 +227,151 @@ namespace CustomerManagement.Classes
                 }
             }
         }
+
+        public bool AddGarment(
+            Customer customer,
+            DateTime? reception_date,
+            DateTime? processing_date,
+            bool is_completed,
+            string contents,
+            int price,
+            string note
+        ) {
+            using (SQLiteConnection connection = new SQLiteConnection(database_path))
+            {
+                connection.Open();
+                using (SQLiteCommand sql_command = new SQLiteCommand(
+                    @"INSERT INTO garments (
+                        reception_date, processing_date,
+                        is_completed, contents,
+                        price, note,
+                        customer_id
+                    ) VALUES (
+                        @reception_date, @processing_date,
+                        @is_completed, @contents,
+                        @price, @note,
+                        @customer_id
+                    )", connection)
+                ) {
+                    sql_command.Parameters.AddWithValue("@reception_date", (object)reception_date?.ToString("yyyy-MM-dd") ?? DBNull.Value);
+                    sql_command.Parameters.AddWithValue("@processing_date", (object)processing_date?.ToString("yyyy-MM-dd") ?? DBNull.Value);
+                    sql_command.Parameters.AddWithValue("@is_completed", is_completed == true ? 1 : 0);
+                    sql_command.Parameters.AddWithValue("@contents", string.IsNullOrEmpty(contents) ? DBNull.Value : (object)contents);
+                    sql_command.Parameters.AddWithValue("@price", price);
+                    sql_command.Parameters.AddWithValue("@note", string.IsNullOrEmpty(note) ? DBNull.Value : (object)note);
+                    sql_command.Parameters.AddWithValue("@customer_id", customer.ID);
+                    return sql_command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public bool UpdateGarment(
+            Garment garment,
+            DateTime? reception_date,
+            DateTime? processing_date,
+            bool is_completed,
+            string contents,
+            int price,
+            string note
+        ) {
+            using (SQLiteConnection connection = new SQLiteConnection(database_path))
+            {
+                connection.Open();
+                using (SQLiteCommand sql_command = new SQLiteCommand(
+                    @"UPDATE garments SET
+                        reception_date = @reception_date,
+                        processing_date = @processing_date,
+                        is_completed = @is_completed,
+                        contents = @contents,
+                        price = @price,
+                        note = @note
+                    WHERE id = @id", connection)
+                ) {
+                    sql_command.Parameters.AddWithValue("@reception_date", (object)reception_date?.ToString("yyyy-MM-dd") ?? DBNull.Value);
+                    sql_command.Parameters.AddWithValue("@processing_date", (object)processing_date?.ToString("yyyy-MM-dd") ?? DBNull.Value);
+                    sql_command.Parameters.AddWithValue("@is_completed", is_completed == true ? 1 : 0);
+                    sql_command.Parameters.AddWithValue("@contents", string.IsNullOrEmpty(contents) ? DBNull.Value : (object)contents);
+                    sql_command.Parameters.AddWithValue("@price", price);
+                    sql_command.Parameters.AddWithValue("@note", string.IsNullOrEmpty(note) ? DBNull.Value : (object)note);
+                    sql_command.Parameters.AddWithValue("@id", garment.ID);
+                    return sql_command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public bool DeleteGarment(Garment garment)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(database_path))
+            {
+                connection.Open();
+                using (SQLiteCommand sql_command = new SQLiteCommand("DELETE FROM garments WHERE id = @id", connection))
+                {
+                    sql_command.Parameters.AddWithValue("@id", garment.ID);
+                    return sql_command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public Garment GetGarment(
+            Customer customer,
+            DateTime? reception_date,
+            DateTime? processing_date,
+            bool is_completed,
+            string contents,
+            int price,
+            string note
+        ) {
+            using (SQLiteConnection connection = new SQLiteConnection(database_path))
+            {
+                var reception_date_query = (object)reception_date?.ToString("yyyy-MM-dd") ?? DBNull.Value;
+                var processing_date_query = (object)processing_date?.ToString("yyyy-MM-dd") ?? DBNull.Value;
+                var is_completed_query = is_completed == true ? 1 : 0;
+                var contents_query = string.IsNullOrEmpty(contents) ? DBNull.Value : (object)contents;
+                var price_query = price;
+                var note_query = string.IsNullOrEmpty(note) ? DBNull.Value : (object)note;
+                var customer_id_query = customer.ID;
+
+                StringBuilder query = new StringBuilder("SELECT * FROM garments WHERE");
+                query.Append(reception_date_query == DBNull.Value ? " reception_date IS NULL AND" : " reception_date = @reception_date AND");
+                query.Append(processing_date_query == DBNull.Value ? " processing_date IS NULL AND" : " processing_date = @processing_date AND");
+                query.Append(" is_completed = @is_completed AND");
+                query.Append(contents_query == DBNull.Value ? " contents IS NULL AND" : " contents = @contents AND");
+                query.Append(" price = @price AND");
+                query.Append(note_query == DBNull.Value ? " note IS NULL AND" : " note = @note AND");
+                query.Append(" customer_id = @customer_id");
+
+                connection.Open();
+                using (SQLiteCommand sql_command = new SQLiteCommand(query.ToString(), connection))
+                {
+                    sql_command.Parameters.AddWithValue("@reception_date", (object)reception_date?.ToString("yyyy-MM-dd") ?? DBNull.Value);
+                    sql_command.Parameters.AddWithValue("@processing_date", (object)processing_date?.ToString("yyyy-MM-dd") ?? DBNull.Value);
+                    sql_command.Parameters.AddWithValue("@is_completed", is_completed == true ? 1 : 0);
+                    sql_command.Parameters.AddWithValue("@contents", string.IsNullOrEmpty(contents) ? DBNull.Value : (object)contents);
+                    sql_command.Parameters.AddWithValue("@price", price);
+                    sql_command.Parameters.AddWithValue("@note", string.IsNullOrEmpty(note) ? DBNull.Value : (object)note);
+                    sql_command.Parameters.AddWithValue("@customer_id", customer.ID);
+                    using (SQLiteDataReader reader = sql_command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Garment(
+                                Convert.ToInt32(reader["id"]),
+                                reader["reception_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["reception_date"]),
+                                reader["processing_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["processing_date"]),
+                                Convert.ToBoolean(reader["is_completed"]),
+                                reader["contents"].ToString(),
+                                Convert.ToInt32(reader["price"]),
+                                reader["note"].ToString(),
+                                customer.ID
+                            );
+                        }
+                        else
+                        {
+                            throw new Exception("Garment not found.");
+                        }
+                    }
+                }
+            }
+        }
     }
 }

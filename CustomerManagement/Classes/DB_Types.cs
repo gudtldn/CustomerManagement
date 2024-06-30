@@ -39,12 +39,45 @@ namespace CustomerManagement.Classes
             Name = name;
             PhoneNumber = phone_number;
         }
+
+        public bool Equals(Customer other)
+        {
+            return (
+                ID == other.ID
+                && Name == other.Name
+                && PhoneNumber == other.PhoneNumber
+            );
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Customer customer)
+            {
+                return Equals(customer);
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public static bool operator ==(Customer left, Customer right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Customer left, Customer right)
+        {
+            return !(left == right);
+        }
     }
 
     /// <summary>
     /// 구조체로 정의된 의류 정보를 나타냅니다.
     /// </summary>
-    public struct Garment
+    public struct Garment : IEquatable<Garment>
     {
         /// <summary>
         /// 의류의 고유 식별자를 가져오거나 설정합니다.
@@ -115,6 +148,41 @@ namespace CustomerManagement.Classes
             Price = price;
             Note = note;
             CustomerID = customer_id;
+        }
+
+        public bool Equals(Garment other)
+        {
+            return Nullable.Compare(ReceptionDate?.Date, other.ReceptionDate?.Date) == 0
+                && Nullable.Compare(ProcessingDate?.Date, other.ProcessingDate?.Date) == 0
+                && IsCompleted == other.IsCompleted
+                && Contents == other.Contents
+                && Price == other.Price
+                && Note == other.Note
+                && CustomerID == other.CustomerID;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Garment garment)
+            {
+                return Equals(garment);
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public static bool operator ==(Garment left, Garment right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Garment left, Garment right)
+        {
+            return !(left == right);
         }
     }
 }
