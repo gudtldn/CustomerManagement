@@ -44,10 +44,27 @@ public class EnhancedTextBox : TextBox
 
     private void EnhancedTextBox_KeyDown(object sender, KeyEventArgs e)
     {
-        if (e.Control && e.KeyCode == Keys.Back)
+        if (e.Control)
         {
-            HandleCtrlBackspace();
-            e.SuppressKeyPress = true; // 기본 동작 억제
+            switch (e.KeyCode)
+            {
+                case Keys.Back:
+                    HandleCtrlBackspace();
+                    e.SuppressKeyPress = true; // 기본 동작 억제
+                    break;
+                case Keys.V:
+                    if (_isNumberOnly && Clipboard.ContainsText() && !uint.TryParse(Clipboard.GetText(), out _))
+                    {
+                        System.Media.SystemSounds.Beep.Play();
+                        toolTip.Show("숫자만 입력할 수 있습니다.", this, 0, -20, 1000);
+                    }
+                    else
+                    {
+                        this.Paste();
+                    }
+                    e.SuppressKeyPress = true; // 기본 동작 억제
+                    break;
+            }
         }
     }
 
