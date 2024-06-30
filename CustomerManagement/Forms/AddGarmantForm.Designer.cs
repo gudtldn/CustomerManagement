@@ -1,4 +1,4 @@
-namespace CustomerManagement
+﻿namespace CustomerManagement
 {
     partial class AddGarmantForm
     {
@@ -41,8 +41,8 @@ namespace CustomerManagement
             this.GarmentFormConfirmButton = new System.Windows.Forms.Button();
             this.GarmentNoteTextBox = new EnhancedTextBox();
             this.GarmentContentsTextBox = new EnhancedTextBox();
-            this.GarmentProcessingDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.GarmentReceptionDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.GarmentProcessingDateTimePicker = new EnhancedDateTimePicker();
+            this.GarmentReceptionDateTimePicker = new EnhancedDateTimePicker();
             this.GarmentIsCompletedCheckBox = new System.Windows.Forms.CheckBox();
             this.GarmentPriceTextBox = new EnhancedTextBox();
             GarmentIsCompletedLabel = new System.Windows.Forms.Label();
@@ -243,28 +243,29 @@ namespace CustomerManagement
             // GarmentProcessingDateTimePicker
             // 
             this.GarmentProcessingDateTimePicker.CalendarFont = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.GarmentProcessingDateTimePicker.CustomFormat = "";
+            this.GarmentProcessingDateTimePicker.CustomFormat = " ";
             this.GarmentProcessingDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentProcessingDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.GarmentProcessingDateTimePicker.IsValueRequired = false;
             this.GarmentProcessingDateTimePicker.Location = new System.Drawing.Point(279, 5);
             this.GarmentProcessingDateTimePicker.Margin = new System.Windows.Forms.Padding(5);
             this.GarmentProcessingDateTimePicker.Name = "GarmentProcessingDateTimePicker";
             this.GarmentProcessingDateTimePicker.Size = new System.Drawing.Size(110, 21);
             this.GarmentProcessingDateTimePicker.TabIndex = 3;
-            this.GarmentProcessingDateTimePicker.Value = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.GarmentProcessingDateTimePicker.Value = this.GarmentProcessingDateTimePicker.Value;
             // 
             // GarmentReceptionDateTimePicker
             // 
             this.GarmentReceptionDateTimePicker.CalendarFont = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.GarmentReceptionDateTimePicker.CustomFormat = "";
+            this.GarmentReceptionDateTimePicker.CustomFormat = " ";
             this.GarmentReceptionDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GarmentReceptionDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.GarmentReceptionDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.GarmentReceptionDateTimePicker.Location = new System.Drawing.Point(83, 5);
             this.GarmentReceptionDateTimePicker.Margin = new System.Windows.Forms.Padding(5);
             this.GarmentReceptionDateTimePicker.Name = "GarmentReceptionDateTimePicker";
             this.GarmentReceptionDateTimePicker.Size = new System.Drawing.Size(108, 21);
             this.GarmentReceptionDateTimePicker.TabIndex = 1;
-            this.GarmentReceptionDateTimePicker.Value = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.GarmentReceptionDateTimePicker.Value = this.GarmentReceptionDateTimePicker.Value;
             // 
             // GarmentIsCompletedCheckBox
             // 
@@ -289,7 +290,6 @@ namespace CustomerManagement
             this.GarmentPriceTextBox.Size = new System.Drawing.Size(110, 23);
             this.GarmentPriceTextBox.TabIndex = 7;
             this.GarmentPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.GarmentPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddGarmentFormPriceTextBox_KeyPress);
             // 
             // AddGarmantForm
             // 
@@ -304,7 +304,6 @@ namespace CustomerManagement
             this.Padding = new System.Windows.Forms.Padding(20, 20, 20, 10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "자료추가";
-            this.Load += new System.EventHandler(this.AddGarmantForm_Load);
             GarmentFormInnerTableLayoutPanel2.ResumeLayout(false);
             GarmentFormTableLayoutPanel.ResumeLayout(false);
             GarmentFormInnerTableLayoutPanel1.ResumeLayout(false);
@@ -316,8 +315,8 @@ namespace CustomerManagement
         #endregion
         private System.Windows.Forms.Button GarmentFormCancelButton;
         private System.Windows.Forms.Button GarmentFormConfirmButton;
-        private System.Windows.Forms.DateTimePicker GarmentProcessingDateTimePicker;
-        private System.Windows.Forms.DateTimePicker GarmentReceptionDateTimePicker;
+        private EnhancedDateTimePicker GarmentProcessingDateTimePicker;
+        private EnhancedDateTimePicker GarmentReceptionDateTimePicker;
         private System.Windows.Forms.CheckBox GarmentIsCompletedCheckBox;
         private EnhancedTextBox GarmentPriceTextBox;
         private EnhancedTextBox GarmentContentsTextBox;

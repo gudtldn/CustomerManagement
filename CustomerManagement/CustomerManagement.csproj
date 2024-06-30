@@ -68,6 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Form\EnhancedDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\AddCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
