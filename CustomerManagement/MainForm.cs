@@ -353,6 +353,7 @@ namespace CustomerManagement
             {
                 if (garments.ElementAt(i).ID == garmentId)
                 {
+                    GarmentListView.SelectedItems.Clear();
                     GarmentListView.Items[i].Selected = true;
                     GarmentListView.Items[i].EnsureVisible();
                     break;
