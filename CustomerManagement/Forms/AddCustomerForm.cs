@@ -50,6 +50,8 @@ namespace CustomerManagement
 
         private void AddCustomerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (DialogResult == DialogResult.OK) return;
+
             if (
                 AddCustomerFormNameTextBox.Text != (CustomerName ?? "")
                 || GetPhoneNumber() != (CustomerPhoneNumber ?? "")

@@ -52,6 +52,8 @@ namespace CustomerManagement
 
         private void AddGarmantForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (DialogResult == DialogResult.OK) return;
+
             Garment UpdatedGarment = new Garment(
                 -1,
                 GarmentReceptionDateTimePicker.Value,
