@@ -48,6 +48,28 @@ namespace CustomerManagement
             }
         }
 
+        private void AddCustomerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (
+                AddCustomerFormNameTextBox.Text != (CustomerName ?? "")
+                || GetPhoneNumber() != (CustomerPhoneNumber ?? "")
+            ) {
+                if (
+                    MessageBox.Show(
+                        "입력된 정보가 저장되지 않습니다. 계속하시겠습니까?",
+                        "알림",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    ) == DialogResult.No
+                ) {
+                    e.Cancel = true;
+                    return;
+                };
+            }
+
+            DialogResult = DialogResult.Cancel;
+        }
+
         private void AddCustomerForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -114,24 +136,6 @@ namespace CustomerManagement
             Close();
         }
 
-        private void AddCustomerFormCancelButton_Click(object sender, EventArgs e)
-        {
-            if (
-                AddCustomerFormNameTextBox.Text != (CustomerName ?? "")
-                || GetPhoneNumber() != (CustomerPhoneNumber ?? "")
-            ) {
-                if (
-                    MessageBox.Show(
-                        "입력된 정보가 저장되지 않습니다. 계속하시겠습니까?",
-                        "알림",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning
-                    ) == DialogResult.No
-                ) return;
-            }
-
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+        private void AddCustomerFormCancelButton_Click(object sender, EventArgs e) => Close();
     }
 }

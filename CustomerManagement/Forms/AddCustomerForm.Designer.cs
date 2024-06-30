@@ -185,6 +185,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "고객 추가";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddCustomerForm_FormClosing);
             this.Load += new System.EventHandler(this.AddCustomerForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddCustomerForm_KeyDown);
             AddCustomerFormTableLayoutPanel.ResumeLayout(false);

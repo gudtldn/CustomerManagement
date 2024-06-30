@@ -309,6 +309,7 @@
             this.Padding = new System.Windows.Forms.Padding(20, 20, 20, 10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "자료추가";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGarmantForm_FormClosing);
             this.Load += new System.EventHandler(this.GarmentForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GarmentForm_KeyDown);
             GarmentFormInnerTableLayoutPanel2.ResumeLayout(false);
