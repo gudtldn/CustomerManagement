@@ -18,7 +18,6 @@ namespace CustomerManagement
         public MainForm()
         {
             InitializeComponent();
-            // TODO: 단축키 설정
         }
 
         private void UpdateTotalCustomer()
