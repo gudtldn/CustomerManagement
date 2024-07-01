@@ -101,8 +101,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\ListViewItemComparer.cs" />
-    <Compile Include="Classes\DB_Types.cs" />
-    <Compile Include="Classes\DataSQL.cs" />
+    <Compile Include="Classes\Database\DB_Types.cs" />
+    <Compile Include="Classes\Database\DataSQL.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Forms\FindCustomerForm.cs">
       <SubType>Form</SubType>
