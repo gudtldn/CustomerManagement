@@ -201,7 +201,9 @@ namespace CustomerManagement
             CustomerListView.SelectedItems[0].Text = form.CustomerName;
             CustomerListView.SelectedItems[0].SubItems[1].Text = Utils.FormatPhoneNumber(form.CustomerPhoneNumber);
             CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber);
-            // TODO: 리스트뷰 정렬 필요
+
+            CustomerListView.Sort();
+            CustomerListView.SelectedItems[0].EnsureVisible();
         }
 
         private void Customer_Delete_Button_Click(object sender, EventArgs e)
@@ -412,7 +414,8 @@ namespace CustomerManagement
 
             UpdateTotalGarment();
 
-            // TODO: 리스트뷰 정렬 필요
+            GarmentListView.Sort();
+            GarmentListView.SelectedItems[0].EnsureVisible();
         }
 
         private void Garment_Delete_Button_Click(object sender, EventArgs e)
