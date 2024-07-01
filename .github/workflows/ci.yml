@@ -33,6 +33,10 @@ jobs:
         $version = $versionInfo.Matches.Groups[1].Value
         echo "version=$version" >> $env:GITHUB_OUTPUT
 
+    - name: Zip Release folder
+      run: |
+        Compress-Archive -Path .\CustomerManagement\bin\Release\* -DestinationPath .\CustomerManagement-${{ steps.get_version.outputs.version }}.zip
+
     - name: Create GitHub Release
       id: create_release
       uses: actions/create-release@v1
@@ -51,6 +55,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./CustomerManagement/bin/Release/CustomerManagement.exe
-        asset_name: CustomerManagement.exe
-        asset_content_type: application/octet-stream
+        asset_path: ./CustomerManagement-${{ steps.get_version.outputs.version }}.zip
+        asset_name: CustomerManagement-${{ steps.get_version.outputs.version }}.zip
+        asset_content_type: application/zip
+
