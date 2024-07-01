@@ -50,6 +50,10 @@ namespace CustomerManagement
 
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
             GarmentListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
+
+            GarmentStatusCountLabel.Text = "";
+            GarmentStatusTotalMoneyLabel.Text = "";
+
             UpdateTotalCustomer();
         }
 
