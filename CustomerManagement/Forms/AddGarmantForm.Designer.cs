@@ -37,6 +37,7 @@
             System.Windows.Forms.TableLayoutPanel GarmentFormTableLayoutPanel;
             System.Windows.Forms.TableLayoutPanel GarmentFormInnerTableLayoutPanel1;
             System.Windows.Forms.Label GarmentNoteLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGarmantForm));
             this.GarmentFormCancelButton = new System.Windows.Forms.Button();
             this.GarmentFormConfirmButton = new System.Windows.Forms.Button();
             this.GarmentNoteTextBox = new EnhancedTextBox();
@@ -303,6 +304,7 @@
             this.ClientSize = new System.Drawing.Size(434, 211);
             this.Controls.Add(GarmentFormTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddGarmantForm";

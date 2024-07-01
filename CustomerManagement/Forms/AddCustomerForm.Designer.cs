@@ -33,6 +33,7 @@
             System.Windows.Forms.Label AddCustomerFormPNLabel;
             System.Windows.Forms.Label AddCustomerFormNameLabel;
             System.Windows.Forms.TableLayoutPanel AddCustomerFormInnerTableLayoutPanel2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomerForm));
             this.AddCustomerFormPNTextBox = new EnhancedTextBox();
             this.AddCustomerFormNameTextBox = new EnhancedTextBox();
             this.AddCustomerFormCancelButton = new System.Windows.Forms.Button();
@@ -178,6 +179,7 @@
             this.ClientSize = new System.Drawing.Size(384, 161);
             this.Controls.Add(AddCustomerFormTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddCustomerForm";

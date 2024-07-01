@@ -341,7 +341,7 @@ namespace CustomerManagement
             this.Garment_Modify_Button.UseVisualStyleBackColor = true;
             this.Garment_Modify_Button.Click += new System.EventHandler(this.Garment_Modify_Button_Click);
             // 
-            // Garment_New_Button
+            // Garment_Add_Button
             // 
             this.Garment_Add_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Garment_Add_Button.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -349,7 +349,7 @@ namespace CustomerManagement
             this.Garment_Add_Button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Garment_Add_Button.Location = new System.Drawing.Point(589, 0);
             this.Garment_Add_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.Garment_Add_Button.Name = "Garment_New_Button";
+            this.Garment_Add_Button.Name = "Garment_Add_Button";
             this.Garment_Add_Button.Size = new System.Drawing.Size(50, 55);
             this.Garment_Add_Button.TabIndex = 1;
             this.Garment_Add_Button.UseVisualStyleBackColor = true;
@@ -474,6 +474,7 @@ namespace CustomerManagement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 701);
             this.Controls.Add(MainSplitContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(640, 369);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
