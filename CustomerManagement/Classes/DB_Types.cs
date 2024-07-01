@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace CustomerManagement.Classes
 {
+    interface IDatabaseID
+    {
+        int GetID();
+    }
+    
     /// <summary>
     /// 고객 정보를 나타내는 구조체입니다.
     /// </summary>
-    public struct Customer
+    public struct Customer : IEquatable<Customer>, IDatabaseID
     {
         /// <summary>
         /// 고객의 식별자를 가져오거나 설정합니다.
@@ -38,6 +43,11 @@ namespace CustomerManagement.Classes
             ID = id;
             Name = name;
             PhoneNumber = phone_number;
+        }
+
+        public int GetID()
+        {
+            return ID;
         }
 
         public bool Equals(Customer other)
@@ -77,7 +87,7 @@ namespace CustomerManagement.Classes
     /// <summary>
     /// 구조체로 정의된 의류 정보를 나타냅니다.
     /// </summary>
-    public struct Garment : IEquatable<Garment>
+    public struct Garment : IEquatable<Garment>, IDatabaseID
     {
         /// <summary>
         /// 의류의 고유 식별자를 가져오거나 설정합니다.
@@ -148,6 +158,11 @@ namespace CustomerManagement.Classes
             Price = price;
             Note = note;
             CustomerID = customer_id;
+        }
+
+        public int GetID()
+        {
+            return ID;
         }
 
         public bool Equals(Garment other)

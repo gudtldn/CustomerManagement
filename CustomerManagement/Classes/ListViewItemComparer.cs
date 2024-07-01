@@ -10,7 +10,7 @@ namespace CustomerManagement.Classes
 {
     public class ListViewItemComparer : IComparer
     {
-        private SortOrder Order;
+        private readonly SortOrder Order;
         public int Column { get; }
 
         public ListViewItemComparer()
@@ -28,6 +28,8 @@ namespace CustomerManagement.Classes
         public int Compare(object x, object y)
         {
             int result = string.Compare(((ListViewItem)x).SubItems[Column].Text, ((ListViewItem)y).SubItems[Column].Text);
+            if (result == 0)
+                result = ((IDatabaseID)((ListViewItem)x).Tag).GetID() > ((IDatabaseID)((ListViewItem)y).Tag).GetID() ? 1 : -1;
 
             return Order == SortOrder.Ascending ? result : -result;
         }
