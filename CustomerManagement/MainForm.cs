@@ -1,4 +1,4 @@
-﻿using CustomerManagement.Classes;
+using CustomerManagement.Classes;
 using System;
 using System.Data;
 using System.Linq;
@@ -83,6 +83,10 @@ namespace CustomerManagement
                         break;
                     case Keys.Delete:
                         Customer_Delete_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                    case Keys.F1:
+                        MessageBox.Show($"현재버전: {Updater.CURRENT_VERSION}", "버전정보", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         e.SuppressKeyPress = true;
                         break;
                 }
@@ -266,6 +270,10 @@ namespace CustomerManagement
                         break;
                     case Keys.Delete:
                         Garment_Delete_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                    case Keys.F1:
+                        MessageBox.Show($"현재버전: {Updater.CURRENT_VERSION}", "버전정보", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         e.SuppressKeyPress = true;
                         break;
                 }
