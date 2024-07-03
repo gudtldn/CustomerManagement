@@ -1,4 +1,4 @@
-using CustomerManagement.Classes;
+﻿using CustomerManagement.Classes;
 using System;
 using System.Data;
 using System.Linq;
@@ -49,7 +49,7 @@ namespace CustomerManagement
                 CustomerListView.Items[0].Selected = true;
 
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
-            GarmentListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
+            GarmentListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Descending);
 
             GarmentStatusCountLabel.Text = "";
             GarmentStatusTotalMoneyLabel.Text = "";

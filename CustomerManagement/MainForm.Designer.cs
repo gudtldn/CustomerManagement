@@ -207,6 +207,7 @@ namespace CustomerManagement
             CustomerListView_PN});
             this.CustomerListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerListView.FullRowSelect = true;
+            this.CustomerListView.GridLines = true;
             this.CustomerListView.HideSelection = false;
             this.CustomerListView.Location = new System.Drawing.Point(0, 55);
             this.CustomerListView.Margin = new System.Windows.Forms.Padding(0);
@@ -379,6 +380,7 @@ namespace CustomerManagement
             GarmentListView_Note});
             this.GarmentListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentListView.FullRowSelect = true;
+            this.GarmentListView.GridLines = true;
             this.GarmentListView.HideSelection = false;
             this.GarmentListView.Location = new System.Drawing.Point(0, 55);
             this.GarmentListView.Margin = new System.Windows.Forms.Padding(0);
