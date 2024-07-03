@@ -30,7 +30,8 @@ namespace CustomerManagement.Classes
                         CREATE TABLE `customers` (
                             `id`                 INTEGER,
                             `name`               TEXT NOT NULL UNIQUE,
-                            `phone_number`       TEXT NOT NULL UNIQUE,
+                            `phone_number`       TEXT,
+                            `note`               TEXT,
                             PRIMARY KEY(`id` AUTOINCREMENT)
                         );
                         CREATE TABLE `garments` (
@@ -89,7 +90,12 @@ namespace CustomerManagement.Classes
                     {
                         if (reader.Read())
                         {
-                            return new Customer(Convert.ToInt32(reader["id"]), reader["name"].ToString(), reader["phone_number"].ToString());
+                            return new Customer(
+                                Convert.ToInt32(reader["id"]),
+                                reader["name"].ToString(),
+                                reader["phone_number"].ToString(),
+                                reader["note"].ToString()
+                            );
                         }
                         else
                         {
@@ -112,7 +118,12 @@ namespace CustomerManagement.Classes
                     {
                         if (reader.Read())
                         {
-                            return new Customer(Convert.ToInt32(reader["id"]), reader["name"].ToString(), reader["phone_number"].ToString());
+                            return new Customer(
+                                Convert.ToInt32(reader["id"]),
+                                reader["name"].ToString(),
+                                reader["phone_number"].ToString(),
+                                reader["note"].ToString()
+                            );
                         }
                         else
                         {
@@ -135,7 +146,12 @@ namespace CustomerManagement.Classes
                     {
                         if (reader.Read())
                         {
-                            return new Customer(Convert.ToInt32(reader["id"]), reader["name"].ToString(), reader["phone_number"].ToString());
+                            return new Customer(
+                                Convert.ToInt32(reader["id"]),
+                                reader["name"].ToString(),
+                                reader["phone_number"].ToString(),
+                                reader["note"].ToString()
+                            );
                         }
                         else
                         {
@@ -150,7 +166,12 @@ namespace CustomerManagement.Classes
         {
             foreach (SQLiteDataReader reader in GetData("SELECT * FROM customers"))
             {
-                yield return new Customer(Convert.ToInt32(reader["id"]), reader["name"].ToString(), reader["phone_number"].ToString());
+                yield return new Customer(
+                    Convert.ToInt32(reader["id"]),
+                    reader["name"].ToString(),
+                    reader["phone_number"].ToString(),
+                    reader["note"].ToString()
+                );
             }
         }
 
@@ -183,29 +204,31 @@ namespace CustomerManagement.Classes
             }
         }
 
-        public bool AddCustomer(string name, string phone_number)
+        public bool AddCustomer(string name, string phone_number, string note)
         {
             using (SQLiteConnection connection = new SQLiteConnection(database_path))
             {
                 connection.Open();
-                using (SQLiteCommand sql_command = new SQLiteCommand("INSERT INTO customers (name, phone_number) VALUES (@name, @phone_number)", connection))
+                using (SQLiteCommand sql_command = new SQLiteCommand("INSERT INTO customers (name, phone_number, note) VALUES (@name, @phone_number, @note)", connection))
                 {
                     sql_command.Parameters.AddWithValue("@name", name);
                     sql_command.Parameters.AddWithValue("@phone_number", phone_number);
+                    sql_command.Parameters.AddWithValue("@note", note);
                     return sql_command.ExecuteNonQuery() > 0;
                 }
             }
         }
 
-        public bool UpdateCustomer(Customer from_customer, string new_name, string new_phone_number)
+        public bool UpdateCustomer(Customer from_customer, string new_name, string new_phone_number, string new_note)
         {
             using (SQLiteConnection connection = new SQLiteConnection(database_path))
             {
                 connection.Open();
-                using (SQLiteCommand sql_command = new SQLiteCommand("UPDATE customers SET name = @name, phone_number = @phone_number WHERE id = @id", connection))
+                using (SQLiteCommand sql_command = new SQLiteCommand("UPDATE customers SET name = @name, phone_number = @phone_number, note = @note WHERE id = @id", connection))
                 {
                     sql_command.Parameters.AddWithValue("@name", new_name);
                     sql_command.Parameters.AddWithValue("@phone_number", new_phone_number);
+                    sql_command.Parameters.AddWithValue("@note", new_note);
                     sql_command.Parameters.AddWithValue("@id", from_customer.ID);
                     return sql_command.ExecuteNonQuery() > 0;
                 }

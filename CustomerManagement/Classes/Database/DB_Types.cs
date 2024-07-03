@@ -29,16 +29,22 @@ namespace CustomerManagement.Classes
         public string PhoneNumber;
 
         /// <summary>
+        /// 고객에 대한 메모를 가져오거나 설정합니다.
+        /// </summary>
+        public string Note;
+
+        /// <summary>
         /// Customer 구조체의 새 인스턴스를 초기화합니다.
         /// </summary>
         /// <param name="id">고객의 식별자입니다.</param>
         /// <param name="name">고객의 이름입니다.</param>
         /// <param name="phone_number">고객의 전화번호입니다.</param>
-        public Customer(int id, string name, string phone_number)
+        public Customer(int id, string name, string phone_number, string note)
         {
             ID = id;
             Name = name;
             PhoneNumber = phone_number;
+            Note = note;
         }
 
         public int GetID()
@@ -52,6 +58,7 @@ namespace CustomerManagement.Classes
                 ID == other.ID
                 && Name == other.Name
                 && PhoneNumber == other.PhoneNumber
+                && Note == other.Note
             );
         }
 

@@ -44,6 +44,7 @@ namespace CustomerManagement
             {
                 ListViewItem item = new ListViewItem(customer.Name);
                 item.SubItems.Add(Utils.FormatPhoneNumber(customer.PhoneNumber));
+                item.SubItems.Add(customer.Note);
                 item.Tag = customer;
                 CustomerListView.Items.Add(item);
             }
@@ -147,15 +148,16 @@ namespace CustomerManagement
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
             DataSQL data = new DataSQL();
-            data.AddCustomer(form.CustomerName, form.CustomerPhoneNumber);
+            data.AddCustomer(form.CustomerName, form.CustomerPhoneNumber, form.CustomerNote);
 
             CustomerListView.Items.Add(new ListViewItem(form.CustomerName)
             {
-                SubItems = { Utils.FormatPhoneNumber(form.CustomerPhoneNumber) },
+                SubItems = { Utils.FormatPhoneNumber(form.CustomerPhoneNumber), form.CustomerNote },
                 Tag = new Customer(
                     data.GetCustomer(form.CustomerName, form.CustomerPhoneNumber).Value.ID,
                     form.CustomerName,
-                    form.CustomerPhoneNumber
+                    form.CustomerPhoneNumber,
+                    form.CustomerNote
                 )
             });
 
@@ -185,23 +187,21 @@ namespace CustomerManagement
                 return;
             }
 
-            AddCustomerForm form = new AddCustomerForm(
-                ((Customer)CustomerListView.SelectedItems[0].Tag).Name,
-                ((Customer)CustomerListView.SelectedItems[0].Tag).PhoneNumber
-            ) {
+            AddCustomerForm form = new AddCustomerForm((Customer)CustomerListView.SelectedItems[0].Tag) {
                 Text = "고객 수정"
             };
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
             DataSQL data = new DataSQL();
             Customer customer = (Customer)CustomerListView.SelectedItems[0].Tag;
-            data.UpdateCustomer(customer, form.CustomerName, form.CustomerPhoneNumber);
+            data.UpdateCustomer(customer, form.CustomerName, form.CustomerPhoneNumber, form.CustomerNote);
 
             Customer_Name_Label.Text = form.CustomerName;
 
             CustomerListView.SelectedItems[0].Text = form.CustomerName;
             CustomerListView.SelectedItems[0].SubItems[1].Text = Utils.FormatPhoneNumber(form.CustomerPhoneNumber);
-            CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber);
+            CustomerListView.SelectedItems[0].SubItems[2].Text = form.CustomerNote;
+            CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber, form.CustomerNote);
 
             CustomerListView.Sort();
             CustomerListView.SelectedItems[0].EnsureVisible();
