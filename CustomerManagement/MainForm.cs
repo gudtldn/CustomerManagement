@@ -36,6 +36,9 @@ namespace CustomerManagement
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            GarmentStatusCountLabel.Text = "";
+            GarmentStatusTotalMoneyLabel.Text = "";
+
             DataSQL data = new DataSQL();
             foreach (Customer customer in data.GetAllCustomers())
             {
@@ -50,9 +53,6 @@ namespace CustomerManagement
 
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
             GarmentListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Descending);
-
-            GarmentStatusCountLabel.Text = "";
-            GarmentStatusTotalMoneyLabel.Text = "";
 
             UpdateTotalCustomer();
         }
