@@ -6,24 +6,15 @@ namespace CustomerManagement
 {
     public partial class AddCustomerForm : Form
     {
-        private string _CustomerName = null;
-        private string _CustomerPhoneNumber = null;
-
-        public string CustomerName
-        {
-            get { return _CustomerName; }
-        }
-        public string CustomerPhoneNumber
-        {
-            get { return _CustomerPhoneNumber; }
-        }
+        public string CustomerName { get; private set; }
+        public string CustomerPhoneNumber { get; private set; }
 
         private string GetPhoneNumber() => AddCustomerFormPNTextBox.Text.Replace("-", "");
 
         public AddCustomerForm(string name, string phoneNumber)
         {
-            _CustomerName = name;
-            _CustomerPhoneNumber = phoneNumber;
+            CustomerName = name;
+            CustomerPhoneNumber = phoneNumber;
             InitializeComponent();
         }
 
@@ -124,8 +115,8 @@ namespace CustomerManagement
                 }
             }
 
-            _CustomerName = AddCustomerFormNameTextBox.Text;
-            _CustomerPhoneNumber = pnText;
+            CustomerName = AddCustomerFormNameTextBox.Text;
+            CustomerPhoneNumber = pnText;
 
             DialogResult = DialogResult.OK;
             Close();

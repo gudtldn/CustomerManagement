@@ -6,22 +6,17 @@ namespace CustomerManagement
 {
     public partial class AddGarmantForm : Form
     {
-        private Garment _garment;
-
-        public Garment Garment
-        {
-            get { return _garment; }
-        }
+        public Garment Garment { get; private set; }
 
         public AddGarmantForm(Garment garment)
         {
-            _garment = garment;
+            Garment = garment;
             InitializeComponent();
         }
 
         public AddGarmantForm()
         {
-            _garment = new Garment(-1, DateTime.Now, null, false, "", 0, "", -1);
+            Garment = new Garment(-1, DateTime.Now, null, false, "", 0, "", -1);
             InitializeComponent();
         }
 
@@ -107,7 +102,7 @@ namespace CustomerManagement
                 return;
             }
 
-            _garment = new Garment(
+            Garment = new Garment(
                 -1,
                 GarmentReceptionDateTimePicker.Value,
                 GarmentProcessingDateTimePicker.Format == DateTimePickerFormat.Custom ?
