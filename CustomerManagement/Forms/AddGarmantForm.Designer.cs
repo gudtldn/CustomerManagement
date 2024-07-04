@@ -81,7 +81,7 @@
             GarmentProcessingDateLabel.Name = "GarmentProcessingDateLabel";
             GarmentProcessingDateLabel.Size = new System.Drawing.Size(72, 33);
             GarmentProcessingDateLabel.TabIndex = 2;
-            GarmentProcessingDateLabel.Text = "처리일자:";
+            GarmentProcessingDateLabel.Text = "납품일자:";
             GarmentProcessingDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GarmentReceptionDateLabel

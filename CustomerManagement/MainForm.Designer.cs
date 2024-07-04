@@ -403,7 +403,7 @@ namespace CustomerManagement
             // 
             // GarmentListView_ProcessingDate
             // 
-            GarmentListView_ProcessingDate.Text = "처리일자";
+            GarmentListView_ProcessingDate.Text = "납품일자";
             GarmentListView_ProcessingDate.Width = 105;
             // 
             // GarmentListView_Completion
