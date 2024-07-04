@@ -91,12 +91,6 @@ namespace CustomerManagement
                 AddCustomerFormNameTextBox.Focus();
                 return;
             }
-            // else if (pnText == "")
-            // {
-            //     MessageBox.Show("전화번호를 입력해주세요.", "입력 오류", MessageBoxButtons.OK);
-            //     AddCustomerFormPNTextBox.Focus();
-            //     return;
-            // }
 
             DataSQL data = new DataSQL();
             if (AddCustomerFormNameTextBox.Text != (CustomerName ?? ""))
@@ -108,15 +102,6 @@ namespace CustomerManagement
                     return;
                 }
             }
-
-            // if (pnText != (CustomerPhoneNumber ?? "")) {
-            //     if (data.GetCustomerFromPhoneNumber(pnText) != null)
-            //     {
-            //         MessageBox.Show("이미 존재하는 전화번호입니다.", "입력 오류", MessageBoxButtons.OK);
-            //         AddCustomerFormPNTextBox.Focus();
-            //         return;
-            //     }
-            // }
 
             CustomerName = AddCustomerFormNameTextBox.Text;
             CustomerPhoneNumber = GetPhoneNumber();
