@@ -108,7 +108,7 @@ namespace CustomerManagement.Classes
         public DateTime? ProcessingDate;
 
         /// <summary>
-        /// 의류의 선불 여부를 가져오거나 설정합니다.
+        /// 의류의 완납 여부를 가져오거나 설정합니다.
         /// </summary>
         public bool IsCompleted;
 
@@ -138,7 +138,7 @@ namespace CustomerManagement.Classes
         /// <param name="id">의류의 고유 식별자입니다.</param>
         /// <param name="reception_date">의류의 등록 날짜입니다.</param>
         /// <param name="processing_date">의류의 처리 날짜입니다.</param>
-        /// <param name="is_completed">의류의 선불 여부입니다.</param>
+        /// <param name="is_completed">의류의 완납 여부입니다.</param>
         /// <param name="contents">의류의 내용입니다.</param>
         /// <param name="price">의류의 가격입니다.</param>
         /// <param name="note">의류에 대한 메모입니다.</param>

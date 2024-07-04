@@ -69,7 +69,7 @@
             GarmentIsCompletedLabel.Name = "GarmentIsCompletedLabel";
             GarmentIsCompletedLabel.Size = new System.Drawing.Size(72, 33);
             GarmentIsCompletedLabel.TabIndex = 4;
-            GarmentIsCompletedLabel.Text = "선불여부:";
+            GarmentIsCompletedLabel.Text = "완납여부:";
             GarmentIsCompletedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GarmentProcessingDateLabel

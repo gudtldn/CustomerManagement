@@ -408,7 +408,7 @@ namespace CustomerManagement
             // 
             // GarmentListView_Completion
             // 
-            GarmentListView_Completion.Text = "선불여부";
+            GarmentListView_Completion.Text = "완납여부";
             GarmentListView_Completion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GarmentListView_Content
