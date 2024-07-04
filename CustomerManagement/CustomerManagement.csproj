@@ -84,7 +84,6 @@
     <Compile Include="Classes\EnhancedComponents\EnhancedDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\Updater.cs" />
     <Compile Include="Forms\AddCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
