@@ -43,6 +43,9 @@
     <ApplicationIcon>Resource\Icons\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Octokit, Version=13.0.0.0, Culture=neutral, PublicKeyToken=0be8860aee462442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Octokit.13.0.0\lib\netstandard2.0\Octokit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -50,6 +53,12 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
@@ -75,6 +84,7 @@
     <Compile Include="Classes\EnhancedComponents\EnhancedDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\Updater.cs" />
     <Compile Include="Forms\AddCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,8 +101,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\ListViewItemComparer.cs" />
-    <Compile Include="Classes\DB_Types.cs" />
-    <Compile Include="Classes\DataSQL.cs" />
+    <Compile Include="Classes\Database\DB_Types.cs" />
+    <Compile Include="Classes\Database\DataSQL.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Forms\FindCustomerForm.cs">
       <SubType>Form</SubType>

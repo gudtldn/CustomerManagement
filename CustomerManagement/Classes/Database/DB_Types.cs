@@ -29,16 +29,22 @@ namespace CustomerManagement.Classes
         public string PhoneNumber;
 
         /// <summary>
+        /// 고객에 대한 메모를 가져오거나 설정합니다.
+        /// </summary>
+        public string Note;
+
+        /// <summary>
         /// Customer 구조체의 새 인스턴스를 초기화합니다.
         /// </summary>
         /// <param name="id">고객의 식별자입니다.</param>
         /// <param name="name">고객의 이름입니다.</param>
         /// <param name="phone_number">고객의 전화번호입니다.</param>
-        public Customer(int id, string name, string phone_number)
+        public Customer(int id, string name, string phone_number, string note)
         {
             ID = id;
             Name = name;
             PhoneNumber = phone_number;
+            Note = note;
         }
 
         public int GetID()
@@ -52,6 +58,7 @@ namespace CustomerManagement.Classes
                 ID == other.ID
                 && Name == other.Name
                 && PhoneNumber == other.PhoneNumber
+                && Note == other.Note
             );
         }
 
@@ -101,7 +108,7 @@ namespace CustomerManagement.Classes
         public DateTime? ProcessingDate;
 
         /// <summary>
-        /// 의류의 완료 여부를 가져오거나 설정합니다.
+        /// 의류의 완납 여부를 가져오거나 설정합니다.
         /// </summary>
         public bool IsCompleted;
 
@@ -131,7 +138,7 @@ namespace CustomerManagement.Classes
         /// <param name="id">의류의 고유 식별자입니다.</param>
         /// <param name="reception_date">의류의 등록 날짜입니다.</param>
         /// <param name="processing_date">의류의 처리 날짜입니다.</param>
-        /// <param name="is_completed">의류의 완료 여부입니다.</param>
+        /// <param name="is_completed">의류의 완납 여부입니다.</param>
         /// <param name="contents">의류의 내용입니다.</param>
         /// <param name="price">의류의 가격입니다.</param>
         /// <param name="note">의류에 대한 메모입니다.</param>

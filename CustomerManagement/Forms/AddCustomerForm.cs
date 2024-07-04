@@ -6,24 +6,17 @@ namespace CustomerManagement
 {
     public partial class AddCustomerForm : Form
     {
-        private string _CustomerName = null;
-        private string _CustomerPhoneNumber = null;
-
-        public string CustomerName
-        {
-            get { return _CustomerName; }
-        }
-        public string CustomerPhoneNumber
-        {
-            get { return _CustomerPhoneNumber; }
-        }
+        public string CustomerName { get; private set; }
+        public string CustomerPhoneNumber { get; private set; }
+        public string CustomerNote { get; private set; }
 
         private string GetPhoneNumber() => AddCustomerFormPNTextBox.Text.Replace("-", "");
 
-        public AddCustomerForm(string name, string phoneNumber)
+        public AddCustomerForm(Customer customer)
         {
-            _CustomerName = name;
-            _CustomerPhoneNumber = phoneNumber;
+            CustomerName = customer.Name;
+            CustomerPhoneNumber = customer.PhoneNumber;
+            CustomerNote = customer.Note;
             InitializeComponent();
         }
 
@@ -38,6 +31,7 @@ namespace CustomerManagement
             {
                 AddCustomerFormNameTextBox.Text = CustomerName;
                 AddCustomerFormPNTextBox.Text = CustomerPhoneNumber;
+                AddCustomerFormNoteTextBox.Text = CustomerNote;
             }
         }
 
@@ -90,17 +84,10 @@ namespace CustomerManagement
 
         private void AddCustomerFormConfirmButton_Click(object sender, EventArgs e)
         {
-            string pnText = GetPhoneNumber();
             if (AddCustomerFormNameTextBox.Text == "")
             {
                 MessageBox.Show("이름을 입력해주세요.", "입력 오류", MessageBoxButtons.OK);
                 AddCustomerFormNameTextBox.Focus();
-                return;
-            }
-            else if (pnText == "")
-            {
-                MessageBox.Show("전화번호를 입력해주세요.", "입력 오류", MessageBoxButtons.OK);
-                AddCustomerFormPNTextBox.Focus();
                 return;
             }
 
@@ -115,17 +102,9 @@ namespace CustomerManagement
                 }
             }
 
-            if (pnText != (CustomerPhoneNumber ?? "")) {
-                if (data.GetCustomerFromPhoneNumber(pnText) != null)
-                {
-                    MessageBox.Show("이미 존재하는 전화번호입니다.", "입력 오류", MessageBoxButtons.OK);
-                    AddCustomerFormPNTextBox.Focus();
-                    return;
-                }
-            }
-
-            _CustomerName = AddCustomerFormNameTextBox.Text;
-            _CustomerPhoneNumber = pnText;
+            CustomerName = AddCustomerFormNameTextBox.Text;
+            CustomerPhoneNumber = GetPhoneNumber();
+            CustomerNote = AddCustomerFormNoteTextBox.Text;
 
             DialogResult = DialogResult.OK;
             Close();

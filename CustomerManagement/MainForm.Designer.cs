@@ -46,6 +46,7 @@ namespace CustomerManagement
             System.Windows.Forms.ColumnHeader GarmentListView_Amount;
             System.Windows.Forms.ColumnHeader GarmentListView_Note;
             System.Windows.Forms.TableLayoutPanel GarmentStatusTableLayoutPanel;
+            System.Windows.Forms.ColumnHeader CustomerListView_Note;
             this.Customer_Find_Button = new System.Windows.Forms.Button();
             this.Customer_Delete_Button = new System.Windows.Forms.Button();
             this.Customer_Add_Button = new System.Windows.Forms.Button();
@@ -75,6 +76,7 @@ namespace CustomerManagement
             GarmentListView_Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             GarmentListView_Note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             GarmentStatusTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            CustomerListView_Note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(MainSplitContainer)).BeginInit();
             MainSplitContainer.Panel1.SuspendLayout();
             MainSplitContainer.Panel2.SuspendLayout();
@@ -204,9 +206,11 @@ namespace CustomerManagement
             // 
             this.CustomerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             CustomerListView_Name,
-            CustomerListView_PN});
+            CustomerListView_PN,
+            CustomerListView_Note});
             this.CustomerListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerListView.FullRowSelect = true;
+            this.CustomerListView.GridLines = true;
             this.CustomerListView.HideSelection = false;
             this.CustomerListView.Location = new System.Drawing.Point(0, 55);
             this.CustomerListView.Margin = new System.Windows.Forms.Padding(0);
@@ -224,12 +228,12 @@ namespace CustomerManagement
             // CustomerListView_Name
             // 
             CustomerListView_Name.Text = "이름";
-            CustomerListView_Name.Width = 225;
+            CustomerListView_Name.Width = 100;
             // 
             // CustomerListView_PN
             // 
             CustomerListView_PN.Text = "전화번호";
-            CustomerListView_PN.Width = 185;
+            CustomerListView_PN.Width = 120;
             // 
             // MainStatusTableLayoutPanel
             // 
@@ -379,6 +383,7 @@ namespace CustomerManagement
             GarmentListView_Note});
             this.GarmentListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GarmentListView.FullRowSelect = true;
+            this.GarmentListView.GridLines = true;
             this.GarmentListView.HideSelection = false;
             this.GarmentListView.Location = new System.Drawing.Point(0, 55);
             this.GarmentListView.Margin = new System.Windows.Forms.Padding(0);
@@ -398,19 +403,19 @@ namespace CustomerManagement
             // 
             // GarmentListView_ProcessingDate
             // 
-            GarmentListView_ProcessingDate.Text = "처리일자";
+            GarmentListView_ProcessingDate.Text = "납품일자";
             GarmentListView_ProcessingDate.Width = 105;
             // 
             // GarmentListView_Completion
             // 
-            GarmentListView_Completion.Text = "완료구분";
+            GarmentListView_Completion.Text = "완납여부";
             GarmentListView_Completion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GarmentListView_Content
             // 
             GarmentListView_Content.Text = "내용";
             GarmentListView_Content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            GarmentListView_Content.Width = 350;
+            GarmentListView_Content.Width = 340;
             // 
             // GarmentListView_Amount
             // 
@@ -467,6 +472,11 @@ namespace CustomerManagement
             this.GarmentStatusCountLabel.TabIndex = 2;
             this.GarmentStatusCountLabel.Text = "자료 수: N개";
             this.GarmentStatusCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CustomerListView_Note
+            // 
+            CustomerListView_Note.Text = "비고";
+            CustomerListView_Note.Width = 175;
             // 
             // MainForm
             // 

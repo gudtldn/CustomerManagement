@@ -36,11 +36,15 @@ namespace CustomerManagement
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            GarmentStatusCountLabel.Text = "";
+            GarmentStatusTotalMoneyLabel.Text = "";
+
             DataSQL data = new DataSQL();
             foreach (Customer customer in data.GetAllCustomers())
             {
                 ListViewItem item = new ListViewItem(customer.Name);
                 item.SubItems.Add(Utils.FormatPhoneNumber(customer.PhoneNumber));
+                item.SubItems.Add(customer.Note);
                 item.Tag = customer;
                 CustomerListView.Items.Add(item);
             }
@@ -49,10 +53,7 @@ namespace CustomerManagement
                 CustomerListView.Items[0].Selected = true;
 
             CustomerListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
-            GarmentListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Ascending);
-
-            GarmentStatusCountLabel.Text = "";
-            GarmentStatusTotalMoneyLabel.Text = "";
+            GarmentListView.ListViewItemSorter = new ListViewItemComparer(0, SortOrder.Descending);
 
             UpdateTotalCustomer();
         }
@@ -85,6 +86,10 @@ namespace CustomerManagement
                         Customer_Delete_Button.PerformClick();
                         e.SuppressKeyPress = true;
                         break;
+                    case Keys.F1:
+                        MessageBox.Show($"현재버전: {Updater.CURRENT_VERSION}", "버전정보", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        e.SuppressKeyPress = true;
+                        break;
                 }
             }
         }
@@ -111,9 +116,9 @@ namespace CustomerManagement
             {
                 ListViewItem item = new ListViewItem(garment.ReceptionDate?.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(garment.ProcessingDate?.ToString("yyyy-MM-dd"));
-                item.SubItems.Add(garment.IsCompleted ? "완료" : "미완료");
+                item.SubItems.Add(garment.IsCompleted ? "완납" : "");
                 item.SubItems.Add(garment.Contents);
-                item.SubItems.Add($"{garment.Price:n0} 원");
+                item.SubItems.Add(garment.Price == 0 ? "" : $"{garment.Price:n0} 원");
                 item.SubItems.Add(garment.Note);
                 item.Tag = garment;
                 GarmentListView.Items.Add(item);
@@ -143,15 +148,16 @@ namespace CustomerManagement
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
             DataSQL data = new DataSQL();
-            data.AddCustomer(form.CustomerName, form.CustomerPhoneNumber);
+            data.AddCustomer(form.CustomerName, form.CustomerPhoneNumber, form.CustomerNote);
 
             CustomerListView.Items.Add(new ListViewItem(form.CustomerName)
             {
-                SubItems = { Utils.FormatPhoneNumber(form.CustomerPhoneNumber) },
+                SubItems = { Utils.FormatPhoneNumber(form.CustomerPhoneNumber), form.CustomerNote },
                 Tag = new Customer(
                     data.GetCustomer(form.CustomerName, form.CustomerPhoneNumber).Value.ID,
                     form.CustomerName,
-                    form.CustomerPhoneNumber
+                    form.CustomerPhoneNumber,
+                    form.CustomerNote
                 )
             });
 
@@ -181,23 +187,21 @@ namespace CustomerManagement
                 return;
             }
 
-            AddCustomerForm form = new AddCustomerForm(
-                ((Customer)CustomerListView.SelectedItems[0].Tag).Name,
-                ((Customer)CustomerListView.SelectedItems[0].Tag).PhoneNumber
-            ) {
+            AddCustomerForm form = new AddCustomerForm((Customer)CustomerListView.SelectedItems[0].Tag) {
                 Text = "고객 수정"
             };
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
             DataSQL data = new DataSQL();
             Customer customer = (Customer)CustomerListView.SelectedItems[0].Tag;
-            data.UpdateCustomer(customer, form.CustomerName, form.CustomerPhoneNumber);
+            data.UpdateCustomer(customer, form.CustomerName, form.CustomerPhoneNumber, form.CustomerNote);
 
             Customer_Name_Label.Text = form.CustomerName;
 
             CustomerListView.SelectedItems[0].Text = form.CustomerName;
             CustomerListView.SelectedItems[0].SubItems[1].Text = Utils.FormatPhoneNumber(form.CustomerPhoneNumber);
-            CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber);
+            CustomerListView.SelectedItems[0].SubItems[2].Text = form.CustomerNote;
+            CustomerListView.SelectedItems[0].Tag = new Customer(customer.ID, form.CustomerName, form.CustomerPhoneNumber, form.CustomerNote);
 
             CustomerListView.Sort();
             CustomerListView.SelectedItems[0].EnsureVisible();
@@ -245,7 +249,6 @@ namespace CustomerManagement
 
         private void GarmentListView_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.Control)
             {
                 switch (e.KeyCode)
@@ -266,6 +269,10 @@ namespace CustomerManagement
                         break;
                     case Keys.Delete:
                         Garment_Delete_Button.PerformClick();
+                        e.SuppressKeyPress = true;
+                        break;
+                    case Keys.F1:
+                        MessageBox.Show($"현재버전: {Updater.CURRENT_VERSION}", "버전정보", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         e.SuppressKeyPress = true;
                         break;
                 }
@@ -327,9 +334,9 @@ namespace CustomerManagement
             {
                 SubItems = {
                     form.Garment.ProcessingDate?.ToString("yyyy-MM-dd") ?? "",
-                    form.Garment.IsCompleted ? "완료" : "미완료",
+                    form.Garment.IsCompleted ? "완납" : "",
                     form.Garment.Contents,
-                    $"{form.Garment.Price:n0} 원",
+                    form.Garment.Price == 0 ? "" : $"{form.Garment.Price:n0} 원",
                     form.Garment.Note
                 },
                 Tag = new Garment(
@@ -394,9 +401,9 @@ namespace CustomerManagement
 
             GarmentListView.SelectedItems[0].Text = form.Garment.ReceptionDate?.ToString("yyyy-MM-dd") ?? "";
             GarmentListView.SelectedItems[0].SubItems[1].Text = form.Garment.ProcessingDate?.ToString("yyyy-MM-dd") ?? "";
-            GarmentListView.SelectedItems[0].SubItems[2].Text = form.Garment.IsCompleted ? "완료" : "미완료";
+            GarmentListView.SelectedItems[0].SubItems[2].Text = form.Garment.IsCompleted ? "완납" : "";
             GarmentListView.SelectedItems[0].SubItems[3].Text = form.Garment.Contents;
-            GarmentListView.SelectedItems[0].SubItems[4].Text = $"{form.Garment.Price:n0} 원";
+            GarmentListView.SelectedItems[0].SubItems[4].Text = form.Garment.Price == 0 ? "" : $"{form.Garment.Price:n0} 원";
             GarmentListView.SelectedItems[0].SubItems[5].Text = form.Garment.Note;
             GarmentListView.SelectedItems[0].Tag = new Garment(
                 garment.ID,
