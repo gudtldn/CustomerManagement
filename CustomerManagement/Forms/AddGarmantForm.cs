@@ -24,7 +24,7 @@ namespace CustomerManagement
         {
             GarmentReceptionDateTimePicker.Value = Garment.ReceptionDate ?? DateTime.Now;
             GarmentIsCompletedCheckBox.Checked = Garment.IsCompleted;
-            GarmentPriceTextBox.Text = Garment.Price.ToString();
+            GarmentPriceTextBox.Text = Garment.Price == 0 ? "" : Garment.Price.ToString();
             GarmentContentsTextBox.Text = Garment.Contents;
             GarmentNoteTextBox.Text = Garment.Note;
             if (Garment.ProcessingDate is DateTime processingDate)
@@ -89,13 +89,7 @@ namespace CustomerManagement
 
         private void GarmentFormConfirmButton_Click(object sender, EventArgs e)
         {
-            if (GarmentPriceTextBox.Text == "")
-            {
-                MessageBox.Show("가격을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                GarmentPriceTextBox.Focus();
-                return;
-            }
-            else if (GarmentContentsTextBox.Text == "")
+            if (GarmentContentsTextBox.Text == "")
             {
                 MessageBox.Show("내용을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 GarmentContentsTextBox.Focus();

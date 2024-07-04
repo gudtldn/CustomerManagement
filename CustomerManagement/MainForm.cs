@@ -118,7 +118,7 @@ namespace CustomerManagement
                 item.SubItems.Add(garment.ProcessingDate?.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(garment.IsCompleted ? "완납" : "");
                 item.SubItems.Add(garment.Contents);
-                item.SubItems.Add($"{garment.Price:n0} 원");
+                item.SubItems.Add(garment.Price == 0 ? "" : $"{garment.Price:n0} 원");
                 item.SubItems.Add(garment.Note);
                 item.Tag = garment;
                 GarmentListView.Items.Add(item);
@@ -249,7 +249,6 @@ namespace CustomerManagement
 
         private void GarmentListView_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.Control)
             {
                 switch (e.KeyCode)
@@ -337,7 +336,7 @@ namespace CustomerManagement
                     form.Garment.ProcessingDate?.ToString("yyyy-MM-dd") ?? "",
                     form.Garment.IsCompleted ? "완납" : "",
                     form.Garment.Contents,
-                    $"{form.Garment.Price:n0} 원",
+                    form.Garment.Price == 0 ? "" : $"{form.Garment.Price:n0} 원",
                     form.Garment.Note
                 },
                 Tag = new Garment(
@@ -404,7 +403,7 @@ namespace CustomerManagement
             GarmentListView.SelectedItems[0].SubItems[1].Text = form.Garment.ProcessingDate?.ToString("yyyy-MM-dd") ?? "";
             GarmentListView.SelectedItems[0].SubItems[2].Text = form.Garment.IsCompleted ? "완납" : "";
             GarmentListView.SelectedItems[0].SubItems[3].Text = form.Garment.Contents;
-            GarmentListView.SelectedItems[0].SubItems[4].Text = $"{form.Garment.Price:n0} 원";
+            GarmentListView.SelectedItems[0].SubItems[4].Text = form.Garment.Price == 0 ? "" : $"{form.Garment.Price:n0} 원";
             GarmentListView.SelectedItems[0].SubItems[5].Text = form.Garment.Note;
             GarmentListView.SelectedItems[0].Tag = new Garment(
                 garment.ID,
