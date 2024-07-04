@@ -84,7 +84,6 @@ namespace CustomerManagement
 
         private void AddCustomerFormConfirmButton_Click(object sender, EventArgs e)
         {
-            // string pnText = GetPhoneNumber();
             if (AddCustomerFormNameTextBox.Text == "")
             {
                 MessageBox.Show("이름을 입력해주세요.", "입력 오류", MessageBoxButtons.OK);
